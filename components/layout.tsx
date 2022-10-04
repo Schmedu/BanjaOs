@@ -5,16 +5,16 @@ import Header2 from "./header2";
 import Footer from "./footer";
 
 interface Props {
-  children: React.ReactNode
+    children: React.ReactNode
 }
 
 export default function Layout({ children }: Props) {
-  return (
-    <div className="m-0 p-0 flex flex-col min-h-screen">
-      {/*<Header />*/}
-      <Header2 />
-      <main className="grow max-w-screen-xl px-4 py-4 mx-auto sm:px-6 lg:px-8 lg:pt-24">{children}</main>
-      <Footer />
-    </div>
-  )
+    return (
+        <div className="m-0 p-0 flex flex-col min-h-screen">
+            {/*<Header />*/}
+            <Header2 />
+            <main className="grow max-w-screen-xl px-4 py-4 mx-auto sm:px-6 lg:px-8 lg:pt-24">{children}</main>
+            <Footer />
+        </div>
+    )
 }

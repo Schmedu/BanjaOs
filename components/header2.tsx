@@ -1,7 +1,7 @@
 import Link from "next/link"
-import {signIn, signOut, useSession} from "next-auth/react"
+import { signIn, signOut, useSession } from "next-auth/react"
 import styles from "./header.module.css"
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 
 // The approach used in this component shows how to build a sign in and sign out
 // component that works on pages which support both client and server side
@@ -12,23 +12,23 @@ function classNames(...classes: string[]) {
 }
 
 const navigation = [
-    {name: 'Home', href: '#'},
-    {name: 'Client', href: '/client'},
-    {name: 'Server', href: '/server'},
-    {name: 'Protected', href: '/protected'},
-    {name: 'API', href: '/api-example'},
-    {name: 'Admin', href: '/admin'},
-    {name: 'Me', href: '/me'},
+    { name: 'Home', href: '#' },
+    { name: 'Client', href: '/client' },
+    { name: 'Server', href: '/server' },
+    { name: 'Protected', href: '/protected' },
+    { name: 'API', href: '/api-example' },
+    { name: 'Admin', href: '/admin' },
+    { name: 'Me', href: '/me' },
 ]
 const userNavigation = [
-    {name: 'Your Profile', href: '#'},
-    {name: 'Settings', href: '#'},
-    {name: 'Sign out', href: '#'},
+    { name: 'Your Profile', href: '#' },
+    { name: 'Settings', href: '#' },
+    { name: 'Sign out', href: '#' },
 ]
 
 export default function Header2() {
     const router = useRouter()
-    const {data: session, status} = useSession()
+    const { data: session, status } = useSession()
     const loading = status === "loading"
 
     return (
@@ -36,57 +36,7 @@ export default function Header2() {
             <noscript>
                 <style>{`.nojs-show { opacity: 1; top: 0; }`}</style>
             </noscript>
-            <div className={styles.signedInStatus}>
-                <p
-                    className={`nojs-show ${
-                        !session && loading ? styles.loading : styles.loaded
-                    }`}
-                >
-                    {!session && (
-                        <>
-              <span className={styles.notSignedInText}>
-                You are not signed in
-              </span>
-                            <a
-                                href={`/api/auth/signin`}
-                                className={styles.buttonPrimary}
-                                onClick={(e) => {
-                                    e.preventDefault()
-                                    signIn()
-                                }}
-                            >
-                                Sign in
-                            </a>
-                        </>
 
-                    )}
-                    {session?.user && (
-                        <>
-                            {session.user.image && (
-                                <span
-                                    style={{backgroundImage: `url('${session.user.image}')`}}
-                                    className={styles.avatar}
-                                />
-                            )}
-                            <span className={styles.signedInText}>
-                <small>Signed in as</small>
-                <br/>
-                <strong>{session.user.email ?? session.user.name}</strong>
-              </span>
-                            <a
-                                href={`/api/auth/signout`}
-                                className={styles.button}
-                                onClick={(e) => {
-                                    e.preventDefault()
-                                    signOut()
-                                }}
-                            >
-                                Sign out
-                            </a>
-                        </>
-                    )}
-                </p>
-            </div>
             {/*Actual Content*/}
             <div className="max-w-screen-xl p-4 mx-auto">
                 <div className="flex items-center justify-between space-x-4 lg:space-x-10">
@@ -109,7 +59,7 @@ export default function Header2() {
                                             ? 'text-gray-500 underline'
                                             : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900',
                                     )}
-                                    // aria-current={item.current ? 'page' : undefined}
+                                // aria-current={item.current ? 'page' : undefined}
                                 >
                                     {item.name}
                                 </a>
@@ -127,6 +77,12 @@ export default function Header2() {
                                 {/*{#                        Profile#}*/}
                                 {/*{#                    </a>#}*/}
 
+                                {session.user.image && (
+                                    <span
+                                        style={{ backgroundImage: `url('${session.user.image}')` }}
+                                        className={styles.avatar}
+                                    />
+                                )}
                                 <a
                                     className="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"
                                     href={`/api/auth/signout`}
@@ -178,9 +134,9 @@ export default function Header2() {
                             >
                                 <path
                                     d="M4 6h16M4 12h16M4 18h16"
-                                    // stroke-linecap="round"
-                                    // stroke-linejoin="round"
-                                    // stroke-width="2"
+                                // stroke-linecap="round"
+                                // stroke-linejoin="round"
+                                // stroke-width="2"
                                 />
                             </svg>
                         </button>

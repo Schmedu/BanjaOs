@@ -8,7 +8,9 @@ export default async (req, res) => {
         // Signed in
         console.log("JSON Web Token", JSON.stringify(token, null, 2))
         res.status(200)
-        return res.send(JSON.stringify(token, null, 2))
+        // return res.send(JSON.stringify(token, null, 2))
+        res.setHeader('Content-Type', 'text/html');
+        return res.send("<h1>Hey There!</h1>")
     } else {
         // Not Signed in
         res.status(401)

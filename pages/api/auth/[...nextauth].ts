@@ -6,11 +6,14 @@ import GithubProvider from "next-auth/providers/github"
 // import Auth0Provider from "next-auth/providers/auth0"
 // import AppleProvider from "next-auth/providers/apple"
 // import EmailProvider from "next-auth/providers/email"
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import prisma from "../../../lib/prismadb"
 
 // For more information on each option (and a full list of options) go to
 // https://next-auth.js.org/configuration/options
 export default NextAuth({
   // https://next-auth.js.org/configuration/providers/oauth
+  adapter: PrismaAdapter(prisma),
   providers: [
     /* EmailProvider({
          server: process.env.EMAIL_SERVER,
@@ -53,11 +56,14 @@ export default NextAuth({
     //   issuer: process.env.AUTH0_ISSUER,
     // }),
   ],
-  theme: {
-    colorScheme: "light",
-  },
+  // theme: {
+  //   colorScheme: "light",
+  // },
   secret: process.env.JWT_SECRET,
-  // jwt: { encryption: true },
+  session: {
+    strategy: "jwt",
+  },
+    // jwt: { encryption: true },
   callbacks: {
     async jwt({ token }) {
       token.userRole = "admin"

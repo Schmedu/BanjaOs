@@ -1,0 +1,217 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:/Users/schmedu/Desktop/Dev2Do/db.sqlite3"
+}
+
+model Dev2Do_command {
+  id          Int          @id @default(autoincrement())
+  cmd         String
+  task_id     Int?
+  search      String
+  Dev2Do_task Dev2Do_task? @relation(fields: [task_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([task_id], map: "Dev2Do_command_task_id_40c9023f")
+}
+
+model Dev2Do_historyitem {
+  url            String          @id
+  title          String?
+  created        DateTime
+  last_visited   DateTime
+  session_id     Int?
+  task_id        Int?
+  Dev2Do_task    Dev2Do_task?    @relation(fields: [task_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Dev2Do_session Dev2Do_session? @relation(fields: [session_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([task_id], map: "Dev2Do_historyitem_task_id_fcfebf26")
+  @@index([session_id], map: "Dev2Do_historyitem_session_id_6921df25")
+}
+
+model Dev2Do_link {
+  id           Int          @id @default(autoincrement())
+  href         String
+  created      DateTime
+  last_visited DateTime
+  task_id      Int?
+  search       String
+  Dev2Do_task  Dev2Do_task? @relation(fields: [task_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([task_id], map: "Dev2Do_link_task_id_a8dd7570")
+}
+
+model Dev2Do_log {
+  id          Int          @id @default(autoincrement())
+  text        String
+  created     DateTime
+  task_id     Int?
+  description String?
+  Dev2Do_task Dev2Do_task? @relation(fields: [task_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([task_id], map: "Dev2Do_log_task_id_5ce15d1e")
+}
+
+model Dev2Do_session {
+  id                                                      Int                  @id @default(autoincrement())
+  start_time                                              DateTime
+  task_id                                                 Int?
+  end_time                                                DateTime?
+  windows                                                 String?
+  Dev2Do_task_Dev2Do_session_task_idToDev2Do_task         Dev2Do_task?         @relation("Dev2Do_session_task_idToDev2Do_task", fields: [task_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Dev2Do_historyitem                                      Dev2Do_historyitem[]
+  Dev2Do_task_Dev2Do_sessionToDev2Do_task_last_session_id Dev2Do_task?         @relation("Dev2Do_sessionToDev2Do_task_last_session_id")
+
+  @@index([task_id], map: "Dev2Do_session_task_id_02e64d83")
+}
+
+model Dev2Do_task {
+  id                                                         Int                  @id @default(autoincrement())
+  description                                                String
+  created                                                    DateTime
+  finished                                                   Boolean
+  is_root                                                    Boolean
+  is_current                                                 Boolean
+  details                                                    String
+  url                                                        String
+  last_session_id                                            Int?              @unique(map: "sqlite_autoindex_Dev2Do_task_1")
+  sub_tasks_id                                               Int?
+  Dev2Do_task                                                Dev2Do_task?         @relation("Dev2Do_taskToDev2Do_task", fields: [sub_tasks_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Dev2Do_session_Dev2Do_sessionToDev2Do_task_last_session_id Dev2Do_session?      @relation("Dev2Do_sessionToDev2Do_task_last_session_id", fields: [last_session_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  Dev2Do_command                                             Dev2Do_command[]
+  Dev2Do_historyitem                                         Dev2Do_historyitem[]
+  Dev2Do_link                                                Dev2Do_link[]
+  Dev2Do_log                                                 Dev2Do_log[]
+  Dev2Do_session_Dev2Do_session_task_idToDev2Do_task         Dev2Do_session[]     @relation("Dev2Do_session_task_idToDev2Do_task")
+  other_Dev2Do_task                                          Dev2Do_task[]        @relation("Dev2Do_taskToDev2Do_task")
+  Dev2Do_taskfile                                            Dev2Do_taskfile[]
+
+  @@index([sub_tasks_id], map: "Dev2Do_task_sub_tasks_id_bac11904")
+}
+
+model Dev2Do_taskfile {
+  id          Int          @id @default(autoincrement())
+  file        String
+  created     DateTime
+  task_id     Int?
+  description String
+  Dev2Do_task Dev2Do_task? @relation(fields: [task_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([task_id], map: "Dev2Do_taskfile_task_id_65b37294")
+}
+
+model auth_group {
+  id                     Int                      @id @default(autoincrement())
+  name                   String                   @unique(map: "sqlite_autoindex_auth_group_1")
+  auth_group_permissions auth_group_permissions[]
+  auth_user_groups       auth_user_groups[]
+}
+
+model auth_group_permissions {
+  id              Int             @id @default(autoincrement())
+  group_id        Int
+  permission_id   Int
+  auth_permission auth_permission @relation(fields: [permission_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  auth_group      auth_group      @relation(fields: [group_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@unique([group_id, permission_id], map: "auth_group_permissions_group_id_permission_id_0cd325b0_uniq")
+  @@index([permission_id], map: "auth_group_permissions_permission_id_84c5c92e")
+  @@index([group_id], map: "auth_group_permissions_group_id_b120cbf9")
+}
+
+model auth_permission {
+  id                         Int                          @id @default(autoincrement())
+  content_type_id            Int
+  codename                   String
+  name                       String
+  django_content_type        django_content_type          @relation(fields: [content_type_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  auth_group_permissions     auth_group_permissions[]
+  auth_user_user_permissions auth_user_user_permissions[]
+
+  @@unique([content_type_id, codename], map: "auth_permission_content_type_id_codename_01ab375a_uniq")
+  @@index([content_type_id], map: "auth_permission_content_type_id_2f476e4b")
+}
+
+model auth_user {
+  id                         Int                          @id @default(autoincrement())
+  password                   String
+  last_login                 DateTime?
+  is_superuser               Boolean
+  username                   String                       @unique(map: "sqlite_autoindex_auth_user_1")
+  last_name                  String
+  email                      String
+  is_staff                   Boolean
+  is_active                  Boolean
+  date_joined                DateTime
+  first_name                 String
+  auth_user_groups           auth_user_groups[]
+  auth_user_user_permissions auth_user_user_permissions[]
+  django_admin_log           django_admin_log[]
+}
+
+model auth_user_groups {
+  id         Int        @id @default(autoincrement())
+  user_id    Int
+  group_id   Int
+  auth_group auth_group @relation(fields: [group_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  auth_user  auth_user  @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@unique([user_id, group_id], map: "auth_user_groups_user_id_group_id_94350c0c_uniq")
+  @@index([group_id], map: "auth_user_groups_group_id_97559544")
+  @@index([user_id], map: "auth_user_groups_user_id_6a12ed8b")
+}
+
+model auth_user_user_permissions {
+  id              Int             @id @default(autoincrement())
+  user_id         Int
+  permission_id   Int
+  auth_permission auth_permission @relation(fields: [permission_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  auth_user       auth_user       @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@unique([user_id, permission_id], map: "auth_user_user_permissions_user_id_permission_id_14a6b632_uniq")
+  @@index([permission_id], map: "auth_user_user_permissions_permission_id_1fbb5f2c")
+  @@index([user_id], map: "auth_user_user_permissions_user_id_a95ead1b")
+}
+
+model django_admin_log {
+  id                  Int                              @id @default(autoincrement())
+  action_time         DateTime
+  object_id           String?
+  object_repr         String
+  change_message      String
+  content_type_id     Int?
+  user_id             Int
+  action_flag         Int
+  auth_user           auth_user                        @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  django_content_type django_content_type?             @relation(fields: [content_type_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@index([user_id], map: "django_admin_log_user_id_c564eba6")
+  @@index([content_type_id], map: "django_admin_log_content_type_id_c4bce8eb")
+}
+
+model django_content_type {
+  id               Int                @id @default(autoincrement())
+  app_label        String
+  model            String
+  auth_permission  auth_permission[]
+  django_admin_log django_admin_log[]
+
+  @@unique([app_label, model], map: "django_content_type_app_label_model_76bd3d3b_uniq")
+}
+
+model django_migrations {
+  id      Int      @id @default(autoincrement())
+  app     String
+  name    String
+  applied DateTime
+}
+
+model django_session {
+  session_key  String   @id
+  session_data String
+  expire_date  DateTime
+
+  @@index([expire_date], map: "django_session_expire_date_a5c62663")
+}

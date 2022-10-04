@@ -1,12 +1,12 @@
-import {PrismaClient} from '@prisma/client'
-import {Component, useState} from "react";
-import {any} from "prop-types";
+import { PrismaClient } from '@prisma/client'
+import { Component, useState } from "react";
+import { any } from "prop-types";
 import Layout from "../components/layout";
 
 const prisma = new PrismaClient()
 
 // @ts-ignore
-export default function CommandsPage({initialPosts}) {
+export default function CommandsPage({ initialPosts }) {
     const [posts, setPosts] = useState(initialPosts)
     // let { posts } = this.props;
     return (
@@ -15,10 +15,11 @@ export default function CommandsPage({initialPosts}) {
                 {/*<ul>*/}
                 {posts.map((post: any) => (
                     // <li>{post.cmd}</li>
-                    <a
-                        href=""
-                        className="relative block p-8 pb-24 border-t-4 border-pink-600 rounded-sm shadow-xl"
-                    >
+                    <div className="relative block p-8 pb-24 border-t-4 border-pink-600 rounded-sm shadow-xl">
+                        {/*<a*/}
+                        {/*    href=""*/}
+                        {/*    className="relative block p-8 pb-24 border-t-4 border-pink-600 rounded-sm shadow-xl"*/}
+                        {/*>*/}
                         <h5 className="text-4xl font-bold break-words">{post.search}</h5>
                         <code className="mt-4 text-lg font-medium text-gray-500 break-words">
                             {post.cmd}
@@ -40,7 +41,8 @@ export default function CommandsPage({initialPosts}) {
                         {/*    />*/}
                         {/*  </svg>*/}
                         {/*</span>*/}
-                    </a>
+                        {/*</a>*/}
+                    </div>
 
                     // <div className="">
                     // <h1 className="">{post.search}</h1>
