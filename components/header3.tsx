@@ -33,7 +33,7 @@ const userNavigation = [
     { name: 'Sign out', href: '#' },
 ]
 
-export default function Header2() {
+export default function Header3() {
     const [isOpen, setIsOpen] = useState(false);
     const router = useRouter()
     const { data: session, status } = useSession()
@@ -68,8 +68,10 @@ export default function Header2() {
                                     // href={item.href}
                                     className={classNames(
                                         router.asPath === item.href
-                                            ? 'text-gray-500 underline whitespace-nowrap'
-                                            : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900 whitespace-nowrap',
+                                            // ? 'text-gray-500 underline whitespace-nowrap'
+                                            // : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900 whitespace-nowrap',
+                                            ? 'block relative py-2 px-4 font-sans text-sm font-semibold uppercase bg-transparent cursor-pointer text-neutral-900 lg:px-2 hover:text-sky-700'
+                                            : 'block relative py-2 px-4 font-sans text-sm font-semibold uppercase bg-transparent cursor-pointer text-neutral-900 lg:px-2 hover:text-sky-700',
                                     )}
                                 // aria-current={item.current ? 'page' : undefined}
                                 >

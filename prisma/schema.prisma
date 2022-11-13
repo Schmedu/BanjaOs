@@ -53,4 +53,11 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
+//model Appointment {
+//  appointmentId String   @id @default(cuid())
+//  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+//  dateTime      DateTime
+//  isAccepted    Boolean  @default(false)
+//}
+
 

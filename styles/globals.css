@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h2 {
+    /*@apply*/
+}
+
+
+#gallery img {
+    @apply rounded
+}
+
+#progress {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    transform: rotate(-90deg);
+}
+
+circle {
+    stroke-dashoffset: 0;
+    stroke-width: 15%;
+    fill: none;
+}
+
+.bg {
+    stroke: blue;
+    opacity: 0.3;
+}
+
+#progress .indicator {
+    stroke: blue;
+}
+
+#slider ul {
+    display: flex;
+    list-style: none;
+    height: 500px;
+    overflow-x: scroll;
+    padding: 20px 0;
+    flex: 0 0 600px;
+    margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+    background: #fff3;
+    -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-thumb {
+    background: blue;
+    -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+    background: #fff3;
+}
+
+#slider li {
+    flex: 0 0 400px;
+    background: blue;
+    margin: 0 20px 0 0;
+}
+
+#slider li:last-of-type {
+    margin: 0;
+}

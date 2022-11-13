@@ -60,7 +60,8 @@ export default function CommandsPage({ initialPosts }) {
 // This function gets called at build time
 export async function getServerSideProps() {
     // Call an external API endpoint to get posts
-    let posts = await prisma.dev2Do_command.findMany()
+    // let posts = await prisma.dev2Do_command.findMany()
+    let posts: any[] = []
 
     // By returning { props: { posts } }, the Blog component
     // will receive `posts` as a prop at build time
