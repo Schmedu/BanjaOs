@@ -28,9 +28,9 @@ export default function IndexPage() {
                 {/*{getHero()}*/}
                 {leftSection()}
                 {rightSection()}
-                {getPrices()}
                 {FaqNew()}
                 <Testimonials />
+                {getPrices()}
                 <ContactForm2 />
 
             </div>

@@ -50,9 +50,11 @@ export default function Header3() {
                 <div className="flex items-center justify-between space-x-4 lg:space-x-10">
                     <div className="flex lg:w-0 lg:flex-1">
                         {/*<span className="w-20 h-10 bg-gray-200 rounded-lg"></span>*/}
-                        <span className="w-1/2 h-auto">
+                        <span className="h-auto flex items-center">
                             {/*<img src="Logo.jpg" alt="logo" className="w-10 h-10" />*/}
-                            <img src="banja-os-logo-cropped.png" alt="logo" className="w-full1 align-middle" />
+                            <img src="11.png" alt="logo" className="w-32 align-middle hidden md:block" />
+                            {/*<img src="banja-os-logo-cropped.png" alt="logo" className=" align-middle" />*/}
+                            <p className={"text-4xl whitespace-nowrap"} style={{ 'font-family': "MrDeHaviland" }}>Banja Os</p>
                         </span>
                     </div>
 
@@ -70,8 +72,8 @@ export default function Header3() {
                                         router.asPath === item.href
                                             // ? 'text-gray-500 underline whitespace-nowrap'
                                             // : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900 whitespace-nowrap',
-                                            ? 'block relative py-2 px-4 font-sans text-sm font-semibold uppercase bg-transparent cursor-pointer text-neutral-900 lg:px-2 hover:text-sky-700'
-                                            : 'block relative py-2 px-4 font-sans text-sm font-semibold uppercase bg-transparent cursor-pointer text-neutral-900 lg:px-2 hover:text-sky-700',
+                                            ? 'block relative py-2 px-4 text-sm font-semibold uppercase bg-transparent cursor-pointer lg:px-2 hover:text-sky-700 underline'
+                                            : 'block relative py-2 px-4 text-sm font-semibold uppercase bg-transparent cursor-pointer lg:px-2 hover:text-sky-700',
                                     )}
                                 // aria-current={item.current ? 'page' : undefined}
                                 >
@@ -115,14 +117,14 @@ export default function Header3() {
                         <>
                             <div className="items-center justify-end flex-1 space-x-4 sm:flex">
                                 <a
-                                    className="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg"
+                                    className="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg uppercase"
                                     href={`/api/auth/signin`}
                                     onClick={(e) => {
                                         e.preventDefault()
                                         signIn()
                                     }}
                                 >
-                                    Login
+                                    Termin buchen
                                 </a>
 
                                 {/*<a*/}
@@ -139,7 +141,7 @@ export default function Header3() {
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             type="button"
-                            className="text-gray-600 bg-gray-100 rounded-lg inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                            className="bg-gray-100 rounded-lg inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                             aria-controls="mobile-menu"
                             aria-expanded="false"
                         >
@@ -180,7 +182,7 @@ export default function Header3() {
                         </button>
                     </div>
                     {/*<div className="lg:hidden">*/}
-                    {/*    <button className="p-2 text-gray-600 bg-gray-100 rounded-lg" type="button" onClick={() => setIsOpen(!isOpen)}>*/}
+                    {/*    <button className="p-2 bg-gray-100 rounded-lg" type="button" onClick={() => setIsOpen(!isOpen)}>*/}
                     {/*        <span className="sr-only">Open menu</span>*/}
                     {/*        <svg*/}
                     {/*            aria-hidden="true"*/}

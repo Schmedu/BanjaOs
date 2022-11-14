@@ -23,17 +23,17 @@ const ContactForm2 = () => {
 
     return (
         <section className="">
-            <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-                <h2 className="mt-0 mb-5 font-sans text-4xl font-medium tracking-wide text-neutral-900 text-center">
+            <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+                <h2 className="mt-0 mb-5 text-4xl font-medium tracking-wide text-center">
                     Jetzt Termin buchen
                 </h2>
                 <div className="mx-auto md:w-7/12">
-                    <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
+                    <div className="rounded-lg bg-white dark:bg-br-green dark:border dark:border-br-l-blush dark:border dark:border-br-l-blush p-8 shadow-lg lg:col-span-3 lg:p-12">
                         <form onSubmit={handleSubmit(handleRegistration)} className="space-y-4">
                             <div>
                                 <label className="sr-only" htmlFor="name">{nameLabel}</label>
                                 <input
-                                    className="w-full rounded-lg border-gray-200 p-3 text-sm border"
+                                    className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
                                     placeholder={namePlaceholder}
                                     type="text"
                                     id="name"
@@ -45,7 +45,7 @@ const ContactForm2 = () => {
                                 <div>
                                     <label className="sr-only" htmlFor="email">Email</label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border"
+                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
                                         placeholder={emailPlaceholder}
                                         type="email"
                                         id="email"
@@ -55,7 +55,7 @@ const ContactForm2 = () => {
                                 <div>
                                     <label className="sr-only" htmlFor="phone">{phoneLabel}</label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border"
+                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
                                         placeholder={phoneNumber}
                                         type="tel"
                                         id="phone"
@@ -67,7 +67,7 @@ const ContactForm2 = () => {
                                 <div>
                                     <label className="sr-only" htmlFor="date">Datum</label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border"
+                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
                                         placeholder="Datum"
                                         type="date"
                                         id="datet"
@@ -93,7 +93,7 @@ const ContactForm2 = () => {
                                 <div>
                                     <label className="sr-only" htmlFor="time"></label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border"
+                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
                                         placeholder="Uhrzeit"
                                         id="time"
                                         list='times'
@@ -122,7 +122,7 @@ const ContactForm2 = () => {
                                 <div>
                                     <label className="sr-only" htmlFor="persons"></label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border"
+                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
                                         placeholder="Anzahl Personen"
                                         id="persons"
                                         type={'number'}
@@ -146,7 +146,7 @@ const ContactForm2 = () => {
                                 <div>
                                     <label className="sr-only" htmlFor="hour">"Stunden"</label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border"
+                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
                                         placeholder="Stunden"
                                         id="hour"
                                         // list={'hours'}
@@ -181,7 +181,7 @@ const ContactForm2 = () => {
                             <div>
                                 <label className="sr-only" htmlFor="message">{message}</label>
                                 <textarea
-                                    className="w-full rounded-lg border-gray-200 p-3 text-sm border"
+                                    className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
                                     placeholder="Nachricht (optional)"
                                     rows={8}
                                     id="message"

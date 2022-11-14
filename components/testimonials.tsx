@@ -104,11 +104,11 @@ const Testimonials = () => {
 
     return (
         <>
-            <section className="bg-white">
-                <div className="mx-auto max-w-[1340px] px-4 py-16 sm:px-6 sm:py-24 lg:mr-0 lg:pl-8 lg:pr-0">
+            <section>
+                <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:mr-0 lg:pl-8 lg:pr-0">
                     <div className="max-w-7xl items-end justify-center sm:flex sm:pr-6 lg:pr-8">
                         {/*<h2 className="max-w-xl text-4xl font-bold tracking-tight sm:text-5xl text-center">*/}
-                        <h2 className="mt-0 mb-5 font-sans text-4xl font-medium tracking-wide text-neutral-900">
+                        <h2 className="mt-0 mb-5 text-4xl font-medium tracking-wide">
                             Das sagen unsere Kunden
                         </h2>
                     </div>
@@ -132,7 +132,7 @@ const Testimonials = () => {
                                 },
                                 // when window width is >= 1024px
                                 1024: {
-                                    slidesPerView: 3,
+                                    slidesPerView: 2,
                                 },
                                 // 1280: {
                                 //     slidesPerGroup: 2,
@@ -148,7 +148,7 @@ const Testimonials = () => {
                             {testimonials.map((testimonial) => (
                                 <SwiperSlide>
                                     <div className="swiper-slide">
-                                        <blockquote className="rounded-lg bg-gray-100 p-8">
+                                        <blockquote className="rounded-lg bg-gray-100 p-8 dark:bg-br-green dark:border dark:border-br-l-blush">
                                             <div className="flex items-center">
                                                 {testimonial.img ? (
                                                     <img
@@ -161,12 +161,12 @@ const Testimonials = () => {
                                                     <div className="flex justify-left gap-0.5 text-green-500">
                                                         <Rating rating={testimonial.rating} />
                                                     </div>
-                                                    <p className="mt-1 text-lg font-medium text-gray-700">
+                                                    <p className="mt-1 text-lg font-medium">
                                                         {testimonial.name}
                                                     </p>
                                                 </div>
                                             </div>
-                                            <p className="mt-4 text-gray-500">
+                                            <p className="mt-4 ">
                                                 {testimonial.text}
                                             </p>
                                         </blockquote>

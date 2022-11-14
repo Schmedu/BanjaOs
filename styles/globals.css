@@ -2,9 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-h2 {
-    /*@apply*/
+@font-face {
+    font-family: 'MrDeHaviland';
+    /*font-style: normal;*/
+    /*font-weight: 400;*/
+    /*font-display: swap;*/
+    /*src: local('MrDeHaviland'), url('/fonts/MrDeHavilandRegular.ttf') format('woff2');*/
+    src: url('/fonts/MrDeHavilandRegular.ttf');
 }
+
+@font-face {
+    font-family: 'Lora';
+    src: url('/fonts/Lora-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'HindMadurai';
+    src: url('/fonts/HindMadurai-Light.ttf');
+}
+
+body {
+    font-family: 'HindMadurai'
+}
+
+body {
+    @apply text-gray-600 dark:bg-br-black dark:text-br-l-blush;
+}
+
+h1, h2, h3 {
+    /*@apply*/
+    font-family: "Lora";
+}
+
+table {
+    border-collapse:separate;
+    /*border:solid black 1px;*/
+    /*border-radius:6px;*/
+}
+
+table {
+    @apply border-solid border rounded-3xl;
+}
+
+td, th {
+    @apply border-solid border-l-0 border-l-br-l-twilight
+    /*border-left:solid  1px;*/
+    /*border-top:solid black 1px;*/
+}
+
+th {
+    @apply border-b border-br-l-blush border-solid
+    /*background-color: blue;*/
+    /*border-top: none;*/
+}
+
+td:first-child, th:first-child {
+    border-left: none;
+}
+
+
+section {
+    @apply mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8
+}
+
 
 
 #gallery img {

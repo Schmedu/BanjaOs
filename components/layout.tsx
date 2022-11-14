@@ -19,7 +19,7 @@ export default function Layout({ children, maxWidth }: Props) {
             {maxWidth ? (
                 <main className="grow">{children}</main>
             ) : (
-                <main className="grow max-w-screen-xl px-4 py-4 mx-auto sm:px-6 lg:px-8 lg:pt-24">{children}</main>
+                <main className="grow max-w-screen-xl px-4 py-4 mx-auto sm:px-6 lg:px-8 lg:pt-12">{children}</main>
             )}
             {/*<main className="grow max-w-screen-xl px-4 py-4 mx-auto sm:px-6 lg:px-8 lg:pt-24">{children}</main>*/}
             {/*<Footer />*/}
