@@ -46,7 +46,7 @@ export default function Header3() {
             </noscript>
 
             {/*Actual Content*/}
-            <div className="max-w-screen-xl p-4 mx-auto">
+            <div className="max-w-screen-xl p-4 xl:p-0 mx-auto">
                 <div className="flex items-center justify-between space-x-4 lg:space-x-10">
                     <div className="flex lg:w-0 lg:flex-1">
                         {/*<span className="w-20 h-10 bg-gray-200 rounded-lg"></span>*/}
@@ -82,66 +82,81 @@ export default function Header3() {
                             </Link>
                         ))}
                     </nav>
-                    {/*{% if user.is_authenticated %}*/}
-                    {session?.user && (
-                        <>
-                            <div className="items-center justify-end flex-1 space-x-4 sm:flex">
-                                {/*{#                    <a#}*/}
-                                {/*{#                            class="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg"#}*/}
-                                {/*{#                            href="{% url 'account' %}"  # ???#}*/}
-                                {/*{#                    >#}*/}
-                                {/*{#                        Profile#}*/}
-                                {/*{#                    </a>#}*/}
+                    {/*/!*{% if user.is_authenticated %}*!/*/}
+                    {/*{session?.user && (*/}
+                    {/*    <>*/}
+                    {/*        <div className="items-center justify-end flex-1 space-x-4 sm:flex">*/}
+                    {/*            /!*{#                    <a#}*!/*/}
+                    {/*            /!*{#                            class="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg"#}*!/*/}
+                    {/*            /!*{#                            href="{% url 'account' %}"  # ???#}*!/*/}
+                    {/*            /!*{#                    >#}*!/*/}
+                    {/*            /!*{#                        Profile#}*!/*/}
+                    {/*            /!*{#                    </a>#}*!/*/}
 
-                                {session.user.image && (
-                                    <span
-                                        style={{ backgroundImage: `url('${session.user.image}')` }}
-                                        className={styles.avatar}
-                                    />
-                                )}
-                                <a
-                                    className="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"
-                                    href={`/api/auth/signout`}
-                                    onClick={(e) => {
-                                        e.preventDefault()
-                                        signOut()
-                                    }}
-                                >
-                                    Log Out
-                                </a>
-                            </div>
-                        </>
-                    )}
-                    {/*{% else %}*/}
-                    {!session && (
-                        <>
-                            <div className="items-center justify-end flex-1 space-x-4 sm:flex">
-                                <a
-                                    className="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg uppercase"
-                                    href={`/api/auth/signin`}
-                                    onClick={(e) => {
-                                        e.preventDefault()
-                                        signIn()
-                                    }}
-                                >
-                                    Termin buchen
-                                </a>
+                    {/*            {session.user.image && (*/}
+                    {/*                <span*/}
+                    {/*                    style={{ backgroundImage: `url('${session.user.image}')` }}*/}
+                    {/*                    className={styles.avatar}*/}
+                    {/*                />*/}
+                    {/*            )}*/}
+                    {/*            <a*/}
+                    {/*                className="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"*/}
+                    {/*                href={`/api/auth/signout`}*/}
+                    {/*                onClick={(e) => {*/}
+                    {/*                    e.preventDefault()*/}
+                    {/*                    signOut()*/}
+                    {/*                }}*/}
+                    {/*            >*/}
+                    {/*                Log Out*/}
+                    {/*            </a>*/}
+                    {/*        </div>*/}
+                    {/*    </>*/}
+                    {/*)}*/}
+                    {/*/!*{% else %}*!/*/}
+                    {/*{!session && (*/}
+                    {/*    <>*/}
+                    {/*        <div className="items-center justify-end flex-1 space-x-4 sm:flex">*/}
+                    {/*            <Link href={`/api/auth/signin`}*/}
+                    {/*                onClick={(e) => {*/}
+                    {/*                    e.preventDefault()*/}
+                    {/*                    signIn()*/}
+                    {/*                }}>*/}
+                    {/*                <a*/}
+                    {/*                    className="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg uppercase"*/}
+                    {/*                // href={`/api/auth/signin`}*/}
+                    {/*                // onClick={(e) => {*/}
+                    {/*                //     e.preventDefault()*/}
+                    {/*                //     signIn()*/}
+                    {/*                // }}*/}
+                    {/*                >*/}
+                    {/*                    Termin buchen*/}
+                    {/*                </a>*/}
+                    {/*            </Link>*/}
 
-                                {/*<a*/}
-                                {/*    className="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"*/}
-                                {/*    href="{% url 'account_signup' %}"*/}
-                                {/*>*/}
-                                {/*    Sign up*/}
-                                {/*</a>*/}
-                            </div>
-                            {/*{% endif %}*/}
-                        </>
-                    )}
+                    {/*            /!*<a*!/*/}
+                    {/*            /!*    className="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"*!/*/}
+                    {/*            /!*    href="{% url 'account_signup' %}"*!/*/}
+                    {/*            /!*>*!/*/}
+                    {/*            /!*    Sign up*!/*/}
+                    {/*            /!*</a>*!/*/}
+                    {/*        </div>*/}
+                    {/*        /!*{% endif %}*!/*/}
+                    {/*    </>*/}
+                    {/*)}*/}
+                    <div className="items-center justify-end flex-1 space-x-4 flex">
+                        <button>
+                            <a
+                                href={`#form`}
+                            >
+                                Termin buchen
+                            </a>
+                        </button>
+                    </div>
                     <div className="mr-10 flex md:hidden ">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             type="button"
-                            className="bg-gray-100 rounded-lg inline-flex items-center justify-center p-2 rounded-md text-white  hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                            className="hover:bg-br-l-twilight bg-br-l-twilight dark:bg-br-black-400 rounded-lg inline-flex items-center justify-center p-2 rounded-md text-white  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                             aria-controls="mobile-menu"
                             aria-expanded="false"
                         >
@@ -205,10 +220,10 @@ export default function Header3() {
             </div>
             <Transition
                 show={isOpen}
-                enter="transition ease-out duration-100 transform"
+                enter="transition ease-out duration-500 transform"
                 enterFrom="opacity-0 scale-95"
                 enterTo="opacity-100 scale-100"
-                leave="transition ease-in duration-75 transform"
+                leave="transition ease-in duration-250 transform"
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
             >
@@ -216,17 +231,17 @@ export default function Header3() {
                     <div className="md:hidden" id="mobile-menu">
                         <div
                             ref={ref}
-                            className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3"
+                            className="bg-white dark:bg-br-black-400 dark:text-br-l-blush px-2 pt-2 pb-3 space-y-1 sm:px-3"
                         >
                             {navigation.map((item) => (
-                                <Link href={item.href}>
+                                <Link key={item.name} href={item.href}>
                                     <a
-                                        key={item.name}
+                                        //key={item.name}
                                         // href={item.href}
                                         className={classNames(
                                             router.asPath === item.href
-                                                ? 'block px-3 py-2 text-gray-500 underline whitespace-nowrap'
-                                                : 'block px-3 py-2 text-gray-500 hover:bg-gray-50 hover:text-gray-900 whitespace-nowrap',
+                                                ? 'block px-3 py-2 text-gray-500 underline whitespace-nowrap dark:text-br-l-blush'
+                                                : 'block px-3 py-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-br-black hover:text-gray-900 whitespace-nowrap dark:text-br-l-blush',
                                         )}
                                     // aria-current={item.current ? 'page' : undefined}
                                     >

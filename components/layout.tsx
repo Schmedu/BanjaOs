@@ -3,8 +3,8 @@ import PreviousFooter from "./previous-footer"
 import type { ReactChildren } from "react"
 import Header2 from "./header2";
 import Footer from "./footer";
-import { footer2 } from "../pages/bloggo";
 import Header3 from "./header3";
+import footer2 from "./footer2";
 
 interface Props {
     maxWidth?: boolean,

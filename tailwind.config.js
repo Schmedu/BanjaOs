@@ -11,7 +11,10 @@ module.exports = {
         // 'br-black': '#0D1821',
         "br-green":"#0D1821",
         // "br-green":"#012622",
-        "br-l-blush":"#f8e9e9",
+        "br-l-blush":{
+          'light': "#FFFBFB",
+          'DEFAULT': "#f8e9e9"
+        },
         "br-l-twilight":"#7b506f",
         "br-brown":"#735F3D",
         "br-black": {
@@ -25,7 +28,8 @@ module.exports = {
           "700": "#00040d",
           "800": "#000003",
           "900": "#000000"
-        }
+        },
+        "br-gray": '#F3F7F0',
 
 
       },

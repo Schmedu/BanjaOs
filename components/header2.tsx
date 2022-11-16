@@ -79,60 +79,78 @@ export default function Header2() {
                         ))}
                     </nav>
                     {/*{% if user.is_authenticated %}*/}
-                    {session?.user && (
-                        <>
-                            <div className="items-center justify-end flex-1 space-x-4 sm:flex">
-                                {/*{#                    <a#}*/}
-                                {/*{#                            class="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg"#}*/}
-                                {/*{#                            href="{% url 'account' %}"  # ???#}*/}
-                                {/*{#                    >#}*/}
-                                {/*{#                        Profile#}*/}
-                                {/*{#                    </a>#}*/}
+                    {/*{session?.user && (*/}
+                    {/*    <>*/}
+                    {/*        <div className="items-center justify-end flex-1 space-x-4 sm:flex">*/}
+                    {/*            /!*{#                    <a#}*!/*/}
+                    {/*            /!*{#                            class="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg"#}*!/*/}
+                    {/*            /!*{#                            href="{% url 'account' %}"  # ???#}*!/*/}
+                    {/*            /!*{#                    >#}*!/*/}
+                    {/*            /!*{#                        Profile#}*!/*/}
+                    {/*            /!*{#                    </a>#}*!/*/}
 
-                                {session.user.image && (
-                                    <span
-                                        style={{ backgroundImage: `url('${session.user.image}')` }}
-                                        className={styles.avatar}
-                                    />
-                                )}
-                                <a
-                                    className="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"
-                                    href={`/api/auth/signout`}
-                                    onClick={(e) => {
-                                        e.preventDefault()
-                                        signOut()
-                                    }}
-                                >
-                                    Log Out
-                                </a>
-                            </div>
-                        </>
-                    )}
-                    {/*{% else %}*/}
-                    {!session && (
-                        <>
-                            <div className="items-center justify-end flex-1 space-x-4 sm:flex">
-                                <a
-                                    className="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg"
-                                    href={`/api/auth/signin`}
-                                    onClick={(e) => {
-                                        e.preventDefault()
-                                        signIn()
-                                    }}
-                                >
-                                    Login
-                                </a>
+                    {/*            {session.user.image && (*/}
+                    {/*                <span*/}
+                    {/*                    style={{ backgroundImage: `url('${session.user.image}')` }}*/}
+                    {/*                    className={styles.avatar}*/}
+                    {/*                />*/}
+                    {/*            )}*/}
+                    {/*            <a*/}
+                    {/*                className="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"*/}
+                    {/*                href={`/api/auth/signout`}*/}
+                    {/*                onClick={(e) => {*/}
+                    {/*                    e.preventDefault()*/}
+                    {/*                    signOut()*/}
+                    {/*                }}*/}
+                    {/*            >*/}
+                    {/*                Log Out*/}
+                    {/*            </a>*/}
+                    {/*        </div>*/}
+                    {/*    </>*/}
+                    {/*)}*/}
+                    {/*/!*{% else %}*!/*/}
+                    {/*{!session && (*/}
+                    {/*    <>*/}
+                    {/*        <div className="items-center justify-end flex-1 space-x-4 sm:flex">*/}
+                    {/*            <a*/}
+                    {/*                className="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg"*/}
+                    {/*                href={`/api/auth/signin`}*/}
+                    {/*                onClick={(e) => {*/}
+                    {/*                    e.preventDefault()*/}
+                    {/*                    signIn()*/}
+                    {/*                }}*/}
+                    {/*            >*/}
+                    {/*                Login*/}
+                    {/*            </a>*/}
 
-                                {/*<a*/}
-                                {/*    className="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"*/}
-                                {/*    href="{% url 'account_signup' %}"*/}
-                                {/*>*/}
-                                {/*    Sign up*/}
-                                {/*</a>*/}
-                            </div>
-                            {/*{% endif %}*/}
-                        </>
-                    )}
+                    {/*            /!*<a*!/*/}
+                    {/*            /!*    className="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"*!/*/}
+                    {/*            /!*    href="{% url 'account_signup' %}"*!/*/}
+                    {/*            /!*>*!/*/}
+                    {/*            /!*    Sign up*!/*/}
+                    {/*            /!*</a>*!/*/}
+                    {/*        </div>*/}
+                    {/*        /!*{% endif %}*!/*/}
+                    {/*    </>*/}
+                    {/*)}*/}
+                    <>
+                        <div className="items-center justify-end flex-1 space-x-4 sm:flex">
+                            <a
+                                className="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg dark:bg-br-orange dark:text-br-l-blush"
+                                href={`#form`}
+                            >
+                                Termin buchen
+                            </a>
+
+                            {/*<a*/}
+                            {/*    className="px-5 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg"*/}
+                            {/*    href="{% url 'account_signup' %}"*/}
+                            {/*>*/}
+                            {/*    Sign up*/}
+                            {/*</a>*/}
+                        </div>
+                        {/*{% endif %}*/}
+                    </>
                     <div className="mr-10 flex md:hidden ">
                         <button
                             onClick={() => setIsOpen(!isOpen)}

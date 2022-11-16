@@ -26,7 +26,7 @@ body {
 }
 
 body {
-    @apply text-gray-600 dark:bg-br-black dark:text-br-l-blush;
+    @apply text-gray-600 dark:bg-br-l-blush dark:bg-br-black dark:text-br-l-blush;
 }
 
 h1, h2, h3 {
@@ -41,7 +41,16 @@ table {
 }
 
 table {
-    @apply border-solid border rounded-3xl;
+    @apply min-w-full divide-y text-sm border-solid border rounded-3xl mt-4 bg-br-l-blush-light dark:bg-br-black-400 dark:border-none border dark:border-br-l-blush shadow-lg mx-auto;
+/*    min-w-full divide-y divide-gray-200 text-sm dark:bg-br-black-400 dark:border-none border dark:border-br-l-blush*/
+}
+
+button {
+    @apply px-5 py-2 text-sm font-medium rounded-lg bg-br-orange text-br-l-blush
+}
+
+input, textarea {
+    @apply border-br-l-twilight focus:border-l-br-l-twilight dark:bg-br-black dark:text-br-l-blush
 }
 
 td, th {
@@ -51,13 +60,15 @@ td, th {
 }
 
 th {
-    @apply border-b border-br-l-blush border-solid
+    @apply border-b dark:border-br-black border-solid text-xl
     /*background-color: blue;*/
     /*border-top: none;*/
 }
 
 td:first-child, th:first-child {
-    border-left: none;
+    /*border-left: none;*/
+    /*border-right: 1px solid black;*/
+    @apply border-l-0 border-r dark:border-br-black border-solid
 }
 
 

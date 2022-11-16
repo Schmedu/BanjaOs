@@ -33,7 +33,7 @@ const testimonials = [
 const SwiperButtonPrev = ({ children }) => {
     const swiper = useSwiper();
     return (
-        <button className="prev-button rounded-full border border-current p-3 text-pink-600 focus:bg-pink-600 focus:text-white focus:outline-none"
+        <button className="prev-button bg-transparent rounded-full border border-current p-3 text-br-l-twilight focus:bg-br-l-twilight focus:text-br-l-blush dark:text-br-l-blush dark:focus:bg-br-l-twilight focus:outline-none"
             onClick={() => swiper.slidePrev()}>
             <span className="sr-only">Previous Slide</span>
             <svg
@@ -57,7 +57,7 @@ const SwiperButtonPrev = ({ children }) => {
 const SwiperButtonNext = ({ children }) => {
     const swiper = useSwiper();
     return (
-        <button className="next-button ml-3 rounded-full border border-current p-3 text-pink-600 focus:bg-pink-600 focus:text-white focus:outline-none"
+        <button className="next-button bg-transparent rounded-full border border-current p-3 text-br-l-twilight focus:bg-br-l-twilight focus:text-br-l-blush dark:text-br-l-blush dark:focus:bg-br-l-twilight focus:outline-none"
             onClick={() => swiper.slideNext()}>
             <span className="sr-only">Nächste Kundenmeinung</span>
             <svg
@@ -108,7 +108,7 @@ const Testimonials = () => {
                 <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:mr-0 lg:pl-8 lg:pr-0">
                     <div className="max-w-7xl items-end justify-center sm:flex sm:pr-6 lg:pr-8">
                         {/*<h2 className="max-w-xl text-4xl font-bold tracking-tight sm:text-5xl text-center">*/}
-                        <h2 className="mt-0 mb-5 text-4xl font-medium tracking-wide">
+                        <h2 className="mt-0 mb-5 text-4xl font-medium tracking-wide text-center">
                             Das sagen unsere Kunden
                         </h2>
                     </div>
@@ -141,14 +141,14 @@ const Testimonials = () => {
                             }}
 
                         >
-                            <div className="text-center mt-4">
+                            <div className="text-center mt-4 space-x-4">
                                 <SwiperButtonPrev />
                                 <SwiperButtonNext />
                             </div>
                             {testimonials.map((testimonial) => (
                                 <SwiperSlide>
                                     <div className="swiper-slide">
-                                        <blockquote className="rounded-lg bg-gray-100 p-8 dark:bg-br-green dark:border dark:border-br-l-blush">
+                                        <blockquote className="rounded-3xl bg-br-l-blush-light p-8 dark:bg-br-black-400 dark:border-none shadow-lg">
                                             <div className="flex items-center">
                                                 {testimonial.img ? (
                                                     <img
@@ -158,7 +158,7 @@ const Testimonials = () => {
                                                     />
                                                 ) : (<></>)}
                                                 <div>
-                                                    <div className="flex justify-left gap-0.5 text-green-500">
+                                                    <div className="flex justify-left gap-0.5 text-br-orange">
                                                         <Rating rating={testimonial.rating} />
                                                     </div>
                                                     <p className="mt-1 text-lg font-medium">

@@ -3,12 +3,12 @@ import { scale } from "style-value-types";
 
 export const HeroHeader2 = () => {
     return (
-        <div className="px-4 py-16 mx-auto sm:w-full md:px-24 lg:px-8 lg:py-20 dark:bg-gray-900 bg-gradient-to-br from-orange-300 via-red-500 to-yellow-500 dark:from-br-black dark:to-br-l-twilight">
+        <div className="px-4 py-16 mx-auto sm:w-full md:px-24 lg:px-8 lg:py-20 bg-gradient-to-br bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight text-br-l-blush text-br-l-blush">
             <div className="flex flex-col items-center justify-between w-full mb-10 lg:flex-row max-w-screen-xl mx-auto">
                 <div className="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5 text-center lg:text-left">
                     <div className="max-w-xl mb-6">
                         <h1
-                            className="block mb-8 text-5xl font-bold bg-transparent text-neutral-900 hover:text-neutral-900 text-white"
+                            className="block mb-8 text-5xl font-bold bg-transparent"
                             style={{ textDecoration: 'none', lineHeight: '60px' }}>
                             Osnabrücks stiller Saunagenuss. Ganz für sich allein sein.
                         </h1>

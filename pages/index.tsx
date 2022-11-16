@@ -8,7 +8,10 @@ import Testimonials from "../components/testimonials";
 import { HeroHeader2 } from "../components/hero-header2";
 import RegisterForm from "../components/form";
 import ContactForm2 from "../components/contact-form2";
-import { FaqNew, getHero, getNavigation, getPrices, leftSection, rightSection } from "./bloggo";
+import FaqNew from "../components/faqNew";
+import getPrices from "../components/getPrices";
+import rightSection from "../components/rightSection";
+import leftSection from "../components/leftSection";
 
 
 export default function IndexPage() {

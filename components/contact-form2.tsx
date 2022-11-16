@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 
-const buttonText = "Buchung Senden";
+const buttonText = "Senden";
 const message = "Nachricht";
 const phoneNumber = "Telefon";
 const phoneLabel = "Telefon";
@@ -28,12 +28,12 @@ const ContactForm2 = () => {
                     Jetzt Termin buchen
                 </h2>
                 <div className="mx-auto md:w-7/12">
-                    <div className="rounded-lg bg-white dark:bg-br-green dark:border dark:border-br-l-blush dark:border dark:border-br-l-blush p-8 shadow-lg lg:col-span-3 lg:p-12">
+                    <div className="rounded-lg bg-br-l-blush-light dark:bg-br-black-400 dark:border-none dark:border-none p-8 shadow-lg lg:col-span-3 lg:p-12">
                         <form onSubmit={handleSubmit(handleRegistration)} className="space-y-4">
                             <div>
                                 <label className="sr-only" htmlFor="name">{nameLabel}</label>
                                 <input
-                                    className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
+                                    className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                     placeholder={namePlaceholder}
                                     type="text"
                                     id="name"
@@ -45,7 +45,7 @@ const ContactForm2 = () => {
                                 <div>
                                     <label className="sr-only" htmlFor="email">Email</label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
+                                        className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                         placeholder={emailPlaceholder}
                                         type="email"
                                         id="email"
@@ -55,7 +55,7 @@ const ContactForm2 = () => {
                                 <div>
                                     <label className="sr-only" htmlFor="phone">{phoneLabel}</label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
+                                        className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                         placeholder={phoneNumber}
                                         type="tel"
                                         id="phone"
@@ -67,7 +67,7 @@ const ContactForm2 = () => {
                                 <div>
                                     <label className="sr-only" htmlFor="date">Datum</label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
+                                        className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                         placeholder="Datum"
                                         type="date"
                                         id="datet"
@@ -93,7 +93,7 @@ const ContactForm2 = () => {
                                 <div>
                                     <label className="sr-only" htmlFor="time"></label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
+                                        className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                         placeholder="Uhrzeit"
                                         id="time"
                                         list='times'
@@ -122,7 +122,7 @@ const ContactForm2 = () => {
                                 <div>
                                     <label className="sr-only" htmlFor="persons"></label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
+                                        className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                         placeholder="Anzahl Personen"
                                         id="persons"
                                         type={'number'}
@@ -146,7 +146,7 @@ const ContactForm2 = () => {
                                 <div>
                                     <label className="sr-only" htmlFor="hour">"Stunden"</label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
+                                        className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                         placeholder="Stunden"
                                         id="hour"
                                         // list={'hours'}
@@ -181,7 +181,7 @@ const ContactForm2 = () => {
                             <div>
                                 <label className="sr-only" htmlFor="message">{message}</label>
                                 <textarea
-                                    className="w-full rounded-lg border-gray-200 p-3 text-sm border dark:bg-br-green dark:border dark:border-br-l-blush"
+                                    className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                     placeholder="Nachricht (optional)"
                                     rows={8}
                                     id="message"
@@ -192,24 +192,25 @@ const ContactForm2 = () => {
                             <div className="mt-4">
                                 <button
                                     type="submit"
-                                    className="inline-flex w-full items-center justify-center rounded-lg bg-black px-5 py-3 text-white sm:w-auto"
+                                    //className="inline-flex w-full items-center justify-center rounded-lg bg-black px-5 py-3 text-white sm:w-auto"
+                                    className="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg bg-br-orange text-br-l-blush"
                                 >
                                     <span className="font-medium"> {buttonText} </span>
 
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="ml-3 h-5 w-5"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M14 5l7 7m0 0l-7 7m7-7H3"
-                                        />
-                                    </svg>
+                                    {/*<svg*/}
+                                    {/*    xmlns="http://www.w3.org/2000/svg"*/}
+                                    {/*    className="ml-3 h-5 w-5"*/}
+                                    {/*    fill="none"*/}
+                                    {/*    viewBox="0 0 24 24"*/}
+                                    {/*    stroke="currentColor"*/}
+                                    {/*>*/}
+                                    {/*    <path*/}
+                                    {/*        stroke-linecap="round"*/}
+                                    {/*        stroke-linejoin="round"*/}
+                                    {/*        stroke-width="2"*/}
+                                    {/*        d="M14 5l7 7m0 0l-7 7m7-7H3"*/}
+                                    {/*    />*/}
+                                    {/*</svg>*/}
                                 </button>
                             </div>
                         </form>
