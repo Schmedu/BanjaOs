@@ -3,7 +3,18 @@ import { scale } from "style-value-types";
 
 export const HeroHeader2 = () => {
     return (
-        <div className="px-4 py-16 mx-auto sm:w-full md:px-24 lg:px-8 lg:py-20 bg-gradient-to-br bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight text-br-l-blush text-br-l-blush">
+        <motion.div className="px-4 py-16 mx-auto sm:w-full md:px-24 lg:px-8 lg:py-20 bg-gradient-to-br bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight text-br-l-blush text-br-l-blush"
+            animate={{
+                background: [
+                    "linear-gradient(to right bottom, #735F3D, #EA9937, #7b506f)",
+                    "linear-gradient(to right bottom, #7b506f, #735F3D, #EA9937)",
+                    "linear-gradient(to right bottom, #EA9937, #7b506f, #735F3D)",
+                    "linear-gradient(to right bottom, #735F3D, #EA9937, #7b506f)",
+                ],
+            }}
+            transition={{ duration: 5, ease: "easeInOut", times: [0, 0.2, 0.5, 1], repeat: Infinity, repeatDelay: 1 }}
+
+        >
             <div className="flex flex-col items-center justify-between w-full mb-10 lg:flex-row max-w-screen-xl mx-auto">
                 <div className="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5 text-center lg:text-left">
                     <div className="max-w-xl mb-6">
@@ -46,12 +57,12 @@ export const HeroHeader2 = () => {
                         whileInView={{ opacity: 1, rotate: 5, transition: { duration: 0.75 } }}
                         viewport={{ once: true }}
                     >
-                        <div className="w-10/12 border-2 border-white rounded-md  mx-auto">
-                            <img className="object-cover" src="sauna-header.jpg" alt="" />
+                        <div className="w-10/12 rounded-3xl  mx-auto">
+                            <img className="object-cover rounded-3xl" src="sauna-header.jpg" alt="" />
                         </div>
                     </motion.div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };

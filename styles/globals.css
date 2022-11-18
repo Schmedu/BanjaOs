@@ -50,8 +50,12 @@ button {
 }
 
 input, textarea {
-    @apply border-br-l-twilight focus:border-l-br-l-twilight dark:bg-br-black dark:text-br-l-blush
+    @apply border-br-l-twilight focus:border-l-br-l-twilight dark:bg-br-black dark:text-br-l-blush focus:outline-none
 }
+
+/*.footer-heading {*/
+/*    @apply*/
+/*}*/
 
 td, th {
     @apply border-solid border-l-0 border-l-br-l-twilight
@@ -73,13 +77,13 @@ td:first-child, th:first-child {
 
 
 section {
-    @apply mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8
+    @apply mx-auto max-w-screen-xl px-4 py-16 lg:py-24 sm:px-6 lg:px-8
 }
 
 
 
 #gallery img {
-    @apply rounded
+    @apply rounded-3xl shadow-lg
 }
 
 #progress {

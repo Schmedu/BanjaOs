@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 export default function FaqNew() {
     const texts = [
         {
@@ -16,8 +18,14 @@ export default function FaqNew() {
             </h2>
             <div className="space-y-4 md:w-2/3 mx-auto px-4 sm:px-6 lg:px-8">
                 {texts.map((text, index) => (
-                    <div key={index}>
-                        <details className="group">
+                    <motion.div key={index}
+                        initial={{ opacity: 0.2, y: +50 }}
+                        whileInView={{ opacity: 1, y: 0, transition: { duration: 0.75 } }}
+                        viewport={{ once: true }}
+                    >
+                        <details className="group"
+                            {...(index === 0 ? { open: true } : {})}
+                        >
                             <summary
                                 className="flex cursor-pointer items-center justify-between rounded-3xl bg-br-l-blush-light dark:bg-br-black-400 dark:border-none p-4 shadow-lg">
                                 <h3 className="font-medium ">
@@ -32,9 +40,9 @@ export default function FaqNew() {
                                     stroke="currentColor"
                                 >
                                     <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
                                         d="M19 9l-7 7-7-7"
                                     />
                                 </svg>
@@ -44,9 +52,9 @@ export default function FaqNew() {
                                 {text.content}
                             </p>
                         </details>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
-        </section>
+        </section >
     );
 };

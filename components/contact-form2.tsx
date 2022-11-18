@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { motion } from 'framer-motion';
 
 
 const buttonText = "Senden";
@@ -11,11 +12,11 @@ const emailPlaceholder = "Email";
 const nameLabel = <>Name</>;
 const namePlaceholder = "Name";
 
-const times = Array.from({ length: 12 }, (_, i) => {
-    const hour = 10 + i;
-    return [`${hour}:00`, `${hour}:30`];
-}).flat();
-console.log(times);
+// const times = Array.from({ length: 12 }, (_, i) => {
+//     const hour = 10 + i;
+//     return [`${hour}:00`, `${hour}:30`];
+// }).flat();
+// console.log(times);
 
 const ContactForm2 = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -25,7 +26,7 @@ const ContactForm2 = () => {
         <section className="">
             <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
                 <h2 className="mt-0 mb-5 text-4xl font-medium tracking-wide text-center">
-                    Jetzt Termin buchen
+                    Termin buchen
                 </h2>
                 <div className="mx-auto md:w-7/12">
                     <div className="rounded-lg bg-br-l-blush-light dark:bg-br-black-400 dark:border-none dark:border-none p-8 shadow-lg lg:col-span-3 lg:p-12">
@@ -37,8 +38,9 @@ const ContactForm2 = () => {
                                     placeholder={namePlaceholder}
                                     type="text"
                                     id="name"
-                                    {...register('name')}
+                                    {...register('name', { required: true })}
                                 />
+                                {errors.name && <span >Das ist ein Pflichtfeld.</span>}
                             </div>
 
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -49,17 +51,35 @@ const ContactForm2 = () => {
                                         placeholder={emailPlaceholder}
                                         type="email"
                                         id="email"
+                                        {...register('email', {
+                                            required: true,
+                                        })}
+                                        {...register('email', {
+                                            required: true,
+                                        })}
+
                                     />
+                                    {errors.email && <span >Das ist ein Pflichtfeld.</span>}
                                 </div>
 
                                 <div>
                                     <label className="sr-only" htmlFor="phone">{phoneLabel}</label>
                                     <input
-                                        className="w-full rounded-lg p-3 text-sm border  dark:border-none"
+                                        className="w-full rounded-lg p-3 text-sm border dark:border-none"
                                         placeholder={phoneNumber}
                                         type="tel"
                                         id="phone"
+                                        {...register('phone', {
+                                            required: true,
+                                        })}
+
                                     />
+                                    {errors.phone && errors.phone.type === "required" && (
+                                        <span role="alert" >Das ist ein Pflichtfeld.</span>
+                                    )}
+                                    {errors.phone && errors.phone.type === "validate" && (
+                                        <span role="alert" >Es muss sich um eine valide Telefonnummer handeln.</span>
+                                    )}
                                 </div>
                             </div>
 
@@ -100,24 +120,24 @@ const ContactForm2 = () => {
                                         type={'time'}
                                         {...register('time', {
                                             required: true,
-                                            validate: value => times.includes(value)
+                                            // validate: value => times.includes(value)
                                         })}
                                     />
                                     {errors.time && errors.time.type === "required" && (
                                         <span role="alert">Das ist ein Pflichtfeld.</span>
                                     )}
                                     {errors.time && errors.time.type === "validate" && (
-                                        <span role="alert">Falsche Uhrzeit</span>
+                                        <span role="alert">Inkorrekte Uhrzeit</span>
                                     )}
                                     {errors.time && errors.time.type === "maxLength" && (
                                         <span role="alert">Max length exceeded</span>
                                     )}
 
-                                    <datalist id="times">
-                                        {times.map((time) => (
-                                            <option key={time} value={time} />
-                                        ))}
-                                    </datalist>
+                                    {/*<datalist id="times">*/}
+                                    {/*    {times.map((time) => (*/}
+                                    {/*        <option key={time} value={time} />*/}
+                                    {/*    ))}*/}
+                                    {/*</datalist>*/}
                                 </div>
                                 <div>
                                     <label className="sr-only" htmlFor="persons"></label>
@@ -180,20 +200,26 @@ const ContactForm2 = () => {
 
                             <div>
                                 <label className="sr-only" htmlFor="message">{message}</label>
-                                <textarea
+                                <motion.textarea
                                     className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                     placeholder="Nachricht (optional)"
                                     rows={8}
                                     id="message"
                                     {...register('message')}
-                                ></textarea>
+                                ></motion.textarea>
                             </div>
 
                             <div className="mt-4">
-                                <button
+                                <motion.button
                                     type="submit"
                                     //className="inline-flex w-full items-center justify-center rounded-lg bg-black px-5 py-3 text-white sm:w-auto"
-                                    className="px-5 py-2 text-sm font-medium text-gray-500 bg-gray-100 rounded-lg bg-br-orange text-br-l-blush"
+                                    className="px-5 py-2 text-xl rounded-lg bg-br-orange text-br-l-blush"
+                                    whileHover={{
+                                        scale: [1.1, 1.15, 1.1],
+                                        // transition: { duration: 0.5 },
+                                    }}
+                                    transition={{ type: "spring", stiffness: 400, damping: 17, repeat: Infinity, repeatDelay: 1 }}
+                                    whileTap={{ scale: 1.0 }}
                                 >
                                     <span className="font-medium"> {buttonText} </span>
 
@@ -211,7 +237,7 @@ const ContactForm2 = () => {
                                     {/*        d="M14 5l7 7m0 0l-7 7m7-7H3"*/}
                                     {/*    />*/}
                                     {/*</svg>*/}
-                                </button>
+                                </motion.button>
                             </div>
                         </form>
                     </div>

@@ -7,6 +7,7 @@ import HamburgerMenu2 from "./hamburger-menu2";
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { Link as ScrollLink } from "react-scroll";
+import { motion } from 'framer-motion';
 
 
 // The approach used in this component shows how to build a sign in and sign out
@@ -21,7 +22,7 @@ const navigation = [
     { name: 'Startseite', href: '/' },
     { name: 'Über uns', href: '/ueber-uns' },
     { name: 'Gallerie', href: '/gallerie' },
-    { name: 'Blog', href: '/blog' },
+    // { name: 'Blog', href: '/blog' },
     // { name: 'Protected', href: '/protected' },
     // { name: 'API', href: '/api-example' },
     // { name: 'Admin', href: '/admin' },
@@ -64,16 +65,16 @@ export default function Header3() {
                         {/*<a className="text-gray-500" href="">Projects</a>*/}
                         {/*<a className="text-gray-500" href="">Contact</a>*/}
                         {navigation.map((item) => (
-                            <Link href={item.href}>
+                            <Link key={item.name} href={item.href}>
                                 <a
-                                    key={item.name}
+                                    // key={item.name}
                                     // href={item.href}
                                     className={classNames(
                                         router.asPath === item.href
                                             // ? 'text-gray-500 underline whitespace-nowrap'
                                             // : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900 whitespace-nowrap',
-                                            ? 'block relative py-2 px-4 text-sm font-semibold uppercase bg-transparent cursor-pointer lg:px-2 hover:text-sky-700 underline'
-                                            : 'block relative py-2 px-4 text-sm font-semibold uppercase bg-transparent cursor-pointer lg:px-2 hover:text-sky-700',
+                                            ? 'block relative py-2 px-4  uppercase bg-transparent cursor-pointer lg:px-2 hover:text-br-orange hover:scale-110 hover:duration-300 transition ease-out text-br-orange'
+                                            : 'block relative py-2 px-4  uppercase bg-transparent cursor-pointer lg:px-2 hover:text-br-orange hover:scale-110 hover:duration-300 transition ease-out',
                                     )}
                                 // aria-current={item.current ? 'page' : undefined}
                                 >
@@ -144,13 +145,21 @@ export default function Header3() {
                     {/*    </>*/}
                     {/*)}*/}
                     <div className="items-center justify-end flex-1 space-x-4 flex">
-                        <button>
+                        <motion.button
+                            className="px-5 py-2 rounded-lg bg-br-orange text-br-l-blush"
+                            whileHover={{
+                                scale: [1.1, 1.15, 1.1],
+                                // transition: { duration: 0.5 },
+                            }}
+                            transition={{ type: "spring", stiffness: 400, damping: 17, repeat: Infinity, repeatDelay: 1 }}
+                            whileTap={{ scale: 1.0 }}
+                        >
                             <a
                                 href={`#form`}
                             >
                                 Termin buchen
                             </a>
-                        </button>
+                        </motion.button>
                     </div>
                     <div className="mr-10 flex md:hidden ">
                         <button
@@ -240,8 +249,8 @@ export default function Header3() {
                                         // href={item.href}
                                         className={classNames(
                                             router.asPath === item.href
-                                                ? 'block px-3 py-2 text-gray-500 underline whitespace-nowrap dark:text-br-l-blush'
-                                                : 'block px-3 py-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-br-black hover:text-gray-900 whitespace-nowrap dark:text-br-l-blush',
+                                                ? 'block px-3 py-2 text-br-orange whitespace-nowrap'
+                                                : 'block px-3 py-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-br-black hover:text-br-orange whitespace-nowrap dark:text-br-l-blush',
                                         )}
                                     // aria-current={item.current ? 'page' : undefined}
                                     >

@@ -3,7 +3,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 export default function Gallery() {
 
     return (
-        <div id={"gallery"}>
+        <section id={"gallery"}>
             <ResponsiveMasonry
                 columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
             >
@@ -15,6 +15,6 @@ export default function Gallery() {
                     <img src="/gallery/Innenbereich.jpg" alt="" loading={"lazy"} />
                 </Masonry>
             </ResponsiveMasonry>
-        </div>
+        </section>
     )
 }
