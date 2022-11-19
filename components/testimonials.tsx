@@ -106,78 +106,76 @@ const Testimonials = () => {
     return (
         <>
             <section>
-                <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:mr-0 lg:pl-8 lg:pr-0">
-                    <div className="max-w-7xl items-end justify-center sm:flex sm:pr-6 lg:pr-8">
-                        {/*<h2 className="max-w-xl text-4xl font-bold tracking-tight sm:text-5xl text-center">*/}
-                        <h2 className="mt-0 mb-5 text-4xl font-medium tracking-wide text-center">
-                            Das sagen unsere Kunden
-                        </h2>
-                    </div>
-                    <div className="-mx-6 lg:col-span-2 lg:mx-0 px-4 sm:px-6 lg:px-8">
-                        {/*<div className="swiper-container !overflow-hidden">*/}
-                        <Swiper
-                            slidesPerView={1}
-                            spaceBetween={50}
-                            slidesPerGroup={1}
-                            autoplay={true}
-                            breakpoints={{
-                                // when window width is >= 576px
-                                576: {
-                                    spaceBetween: 10,
-                                    slidesPerView: 1,
-                                },
-                                // when window width is >= 768px
-                                768: {
-                                    spaceBetween: 20,
-                                    slidesPerView: 2,
-                                },
-                                // when window width is >= 1024px
-                                1024: {
-                                    slidesPerView: 2,
-                                },
-                                // 1280: {
-                                //     slidesPerGroup: 2,
-                                //     slidesPerView: 4,
-                                // },
-                            }}
+                <div className="max-w-7xl items-end justify-center sm:flex sm:pr-6 lg:pr-8">
+                    {/*<h2 className="max-w-xl text-4xl font-bold tracking-tight sm:text-5xl text-center">*/}
+                    <h2 className="mt-0 mb-5 text-4xl font-medium tracking-wide text-center">
+                        Das sagen unsere Kunden
+                    </h2>
+                </div>
+                <div className="lg:col-span-2">
+                    {/*<div className="swiper-container !overflow-hidden">*/}
+                    <Swiper
+                        slidesPerView={1}
+                        spaceBetween={50}
+                        slidesPerGroup={1}
+                        autoplay={true}
+                        breakpoints={{
+                            // when window width is >= 576px
+                            576: {
+                                spaceBetween: 10,
+                                slidesPerView: 1,
+                            },
+                            // when window width is >= 768px
+                            768: {
+                                spaceBetween: 20,
+                                slidesPerView: 2,
+                            },
+                            // when window width is >= 1024px
+                            1024: {
+                                slidesPerView: 2,
+                            },
+                            // 1280: {
+                            //     slidesPerGroup: 2,
+                            //     slidesPerView: 4,
+                            // },
+                        }}
 
-                        >
-                            <div className="text-center mt-4 space-x-4">
-                                <SwiperButtonPrev />
-                                <SwiperButtonNext />
-                            </div>
-                            {testimonials.map((testimonial) => (
-                                <SwiperSlide key={testimonial.name}>
-                                    <div className="swiper-slide">
-                                        <blockquote className="rounded-3xl bg-br-l-blush-light p-8 dark:bg-br-black-400 dark:border-none shadow-lg">
-                                            <div className="flex items-center">
-                                                {testimonial.img ? (
-                                                    <img
-                                                        alt="Man"
-                                                        src={testimonial.img}
-                                                        className="h-16 w-16 rounded-full object-cover mr-4"
-                                                    />
-                                                ) : (<></>)}
-                                                <div>
-                                                    <div className="flex justify-left gap-0.5 text-br-orange">
-                                                        <Rating rating={testimonial.rating} />
-                                                    </div>
-                                                    <p className="mt-1 text-lg font-medium">
-                                                        {testimonial.name}
-                                                    </p>
+                    >
+                        <div className="text-center mt-4 space-x-4">
+                            <SwiperButtonPrev />
+                            <SwiperButtonNext />
+                        </div>
+                        {testimonials.map((testimonial) => (
+                            <SwiperSlide key={testimonial.name}>
+                                <div className="swiper-slide">
+                                    <blockquote className="rounded-3xl bg-br-l-blush-light p-8 dark:bg-br-black-400 dark:border-none shadow-lg">
+                                        <div className="flex items-center">
+                                            {testimonial.img ? (
+                                                <img
+                                                    alt="Man"
+                                                    src={testimonial.img}
+                                                    className="h-16 w-16 rounded-full object-cover mr-4"
+                                                />
+                                            ) : (<></>)}
+                                            <div>
+                                                <div className="flex justify-left gap-0.5 text-br-orange">
+                                                    <Rating rating={testimonial.rating} />
                                                 </div>
+                                                <p className="mt-1 text-lg font-medium">
+                                                    {testimonial.name}
+                                                </p>
                                             </div>
-                                            <p className="mt-4 ">
-                                                {testimonial.text}
-                                            </p>
-                                        </blockquote>
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                            {/*</div>*/}
-                            {/*</div>*/}
-                        </Swiper>
-                    </div>
+                                        </div>
+                                        <p className="mt-4 ">
+                                            {testimonial.text}
+                                        </p>
+                                    </blockquote>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                        {/*</div>*/}
+                        {/*</div>*/}
+                    </Swiper>
                 </div>
             </section>
         </>

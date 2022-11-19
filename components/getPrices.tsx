@@ -15,21 +15,17 @@ export default function getPrices() {
     return (
         <section>
             <div>
-                <div className="relative flex items-center text-center w-3/5 mx-auto">
+                <div className="text-center">
                     <span className="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16" />
                     <div>
                         <h2 className="mt-0 mb-5 text-4xl font-medium tracking-wide ">
                             Preise
                         </h2>
-                        <p className="mt-4">
-                            Wir versuchen Ihnen eine möglichst günstige Alternative zu bieten
-                            ein privates Saunaerlebnis zu haben.
-                        </p>
                     </div>
                 </div>
                 <div className="relative z-10 flex items-center mx-auto md:w-full">
                     <div className="relative w-full">
-                        <div className="overflow-hidden overflow-x-auto md:grid md:grid-cols-2 md:gap-10 p-4">
+                        <div className="overflow-hidden overflow-x-auto md:grid md:grid-cols-2 md:gap-10">
                             <motion.div
                                 initial={{ opacity: 0.2, x: -50 }}
                                 whileInView={{ opacity: 1, x: 0, transition: { duration: 0.75 } }}
