@@ -1,5 +1,6 @@
 // @ts-ignore
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { motion } from 'framer-motion';
 import 'swiper/css';
 
 const testimonials = [
@@ -105,8 +106,8 @@ const Testimonials = () => {
 
     return (
         <>
-            <section>
-                <div className="max-w-7xl items-end justify-center sm:flex sm:pr-6 lg:pr-8">
+            <section className={"max-w-full"}>
+                <div className="items-end justify-center sm:flex sm:pr-6 lg:pr-8">
                     {/*<h2 className="max-w-xl text-4xl font-bold tracking-tight sm:text-5xl text-center">*/}
                     <h2 className="mt-0 mb-5 text-4xl font-medium tracking-wide text-center">
                         Das sagen unsere Kunden
@@ -132,7 +133,7 @@ const Testimonials = () => {
                             },
                             // when window width is >= 1024px
                             1024: {
-                                slidesPerView: 2,
+                                slidesPerView: 4,
                             },
                             // 1280: {
                             //     slidesPerGroup: 2,
@@ -141,13 +142,18 @@ const Testimonials = () => {
                         }}
 
                     >
-                        <div className="text-center mt-4 space-x-4">
+                        <div className="text-center mt-4 space-x-4 lg:hidden">
                             <SwiperButtonPrev />
                             <SwiperButtonNext />
                         </div>
-                        {testimonials.map((testimonial) => (
+                        {testimonials.map((testimonial, index) => (
                             <SwiperSlide key={testimonial.name}>
-                                <div className="swiper-slide p-2">
+                                <motion.div className="swiper-slide p-2"
+                                    initial={{ opacity: 0, x: 50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: (0.3 * index) }}
+                                    viewport={{ once: true }}
+                                >
                                     <blockquote className="rounded-3xl bg-br-l-blush-light p-8 dark:bg-br-black-400 dark:border-none shadow-lg">
                                         <div className="flex items-center">
                                             {testimonial.img ? (
@@ -170,7 +176,7 @@ const Testimonials = () => {
                                             {testimonial.text}
                                         </p>
                                     </blockquote>
-                                </div>
+                                </motion.div>
                             </SwiperSlide>
                         ))}
                         {/*</div>*/}

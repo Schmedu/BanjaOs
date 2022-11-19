@@ -32,7 +32,10 @@ const ContactForm2 = () => {
                     <form onSubmit={handleSubmit(handleRegistration)} className="space-y-4">
                         <div>
                             <label className="sr-only" htmlFor="name">{nameLabel}</label>
-                            <input
+                            <motion.input
+                                initial={{ opacity: 0.2, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
+                                viewport={{ once: true }}
                                 className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                 placeholder={namePlaceholder}
                                 type="text"
@@ -45,7 +48,10 @@ const ContactForm2 = () => {
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                             <div>
                                 <label className="sr-only" htmlFor="email">Email</label>
-                                <input
+                                <motion.input
+                                    initial={{ opacity: 0.2, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
+                                    viewport={{ once: true }}
                                     className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                     placeholder={emailPlaceholder}
                                     type="email"
@@ -63,7 +69,10 @@ const ContactForm2 = () => {
 
                             <div>
                                 <label className="sr-only" htmlFor="phone">{phoneLabel}</label>
-                                <input
+                                <motion.input
+                                    initial={{ opacity: 0.2, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
+                                    viewport={{ once: true }}
                                     className="w-full rounded-lg p-3 text-sm border dark:border-none"
                                     placeholder={phoneNumber}
                                     type="tel"
@@ -85,7 +94,10 @@ const ContactForm2 = () => {
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                             <div>
                                 <label className="sr-only" htmlFor="date">Datum</label>
-                                <input
+                                <motion.input
+                                    initial={{ opacity: 0.2, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
+                                    viewport={{ once: true }}
                                     className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                     placeholder="Datum"
                                     type="date"
@@ -111,7 +123,10 @@ const ContactForm2 = () => {
                             </div>
                             <div>
                                 <label className="sr-only" htmlFor="time"></label>
-                                <input
+                                <motion.input
+                                    initial={{ opacity: 0.2, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
+                                    viewport={{ once: true }}
                                     className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                     placeholder="Uhrzeit"
                                     id="time"
@@ -140,7 +155,10 @@ const ContactForm2 = () => {
                             </div>
                             <div>
                                 <label className="sr-only" htmlFor="persons"></label>
-                                <input
+                                <motion.input
+                                    initial={{ opacity: 0.2, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
+                                    viewport={{ once: true }}
                                     className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                     placeholder="Anzahl Personen"
                                     id="persons"
@@ -164,7 +182,10 @@ const ContactForm2 = () => {
                             </div>
                             <div>
                                 <label className="sr-only" htmlFor="hour">"Stunden"</label>
-                                <input
+                                <motion.input
+                                    initial={{ opacity: 0.2, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
+                                    viewport={{ once: true }}
                                     className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                     placeholder="Stunden"
                                     id="hour"
@@ -199,17 +220,24 @@ const ContactForm2 = () => {
 
                         <div>
                             <label className="sr-only" htmlFor="message">{message}</label>
-                            <textarea
+                            <motion.textarea
+                                initial={{ opacity: 0.2, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
+                                viewport={{ once: true }}
                                 className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                 placeholder="Nachricht (optional)"
                                 rows={2}
                                 id="message"
                                 {...register('message')}
-                            ></textarea>
+                            ></motion.textarea>
                         </div>
 
                         <div className="space-y-2">
-                            <div>
+                            <motion.div
+                                initial={{ opacity: 0.2, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
+                                viewport={{ once: true }}
+                            >
                                 <input
                                     {...register('dataProtection', { required: true })}
                                     name="dataProtection"
@@ -221,8 +249,12 @@ const ContactForm2 = () => {
                                 {errors.dataProtection && errors.dataProtection.type === "required" && (
                                     <span className={"block mb-2"} role="alert">Das ist ein Pflichtfeld.</span>
                                 )}
-                            </div>
-                            <div className={""}>
+                            </motion.div>
+                            <motion.div className={""}
+                                initial={{ opacity: 0.2, x: -50 }}
+                                whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
+                                viewport={{ once: true }}
+                            >
                                 <input
                                     {...register('newsletter',)}
                                     name="newsletter"
@@ -231,19 +263,30 @@ const ContactForm2 = () => {
                                 <label htmlFor="newsletter" className={"ml-2"}>
                                     Informiere mich über Sauna Angebote.
                                 </label>
-                            </div>
+                            </motion.div>
                         </div>
                         <div className={"text-right"}>
                             <motion.button
                                 type="submit"
                                 //className="inline-flex w-full items-center justify-center rounded-lg bg-black px-5 py-3 text-white sm:w-auto"
-                                className="px-5 py-2 text-xl rounded-lg bg-br-orange text-br-l-blush"
+                                className="px-5 py-2 text-xl rounded-lg text-br-l-blush bg-br-orange"
+                                // className={classNames ? `bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight ${classNames}` : "bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight text-br-l-blush"}
                                 whileHover={{
-                                    scale: [1.1, 1.15, 1.1],
-                                    // transition: { duration: 0.5 },
-                                }}
-                                transition={{ type: "spring", stiffness: 400, damping: 17, repeat: Infinity, repeatDelay: 1 }}
-                                whileTap={{ scale: 1.0 }}
+                                    background: [
+                                        "linear-gradient(to right bottom, #EA9937, #EA9937, #EA9937)",
+                                        "linear-gradient(to right bottom, #735F3D, #EA9937, #EA9937)",
+                                        "linear-gradient(to right bottom, #735F3D, #EA9937, #7b506f)",
+                                        "linear-gradient(to right bottom, #7b506f, #735F3D, #EA9937)",
+                                        "linear-gradient(to right bottom, #EA9937, #7b506f, #735F3D)",
+                                        "linear-gradient(to right bottom, #EA9937, #EA9937, #7b506f)",
+                                        "linear-gradient(to right bottom, #EA9937, #EA9937, #EA9937)",
+                                        "linear-gradient(to right bottom, #EA9937, #EA9937, #EA9937)",
+                                    ],
+                                    scale: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.15, 1.0],
+                                }
+                                }
+                                transition={{ duration: 5, ease: "easeInOut", repeat: Infinity, repeatDelay: 1 }}
+                                whileTap={{ scale: 0.9 }}
                             >
                                 <span className="font-medium"> {buttonText} </span>
 
@@ -265,8 +308,8 @@ const ContactForm2 = () => {
                         </div>
                     </form>
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     )
 }
 

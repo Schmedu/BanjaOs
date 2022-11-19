@@ -24,11 +24,11 @@ export default function getPrices() {
                     </div>
                 </div>
                 <div className="relative z-10 flex items-center mx-auto md:w-full">
-                    <div className="relative w-full">
-                        <div className="overflow-hidden overflow-x-auto md:grid md:grid-cols-2 md:gap-10">
+                    <div className="relative mx-auto w-full lg:w-3/4">
+                        <div className="overflow-hidden overflow-x-auto md:grid md:grid-cols-2 md:gap-5">
                             <motion.div
-                                initial={{ opacity: 0.2, x: -50 }}
-                                whileInView={{ opacity: 1, x: 0, transition: { duration: 0.75 } }}
+                                initial={{ opacity: 0.2, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.75 } }}
                                 viewport={{ once: true }}
                                 className={"m-4 mt-0"}
                             >
@@ -80,8 +80,8 @@ export default function getPrices() {
                                 </table>
                             </motion.div>
                             <motion.div
-                                initial={{ opacity: 0.2, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0, transition: { duration: 0.75 } }}
+                                initial={{ opacity: 0.2, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.75 } }}
                                 viewport={{ once: true }}
                                 className={"m-4 mt-0"}
                             >

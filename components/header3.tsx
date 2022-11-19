@@ -8,6 +8,7 @@ import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { Link as ScrollLink } from "react-scroll";
 import { motion } from 'framer-motion';
+import GradientButton from "./gradient-button";
 
 
 // The approach used in this component shows how to build a sign in and sign out
@@ -145,21 +146,22 @@ export default function Header3() {
                     {/*    </>*/}
                     {/*)}*/}
                     <div className="items-center justify-end flex-1 space-x-4 flex">
-                        <motion.button
-                            className="px-5 py-2 rounded-lg bg-br-orange text-br-l-blush"
-                            whileHover={{
-                                scale: [1.1, 1.15, 1.1],
-                                // transition: { duration: 0.5 },
-                            }}
-                            transition={{ type: "spring", stiffness: 400, damping: 17, repeat: Infinity, repeatDelay: 1 }}
-                            whileTap={{ scale: 1.0 }}
-                        >
-                            <a
-                                href={`#form`}
-                            >
-                                Termin buchen
-                            </a>
-                        </motion.button>
+                        {/*<motion.button*/}
+                        {/*    className="px-5 py-2 rounded-lg bg-br-orange text-br-l-blush"*/}
+                        {/*    whileHover={{*/}
+                        {/*        scale: [1.1, 1.15, 1.1],*/}
+                        {/*        // transition: { duration: 0.5 },*/}
+                        {/*    }}*/}
+                        {/*    transition={{ type: "spring", stiffness: 400, damping: 17, repeat: Infinity, repeatDelay: 1 }}*/}
+                        {/*    whileTap={{ scale: 1.0 }}*/}
+                        {/*>*/}
+                        {/*    <a*/}
+                        {/*        href={`#form`}*/}
+                        {/*    >*/}
+                        {/*        Termin buchen*/}
+                        {/*    </a>*/}
+                        {/*</motion.button>*/}
+                        <GradientButton buttonText={"Termin buchen"} classNames={"text-sm"} />
                     </div>
                     <div className="mr-10 flex md:hidden ">
                         <button

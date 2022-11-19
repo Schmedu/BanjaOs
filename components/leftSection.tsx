@@ -5,13 +5,13 @@ export default function leftSection() {
         <section>
             <div className="grid grid-cols-1 lg:grid-cols-2">
                 <motion.div
-                    initial={{ opacity: 0.5 }}
+                    initial={{ opacity: 0.0 }}
                     whileHover={{
                         scale: 1.05,
                         transition: { duration: 0.5 },
                     }}
                     whileTap={{ scale: 1.0 }}
-                    whileInView={{ opacity: 1, rotate: -3, transition: { duration: 0.75 } }}
+                    whileInView={{ opacity: 1, rotate: -3, transition: { duration: 0.75, delay: 0.3 } }}
                     viewport={{ once: true }}
                 >
                     <div className="relative z-10 rounded-3xl shadow-lg">
