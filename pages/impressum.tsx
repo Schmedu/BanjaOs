@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 
 export default function Impressum() {
     return (
-        <Layout maxWidth={true}>
+        <Layout>
             <HeroHeaderText heading={"Impressum"} />
 
         </Layout>

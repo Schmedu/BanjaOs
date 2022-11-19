@@ -11,7 +11,7 @@ import { HeroHeaderText } from "../components/hero-header-text";
 
 export default function IndexPage() {
     return (
-        <Layout maxWidth={true}>
+        <Layout>
             <HeroHeaderText heading={"Gallerie"} />
             <div className="max-w-screen-xl px-4 py-4 mx-auto sm:px-6 lg:px-8 lg:pt-24">
                 <Gallery />

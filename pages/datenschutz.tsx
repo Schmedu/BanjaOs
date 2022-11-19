@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 
 export default function Datenschutz() {
     return (
-        <Layout maxWidth={true}>
+        <Layout>
             <HeroHeaderText heading={"Datenschutz"} />
         </Layout>
     )

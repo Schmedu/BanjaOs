@@ -16,7 +16,7 @@ import leftSection from "../components/leftSection";
 
 export default function IndexPage() {
     return (
-        <Layout maxWidth={true}>
+        <Layout>
             <HeroHeader2 />
             <div>
                 {/*<Slider />*/}

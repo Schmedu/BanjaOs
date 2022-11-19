@@ -4,7 +4,7 @@ import { getArticles } from "../bloggo";
 
 export default function BlogIndexPage() {
     return (
-        <Layout maxWidth={true}>
+        <Layout>
             <HeroHeaderText heading={"Blog"} />
             <h1>Zur Zeit noch im Aufbau!</h1>
             {/*{getArticles()}*/}
