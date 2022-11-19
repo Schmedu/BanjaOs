@@ -200,16 +200,41 @@ const ContactForm2 = () => {
 
                             <div>
                                 <label className="sr-only" htmlFor="message">{message}</label>
-                                <motion.textarea
+                                <textarea
                                     className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                     placeholder="Nachricht (optional)"
-                                    rows={8}
+                                    rows={2}
                                     id="message"
                                     {...register('message')}
-                                ></motion.textarea>
+                                ></textarea>
                             </div>
 
-                            <div className="mt-4">
+                            <div className="space-y-2">
+                                <div>
+                                    <input
+                                        {...register('dataProtection', { required: true })}
+                                        name="dataProtection"
+                                        type="checkbox"
+                                    />
+                                    <label htmlFor="dataProtection" className={"ml-2"}>
+                                        Ich akzeptiere die <a href="/datenschutz" target="_blank">Datenschutzerklärung</a>
+                                    </label>
+                                    {errors.dataProtection && errors.dataProtection.type === "required" && (
+                                        <span className={"block mb-2"} role="alert">Das ist ein Pflichtfeld.</span>
+                                    )}
+                                </div>
+                                <div className={""}>
+                                    <input
+                                        {...register('newsletter',)}
+                                        name="newsletter"
+                                        type="checkbox"
+                                    />
+                                    <label htmlFor="newsletter" className={"ml-2"}>
+                                        Informiere mich über Sauna Angebote.
+                                    </label>
+                                </div>
+                            </div>
+                            <div className={"text-right"}>
                                 <motion.button
                                     type="submit"
                                     //className="inline-flex w-full items-center justify-center rounded-lg bg-black px-5 py-3 text-white sm:w-auto"

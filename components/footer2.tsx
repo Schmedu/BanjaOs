@@ -34,7 +34,7 @@ export default function footer2() {
                         {/*            info@banja-os.de*/}
                         {/*        </a>*/}
                         {/*    </p>*/}
-                        {/*    /!*<ul className="mt-4 space-y-2 text-sm">*!/*/}
+                        {/*    /!*<ul className="space-y-2 text-sm">*!/*/}
                         {/*    /!*    <li>Montag - Donnerstag: 12:00 - 10:00</li>*!/*/}
                         {/*    /!*    <li>Freitag - Sonntag: 10:00 - 23:00</li>*!/*/}
                         {/*    /!*</ul>*!/*/}
@@ -42,7 +42,7 @@ export default function footer2() {
                         <div>
                             <div>
                                 <p className="footer-heading">Öffnungszeiten</p>
-                                <ul className="mt-4 space-y-2 text-sm">
+                                <ul className="space-y-2 text-sm">
                                     <li><span className={"whitespace-nowrap"}>Montag - Donnerstag:</span> <span className={"whitespace-nowrap"}>12:00 - 10:00</span></li>
                                     <li><span className={"whitespace-nowrap"}>Freitag - Sonntag:</span> <span className={"whitespace-nowrap"}>10:00 - 23:00</span></li>
                                 </ul>
@@ -51,7 +51,7 @@ export default function footer2() {
                         <div>
                             <div>
                                 <p className="footer-heading">Anfahrt</p>
-                                <ul className="mt-4 space-y-2 text-sm">
+                                <ul className="space-y-2 text-sm">
                                     <li><span className={"whitespace-nowrap"}>Kleine Schulstraße 24a,</span></li>
                                     <li><span className={"whitespace-nowrap"}>49078 Osnabrück</span></li>
                                     <li><a href={""}>Routenbeschreibung</a></li>
@@ -71,7 +71,7 @@ export default function footer2() {
                         <div>
                             <div>
                                 <p className="footer-heading">Kontakt</p>
-                                <ul className="mt-4 space-y-2 text-sm">
+                                <ul className="space-y-2 text-sm">
                                     <li><a
                                         href="tel:0541441806"
                                         className="block hover:opacity-75"
