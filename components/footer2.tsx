@@ -1,20 +1,10 @@
 import { motion } from 'framer-motion';
+import GradientBg from "./gradient-bg";
 
 export default function footer2() {
     return (
         // <footer aria-label="Site Footer" className=" bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight text-br-l-blush">
-        <motion.footer aria-label="Site Footer"
-            className=" bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight text-br-l-blush"
-            animate={{
-                background: [
-                    "linear-gradient(to right bottom, #735F3D, #EA9937, #7b506f)",
-                    "linear-gradient(to right bottom, #7b506f, #735F3D, #EA9937)",
-                    "linear-gradient(to right bottom, #EA9937, #7b506f, #735F3D)",
-                    "linear-gradient(to right bottom, #735F3D, #EA9937, #7b506f)",
-                ],
-            }}
-            transition={{ duration: 5, ease: "easeInOut", times: [0, 0.2, 0.5, 1], repeat: Infinity, repeatDelay: 1 }}
-        >
+        <GradientBg>
             <div className="max-w-screen-xl md:grid md:grid-cols-3 lg:grid-cols-5 mx-auto lg:items-center">
                 <div className="md:col-span-1 lg:relative lg:col-span-2 lg:block">
                     <img alt="Art" src="Banja-os.png" className="md:w-full mx-auto" />
@@ -97,7 +87,7 @@ export default function footer2() {
                     </div>
                 </div>
             </div>
-        </motion.footer>
+        </GradientBg>
 
 
     )
