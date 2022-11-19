@@ -21,7 +21,7 @@ function classNames(...classes: string[]) {
 const navigation = [
     { name: 'Startseite', href: '/' },
     { name: 'Über uns', href: '/ueber-uns' },
-    { name: 'Gallerie', href: '/gallerie' },
+    // { name: 'Gallerie', href: '/gallerie' },
     // { name: 'Blog', href: '/blog' },
     // { name: 'Protected', href: '/protected' },
     // { name: 'API', href: '/api-example' },

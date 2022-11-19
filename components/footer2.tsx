@@ -7,7 +7,7 @@ export default function footer2() {
         <GradientBg>
             <div className="max-w-screen-xl md:grid md:grid-cols-3 lg:grid-cols-5 mx-auto lg:items-center">
                 <div className="md:col-span-1 lg:relative lg:col-span-2 lg:block">
-                    <img alt="Art" src="Banja-os.png" className="md:w-full mx-auto" />
+                    <img alt="Art" src="Banja-os.png" className="md:w-full mx-auto" loading={"lazy"} />
                 </div>
                 <div className="text-center sm:text-left px-4 py-8 sm:px-6 md:col-span-2 lg:col-span-3">
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
@@ -44,7 +44,7 @@ export default function footer2() {
                                 <ul className="space-y-2 text-sm">
                                     <li><span className={"whitespace-nowrap"}>Kleine Schulstraße 24a,</span></li>
                                     <li><span className={"whitespace-nowrap"}>49078 Osnabrück</span></li>
-                                    <li><a href={""}>Routenbeschreibung</a></li>
+                                    <li><a href={"https://www.google.com/maps/dir//Banja+OS,+Kleine+Schulstra%C3%9Fe+24a,+49078+Osnabr%C3%BCck/@52.2583381,7.988857,17z/data=!4m16!1m6!3m5!1s0x47b9e94b802c3863:0xe8b1d692e333080e!2sBanja+OS!8m2!3d52.2583381!4d7.9910457!4m8!1m0!1m5!1m1!1s0x47b9e94b802c3863:0xe8b1d692e333080e!2m2!1d7.9910457!2d52.2583381!3e3"}>Routenbeschreibung</a></li>
                                 </ul>
 
                                 {/*<nav*/}
@@ -64,7 +64,7 @@ export default function footer2() {
                                 <ul className="space-y-2 text-sm">
                                     <li><a
                                         href="tel:0541441806"
-                                        className="block hover:opacity-75"
+                                        className=""
                                     >
                                         0541 441806
                                     </a>

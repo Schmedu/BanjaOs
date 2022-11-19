@@ -30,6 +30,7 @@ export default function getPrices() {
                                 initial={{ opacity: 0.2, x: -50 }}
                                 whileInView={{ opacity: 1, x: 0, transition: { duration: 0.75 } }}
                                 viewport={{ once: true }}
+                                className={"m-4 mt-0"}
                             >
                                 <table>
                                     <thead>
@@ -82,6 +83,7 @@ export default function getPrices() {
                                 initial={{ opacity: 0.2, x: 50 }}
                                 whileInView={{ opacity: 1, x: 0, transition: { duration: 0.75 } }}
                                 viewport={{ once: true }}
+                                className={"m-4 mt-0"}
                             >
                                 <table>
                                     <thead>

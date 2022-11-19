@@ -9,16 +9,19 @@
     /*font-display: swap;*/
     /*src: local('MrDeHaviland'), url('/fonts/MrDeHavilandRegular.ttf') format('woff2');*/
     src: url('/fonts/MrDeHavilandRegular.ttf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Lora';
     src: url('/fonts/Lora-Regular.ttf');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'HindMadurai';
     src: url('/fonts/HindMadurai-Light.ttf');
+    font-display: swap;
 }
 
 body {

@@ -6,7 +6,7 @@ export default function rightSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="relative flex items-center justify-center text-center lg:text-right">
                     <div className="p-8 sm:p-16 lg:p-24">
-                        <h2 className="text-4xl">Birkenzweige / Wenik</h2>
+                        <h2 className="text-4xl lg:text-right">Birkenzweige / Wenik</h2>
                         <p className="mt-4">
                             Genießen Sie trockene Luft, die nur ein Holzofen erzeugen kann.
                         </p>

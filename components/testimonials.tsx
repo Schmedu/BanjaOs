@@ -147,7 +147,7 @@ const Testimonials = () => {
                         </div>
                         {testimonials.map((testimonial) => (
                             <SwiperSlide key={testimonial.name}>
-                                <div className="swiper-slide">
+                                <div className="swiper-slide p-2">
                                     <blockquote className="rounded-3xl bg-br-l-blush-light p-8 dark:bg-br-black-400 dark:border-none shadow-lg">
                                         <div className="flex items-center">
                                             {testimonial.img ? (

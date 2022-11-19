@@ -22,7 +22,7 @@ export default function leftSection() {
                 </motion.div>
                 <div className="relative flex items-center justify-center ">
                     <div className="p-8 sm:p-16 lg:p-24 text-center lg:text-left">
-                        <h2 className="text-4xl">
+                        <h2 className="text-4xl lg:text-left">
                             Holzofensauna
                         </h2>
                         <p className="mt-4">
