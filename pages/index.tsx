@@ -18,7 +18,7 @@ export default function IndexPage() {
     return (
         <Layout maxWidth={true}>
             <HeroHeader2 />
-            <div className="px-4 py-4 mx-auto sm:px-6 lg:px-8 lg:pt-24">
+            <div>
                 {/*<Slider />*/}
                 {/*<Testimonials />*/}
                 {/*<Faq />*/}
