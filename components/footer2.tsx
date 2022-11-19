@@ -9,7 +9,7 @@ export default function footer2() {
                 <div className="md:col-span-1 lg:relative lg:col-span-2 lg:block">
                     <img alt="Art" src="Banja-os.png" className="md:w-full mx-auto" />
                 </div>
-                <div className="px-4 py-8 sm:px-6 md:col-span-2 lg:col-span-3">
+                <div className="text-center sm:text-left px-4 py-8 sm:px-6 md:col-span-2 lg:col-span-3">
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
                         {/*<div>*/}
                         {/*    <p className="font-medium">*/}
@@ -78,11 +78,11 @@ export default function footer2() {
                     </div>
                     <div className="mt-12 border-t border-br-l-blush pt-12">
                         <div className="text-sm  sm:flex sm:items-center sm:justify-between">
-                            <div className="flex gap-3">
+                            <div className="sm:flex sm:gap-3">
                                 <a className="hover:opacity-75" href={"impressum"}> Impressum </a>
                                 <a className="hover:opacity-75" href={"datenschutz"}> Datenschutz </a>
                             </div>
-                            <p className="mt-4 sm:mt-0">© 2022 Banja Os</p>
+                            <p className="mt-4 sm:mt-0">©2002-{new Date().getFullYear()} Banja Os</p>
                         </div>
                     </div>
                 </div>
