@@ -4,6 +4,7 @@ export default function Gallery() {
 
     return (
         <section id={"gallery"}>
+            <h2>Gallerie</h2>
             <ResponsiveMasonry
                 columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
             >

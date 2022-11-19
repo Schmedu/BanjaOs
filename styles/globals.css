@@ -34,6 +34,10 @@ h1, h2, h3 {
     font-family: "Lora";
 }
 
+h2 {
+    @apply mt-0 mb-5 text-4xl font-medium tracking-wide text-center
+}
+
 table {
     border-collapse:separate;
     /*border:solid black 1px;*/

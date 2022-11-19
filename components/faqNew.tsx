@@ -23,7 +23,7 @@ export default function FaqNew() {
                         whileInView={{ opacity: 1, y: 0, transition: { duration: 0.75 } }}
                         viewport={{ once: true }}
                     >
-                        <details className="group"
+                        <details className="group  max-w-prose mx-auto"
                             {...(index === 0 ? { open: true } : {})}
                         >
                             <summary
@@ -48,7 +48,7 @@ export default function FaqNew() {
                                 </svg>
                             </summary>
 
-                            <p className="mt-4 px-4 leading-relaxed ">
+                            <p className="mt-4 px-4 leading-relaxed">
                                 {text.content}
                             </p>
                         </details>
