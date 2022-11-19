@@ -37,6 +37,10 @@ h1, h2, h3 {
     font-family: "Lora";
 }
 
+h1, h2, h3 {
+    @apply tracking-wide
+}
+
 h2 {
     @apply mt-0 mb-5 text-4xl font-medium tracking-wide text-center
 }
