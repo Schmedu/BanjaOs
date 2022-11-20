@@ -7,14 +7,14 @@ interface Props {
 
 export default function GradientBg({ children, classNames }: Props) {
     return (
-        <motion.div aria-label="Site Footer"
+        <motion.div
             className={classNames ? `bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight ${classNames}` : "bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight text-br-l-blush"}
             animate={{
                 background: [
-                    "linear-gradient(to right bottom, #735F3D, #EA9937, #7b506f)",
-                    "linear-gradient(to right bottom, #7b506f, #735F3D, #EA9937)",
-                    "linear-gradient(to right bottom, #EA9937, #7b506f, #735F3D)",
-                    "linear-gradient(to right bottom, #735F3D, #EA9937, #7b506f)",
+                    "linear-gradient(to right bottom, #735F3D, #EA9937, #657153)",
+                    "linear-gradient(to right bottom, #657153, #735F3D, #EA9937)",
+                    "linear-gradient(to right bottom, #EA9937, #657153, #735F3D)",
+                    "linear-gradient(to right bottom, #735F3D, #EA9937, #657153)",
                 ],
             }
             }

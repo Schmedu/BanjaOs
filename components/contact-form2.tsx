@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { motion } from 'framer-motion';
+import GradientButton from "./gradient-button";
 
 
 const buttonText = "Senden";
@@ -266,45 +267,7 @@ const ContactForm2 = () => {
                             </motion.div>
                         </div>
                         <div className={"text-right"}>
-                            <motion.button
-                                type="submit"
-                                //className="inline-flex w-full items-center justify-center rounded-lg bg-black px-5 py-3 text-white sm:w-auto"
-                                className="px-5 py-2 text-xl rounded-lg text-br-l-blush bg-br-orange"
-                                // className={classNames ? `bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight ${classNames}` : "bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight text-br-l-blush"}
-                                whileHover={{
-                                    background: [
-                                        "linear-gradient(to right bottom, #EA9937, #EA9937, #EA9937)",
-                                        "linear-gradient(to right bottom, #735F3D, #EA9937, #EA9937)",
-                                        "linear-gradient(to right bottom, #735F3D, #EA9937, #7b506f)",
-                                        "linear-gradient(to right bottom, #7b506f, #735F3D, #EA9937)",
-                                        "linear-gradient(to right bottom, #EA9937, #7b506f, #735F3D)",
-                                        "linear-gradient(to right bottom, #EA9937, #EA9937, #7b506f)",
-                                        "linear-gradient(to right bottom, #EA9937, #EA9937, #EA9937)",
-                                        "linear-gradient(to right bottom, #EA9937, #EA9937, #EA9937)",
-                                    ],
-                                    scale: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.15, 1.0],
-                                }
-                                }
-                                transition={{ duration: 5, ease: "easeInOut", repeat: Infinity, repeatDelay: 1 }}
-                                whileTap={{ scale: 0.9 }}
-                            >
-                                <span className="font-medium"> {buttonText} </span>
-
-                                {/*<svg*/}
-                                {/*    xmlns="http://www.w3.org/2000/svg"*/}
-                                {/*    className="ml-3 h-5 w-5"*/}
-                                {/*    fill="none"*/}
-                                {/*    viewBox="0 0 24 24"*/}
-                                {/*    stroke="currentColor"*/}
-                                {/*>*/}
-                                {/*    <path*/}
-                                {/*        stroke-linecap="round"*/}
-                                {/*        stroke-linejoin="round"*/}
-                                {/*        stroke-width="2"*/}
-                                {/*        d="M14 5l7 7m0 0l-7 7m7-7H3"*/}
-                                {/*    />*/}
-                                {/*</svg>*/}
-                            </motion.button>
+                            <GradientButton buttonText={buttonText} classNames={"px-5 py-2 text-xl"} />
                         </div>
                     </form>
                 </div>

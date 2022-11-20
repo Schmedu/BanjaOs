@@ -9,7 +9,12 @@ module.exports = {
       colors: {
         'br-orange': '#EA9937',
         // 'br-black': '#0D1821',
-        "br-green":"#0D1821",
+        // "br-green":"#0D1821",
+        "br-green": {
+          "DEFAULT": "#657153",
+          "light": "#B3BEA1",
+          "medium": "#899675",
+        },
         // "br-green":"#012622",
         "br-l-blush":{
           'light': "#FFFBFB",

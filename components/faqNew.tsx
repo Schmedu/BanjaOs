@@ -20,7 +20,7 @@ export default function FaqNew() {
         }
     ]
     return (
-        <section className={"max-w-full bg-br-l-blush dark:bg-br-black"}>
+        <section className={"max-w-full bg-br-green-light dark:bg-br-black"}>
             <h2 className="mt-0 mb-5 text-4xl font-medium tracking-wide   text-center">
                 Häufig gestellte Fragen
             </h2>

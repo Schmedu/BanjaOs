@@ -167,7 +167,7 @@ export default function Header3() {
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             type="button"
-                            className="hover:bg-br-l-twilight bg-br-l-twilight dark:bg-br-black-400 rounded-lg inline-flex items-center justify-center p-2 rounded-md text-white  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                            className="hover:bg-br-green-medium bg-br-green-medium dark:bg-br-black-400 rounded-lg inline-flex items-center justify-center p-2 rounded-md text-white  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                             aria-controls="mobile-menu"
                             aria-expanded="false"
                         >
@@ -234,7 +234,7 @@ export default function Header3() {
                 enter="transition ease-out duration-500 transform"
                 enterFrom="opacity-0 scale-95"
                 enterTo="opacity-100 scale-100"
-                leave="transition ease-in duration-250 transform"
+                leave="transition ease-in-out duration-250 transform"
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
             >
