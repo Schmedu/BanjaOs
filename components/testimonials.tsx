@@ -3,6 +3,7 @@ import React from "react";
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { motion } from 'framer-motion';
 import 'swiper/css';
+import ResponsiveImage from "./responsiveImage";
 
 const testimonials = [
     {
@@ -157,7 +158,7 @@ const Testimonials = () => {
                                     <blockquote className="rounded-3xl bg-br-l-blush-light p-8 dark:bg-br-black-400 dark:border-none shadow-lg">
                                         <div className="flex items-center">
                                             {testimonial.img ? (
-                                                <img
+                                                <ResponsiveImage
                                                     alt="Man"
                                                     src={testimonial.img}
                                                     className="h-16 w-16 rounded-full object-cover mr-4"

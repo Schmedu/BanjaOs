@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ResponsiveImage from "./responsiveImage";
 
 export default function rightSection() {
     return (
@@ -25,9 +26,9 @@ export default function rightSection() {
 
                     <div className="relative z-10 rounded-3xl shadow-lg">
                         <div className="relative h-64 sm:h-80">
-                            <img
+                            <ResponsiveImage
                                 alt="House"
-                                src="gallery/Holzofen.jpg"
+                                src="Holzofen.jpg"
                                 className="absolute inset-0 h-full w-full object-cover object-bottom rounded-3xl"
                             />
                         </div>

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { scale } from "style-value-types";
 import GradientBg from "./gradientBg";
+import ResponsiveImage from "./responsiveImage";
 
 export const HeroHeader = () => {
     return (
@@ -48,7 +49,7 @@ export const HeroHeader = () => {
                         viewport={{ once: true }}
                     >
                         <div className="w-10/12 rounded-3xl  mx-auto">
-                            <img className="object-cover rounded-3xl" src="sauna-header.jpg" alt="" />
+                            <ResponsiveImage className="object-cover rounded-3xl" src="sauna-header.jpg" alt="" />
                         </div>
                     </motion.div>
                 </div>

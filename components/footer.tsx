@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import GradientBg from "./gradientBg";
+import ResponsiveImage from "./responsiveImage";
 
 export default function footer() {
     return (
@@ -8,7 +9,7 @@ export default function footer() {
             <div className="max-w-screen-xl md:grid md:grid-cols-3 lg:grid-cols-5 mx-auto lg:items-center">
                 <div className="md:col-span-1 lg:relative lg:col-span-2 lg:block">
                     {/*<img alt="Art" src="Banja-os.avif" className="md:w-full mx-auto" loading={"lazy"} />*/}
-                    <img alt="Art" src="Banja-os.png" className="md:w-full mx-auto" />
+                    <ResponsiveImage alt="Art" src="Banja-Os.png" className="md:w-full mx-auto" />
                 </div>
                 <div className="text-center sm:text-left px-4 py-8 sm:px-6 md:col-span-2 lg:col-span-3">
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">

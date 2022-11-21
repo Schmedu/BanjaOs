@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion';
+import ResponsiveImage from "./responsiveImage";
 
 export default function leftSection() {
     return (
         <section>
-            <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="flex flex-col-reverse lg:grid lg:grid-cols-2">
                 <motion.div
                     initial={{ opacity: 0.0 }}
                     whileHover={{
@@ -16,7 +17,7 @@ export default function leftSection() {
                 >
                     <div className="relative z-10 rounded-3xl shadow-lg">
                         <div className="relative h-64 sm:h-80">
-                            <img alt="House" src="gallery/Holzofen.jpg" className="absolute inset-0 h-full w-full object-cover object-bottom rounded-3xl" />
+                            <ResponsiveImage alt="House" src="Holzofen.jpg" className="absolute inset-0 h-full w-full object-cover object-bottom rounded-3xl" />
                         </div>
                     </div>
                 </motion.div>
