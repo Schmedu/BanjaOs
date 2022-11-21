@@ -1,4 +1,5 @@
 // @ts-ignore
+import React from "react";
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { motion } from 'framer-motion';
 import 'swiper/css';
@@ -14,7 +15,7 @@ const testimonials = [
         name: 'Kevin Kopsicker',
         rating: 5,
         text: "Super gemütliche Sauna mit freundlichen und diskreten Gastgeber:innen! Seit Jahren der ideale Ort zum Entspannen direkt in der Nachbarschaft 👌",
-        img: "https://lh3.googleusercontent.com/a-/ACNPEu8YD903ZjnbwW5Eqm05xuXrV5OU-FytZW1KL6JW_g=w72-h72-p-c0x00000000-rp-mo-br100",
+        img: "/testimonials/kevin-kopsicker.png",
     },
     {
         name: 'Jan Peter Koch',
@@ -26,12 +27,11 @@ const testimonials = [
         name: 'Simon Sabin',
         rating: 5,
         text: "Super Saunaerlebnis!",
-        img: "https://lh3.googleusercontent.com/a-/ACNPEu_KzgdgX16LR4KfgZd2Gi0txZ2q4BwuJORiacF3=w72-h72-p-c0x00000000-rp-mo-br100",
+        img: "/testimonials/simon-sabin.png",
     }
 ]
 
-
-const SwiperButtonPrev = ({ children }) => {
+const SwiperButtonPrev = () => {
     const swiper = useSwiper();
     return (
         <button className="prev-button bg-transparent rounded-full border border-current p-3 text-br-l-twilight focus:bg-br-l-twilight focus:text-br-l-blush dark:text-br-l-blush dark:focus:bg-br-l-twilight focus:outline-none"
@@ -55,7 +55,7 @@ const SwiperButtonPrev = ({ children }) => {
     );
 };
 
-const SwiperButtonNext = ({ children }) => {
+const SwiperButtonNext = () => {
     const swiper = useSwiper();
     return (
         <button className="next-button bg-transparent rounded-full border border-current p-3 text-br-l-twilight focus:bg-br-l-twilight focus:text-br-l-blush dark:text-br-l-blush dark:focus:bg-br-l-twilight focus:outline-none"
@@ -79,7 +79,7 @@ const SwiperButtonNext = ({ children }) => {
     );
 };
 
-const Rating = ({ rating }) => {
+const Rating = ({ rating }: { rating: number }) => {
     let a = []
     for (let step = 0; step < rating; step++) {
         a.push(1)

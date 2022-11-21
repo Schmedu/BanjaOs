@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { scale } from "style-value-types";
-import GradientBg from "./gradient-bg";
+import GradientBg from "./gradientBg";
 
-export const HeroHeader2 = () => {
+export const HeroHeader = () => {
     return (
         <GradientBg classNames={"px-4 py-16 mx-auto sm:w-full md:px-24 lg:px-8 lg:py-20 text-br-l-blush text-br-l-blush"}>
             <div className="flex flex-col items-center justify-between w-full mb-10 lg:flex-row max-w-screen-xl mx-auto">

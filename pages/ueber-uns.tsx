@@ -1,15 +1,13 @@
 import Layout from "../components/layout";
-import { HeroHeaderText } from "../components/hero-header-text";
+import { HeroHeaderText } from "../components/heroHeaderText";
 import Gallery from "../components/gallery";
-import Slider from "../components/slider";
-import ContactForm2 from "../components/contact-form2";
 
 export default function UeberUnsPage() {
     return (
         <Layout>
             <HeroHeaderText heading={"Über Uns"} />
             {/*<section className={"max-w-prose mx-auto text-justify"}>*/}
-            <section className={"grid grid-cols-1 md:grid-cols-5"}>
+            <section className={"grid grid-cols-1 md:grid-cols-5 gap-4"}>
                 <div className={"col-span-3 max-w-prose mx-auto"}>
                     <h2 className={"text-left"}>Familienbetrieb seit 2002</h2>
                     <p className={""}>

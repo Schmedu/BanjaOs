@@ -1,4 +1,4 @@
-import { HeroHeaderText } from "../components/hero-header-text";
+import { HeroHeaderText } from "../components/heroHeaderText";
 import Layout from "../components/layout";
 
 export default function Datenschutz() {

@@ -15,9 +15,9 @@ export default function App({ Component, pageProps }: AppProps<{
     session: Session;
 }>) {
     return (
-        <SessionProvider session={pageProps.session} refetchInterval={0}>
-            {/*<script src="https://unpkg.com/htmx.org@1.8.0"></script>*/}
-            <Component {...pageProps} />
-        </SessionProvider>
+        // <SessionProvider session={pageProps.session} refetchInterval={0}>
+        //     <script src="https://unpkg.com/htmx.org@1.8.0"></script>
+        <Component {...pageProps} />
+        // </SessionProvider>
     )
 }

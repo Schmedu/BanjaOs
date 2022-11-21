@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { scale } from "style-value-types";
-import GradientBg from "./gradient-bg";
+import GradientBg from "./gradientBg";
 
 export const HeroHeaderText = ({ heading }: { heading: string }) => {
     return (

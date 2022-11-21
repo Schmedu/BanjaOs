@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { motion } from 'framer-motion';
-import GradientButton from "./gradient-button";
+import GradientButton from "./gradientButton";
 
 
 const buttonText = "Senden";
@@ -19,8 +19,9 @@ const namePlaceholder = "Name";
 // }).flat();
 // console.log(times);
 
-const ContactForm2 = () => {
+const ContactForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    // @ts-ignore TODO: fix this
     const handleRegistration = (data) => console.log(data);
 
     return (
@@ -161,7 +162,7 @@ const ContactForm2 = () => {
                                     whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
                                     viewport={{ once: true }}
                                     className="w-full rounded-lg p-3 text-sm border  dark:border-none"
-                                    placeholder="Anzahl Personen"
+                                    placeholder="Personen"
                                     id="persons"
                                     type={'number'}
                                     // list='persons'
@@ -276,4 +277,4 @@ const ContactForm2 = () => {
     )
 }
 
-export default ContactForm2;
+export default ContactForm;
