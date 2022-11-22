@@ -7,10 +7,15 @@ export default function footer() {
         // <footer aria-label="Site Footer" className=" bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight text-br-l-blush">
         <GradientBg>
             <div className="max-w-screen-xl md:grid md:grid-cols-3 lg:grid-cols-5 mx-auto lg:items-center">
-                <div className="md:col-span-1 lg:relative lg:col-span-2 lg:block">
+                <motion.div className="md:col-span-1 lg:relative lg:col-span-2 lg:block"
+                    whileInView={{ opacity: 1, y: 0, transition: { type: "spring", stiffness: 400, damping: 17, duration: 0.6, delay: 0.8 } }}
+                    viewport={{ once: true }}
+                    initial={{ opacity: 0, y: -100 }}
+                // transition={}
+                >
                     {/*<img alt="Art" src="Banja-os.avif" className="md:w-full mx-auto" loading={"lazy"} />*/}
                     <ResponsiveImage alt="Art" src="Banja-Os.png" className="md:w-full mx-auto" />
-                </div>
+                </motion.div>
                 <div className="text-center sm:text-left px-4 py-8 sm:px-6 md:col-span-2 lg:col-span-3">
                     <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
                         {/*<div>*/}
@@ -35,7 +40,8 @@ export default function footer() {
                             <div>
                                 <p className="footer-heading">Öffnungszeiten</p>
                                 <ul className="space-y-2 text-sm">
-                                    <li><span className={"whitespace-nowrap"}>Montag - Donnerstag:</span> <span className={"whitespace-nowrap"}>12:00 - 10:00</span></li>
+                                    <li><span className={"whitespace-nowrap"}>Montag - Mittwoch:</span> <span className={"whitespace-nowrap"}>12:00 - 22:00</span></li>
+                                    <li><span className={"whitespace-nowrap"}>Donerstag:</span> <span className={"whitespace-nowrap"}>12:00 - 23:00</span></li>
                                     <li><span className={"whitespace-nowrap"}>Freitag - Sonntag:</span> <span className={"whitespace-nowrap"}>10:00 - 23:00</span></li>
                                 </ul>
                             </div>

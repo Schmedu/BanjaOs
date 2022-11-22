@@ -134,16 +134,16 @@ const Testimonials = () => {
                             },
                             // when window width is >= 1024px
                             1024: {
+                                slidesPerView: 3,
+                            },
+                            1280: {
+                                // slidesPerGroup: 2,
                                 slidesPerView: 4,
                             },
-                            // 1280: {
-                            //     slidesPerGroup: 2,
-                            //     slidesPerView: 4,
-                            // },
                         }}
 
                     >
-                        <div className="text-center mt-4 space-x-4 lg:hidden">
+                        <div className="text-center mt-4 space-x-4 xl:hidden">
                             <SwiperButtonPrev />
                             <SwiperButtonNext />
                         </div>

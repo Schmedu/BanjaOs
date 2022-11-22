@@ -156,13 +156,13 @@ export default function Header() {
                         {/*        Termin buchen*/}
                         {/*    </a>*/}
                         {/*</motion.button>*/}
-                        <GradientButton buttonText={"Termin buchen"} classNames={"text-sm"} />
+                        <GradientButton buttonText={"Termin buchen"} classNames={"text-sm"} delay={1} />
                     </div>
                     <div className="mr-10 flex md:hidden ">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             type="button"
-                            className="hover:bg-br-green-medium bg-br-green-medium dark:bg-br-black-400 rounded-lg inline-flex items-center justify-center p-2 rounded-md text-white  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                            className="hover:bg-br-l-twilight bg-br-l-twilight dark:bg-br-black-400 rounded-lg inline-flex items-center justify-center p-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                             aria-controls="mobile-menu"
                             aria-expanded="false"
                         >
