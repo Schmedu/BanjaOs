@@ -243,6 +243,7 @@ const ContactForm = () => {
                                 <input
                                     {...register('dataProtection', { required: true })}
                                     name="dataProtection"
+                                    id="dataProtection"
                                     type="checkbox"
                                 />
                                 <label htmlFor="dataProtection" className={"ml-2"}>
@@ -259,6 +260,7 @@ const ContactForm = () => {
                             >
                                 <input
                                     {...register('newsletter',)}
+                                    id="newsletter"
                                     name="newsletter"
                                     type="checkbox"
                                 />

@@ -10,7 +10,7 @@ import leftSection from "../components/leftSection";
 
 export default function IndexPage() {
     return (
-        <Layout>
+        <Layout title={"Banja Os - Osnabrücks Ruhige Sauna"}>
             <HeroHeader />
             <div>
                 {/*<Slider />*/}
