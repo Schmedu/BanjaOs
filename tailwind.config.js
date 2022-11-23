@@ -7,7 +7,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'br-orange': '#EA9937',
+        'br-orange': {
+          DEFAULT: '#EA9937',
+          '50': '#FBEEDD',
+          '100': '#FAE4CB',
+          '200': '#F6D1A6',
+          '300': '#F2BF81',
+          '400': '#EEAC5C',
+          '500': '#EA9937',
+          '600': '#D37D16',
+          '700': '#A05F11',
+          '800': '#6D410B',
+          '900': '#3A2306'
+        },
         // 'br-black': '#0D1821',
         // "br-green":"#0D1821",
         "br-green": {
@@ -20,7 +32,18 @@ module.exports = {
           'light': "#FFFBFB",
           'DEFAULT': "#f8e9e9"
         },
-        "br-l-twilight":"#7b506f",
+        "br-l-twilight": {  DEFAULT: '#7B506F',
+          '50': '#CEB4C7',
+          '100': '#C6A8BE',
+          '200': '#B68FAB',
+          '300': '#A67699',
+          '400': '#946085',
+          '500': '#7B506F',
+          '600': '#593A50',
+          '700': '#372432',
+          '800': '#150E13',
+          '900': '#000000'
+        },
         "br-brown":"#735F3D",
         "br-black": {
           "50": "#3f4a53",
