@@ -17,17 +17,17 @@ export default function leftSection() {
                 >
                     <div className="relative z-10 rounded-3xl shadow-lg">
                         <div className="relative h-64 sm:h-80">
-                            <ResponsiveImage alt="House" src="Holzofen.jpg" className="absolute inset-0 h-full w-full object-cover object-bottom rounded-3xl" />
+                            <ResponsiveImage alt="Holzofen Sauna in Banja Os in Osnabrück" src="Holzofen.jpg" className="absolute inset-0 h-full w-full object-cover object-bottom rounded-3xl" />
                         </div>
                     </div>
                 </motion.div>
                 <div className="relative flex items-center justify-center ">
                     <div className="p-8 sm:p-16 lg:p-24 text-center lg:text-left">
                         <h2 className="text-4xl lg:text-left">
-                            Holzofensauna
+                            Holzofen Sauna
                         </h2>
                         <p className="mt-4">
-                            Genießen Sie trockene Luft, die nur ein Holzofen erzeugen kann.
+                            Ein Holzofen gibt ein unverwechselbares Erlebnis. Es gibt ein uriges Gefühl das flackernde Licht der Flammen zu sehen und den Duft von Holz in der Luft wahrzunehmen.
                         </p>
                     </div>
                 </div>

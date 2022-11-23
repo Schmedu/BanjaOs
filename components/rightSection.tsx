@@ -7,9 +7,9 @@ export default function rightSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="relative flex items-center justify-center text-center lg:text-right">
                     <div className="p-8 sm:p-16 lg:p-24">
-                        <h2 className="text-4xl lg:text-right">Birkenzweige / Wenik</h2>
+                        <h2 className="text-4xl lg:text-right">Birkenquast gefällig?</h2>
                         <p className="mt-4">
-                            Genießen Sie trockene Luft, die nur ein Holzofen erzeugen kann.
+                            Eine in Finnland beliebte Praxis. Es wird ein Birkenreisig angefeuchtet und sanft auf die Haut geschlagen. Das hilft dabei die Durchblutung zu erhöhen und sorgt für ein angenehmes Gefühl.
                         </p>
                     </div>
                 </div>
@@ -27,9 +27,9 @@ export default function rightSection() {
                     <div className="relative z-10 rounded-3xl shadow-lg">
                         <div className="relative h-64 sm:h-80">
                             <ResponsiveImage
-                                alt="House"
-                                src="Holzofen.jpg"
-                                className="absolute inset-0 h-full w-full object-cover object-bottom rounded-3xl"
+                                alt="Birkenzweige in Sauna mit Holzofen in Banja Os in Osnabrück"
+                                src="Birkenzweig-Sauna-Banja-Os.jpg"
+                                className="absolute inset-0 h-full w-full object-cover rounded-3xl"
                             />
                         </div>
                     </div>

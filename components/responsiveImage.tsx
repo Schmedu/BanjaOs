@@ -51,9 +51,8 @@ export default function ResponsiveImage({ src, alt, className }: ResponsiveImage
                 <>
                     {ranges.filter((range) => isShown(src, range)).map((range) => (
                         <source
-                            key={`${fileName}-${range}.${fileFormat}`}
+                            key={`${fileName}-${range}-${fileFormat}`}
                             media={`(max-width: ${range - 1}px)`}
-                            width={getWidth(src, range)}
                             srcSet={`/images/test/${fileName}-${range}.${fileFormat}`}
                         />
                     )

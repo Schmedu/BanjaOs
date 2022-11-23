@@ -149,7 +149,7 @@ const Testimonials = () => {
                         </div>
                         {testimonials.map((testimonial, index) => (
                             <SwiperSlide key={testimonial.name}>
-                                <motion.div className="swiper-slide p-2"
+                                <motion.div className="swiper-slide p-2 pb-4"
                                     initial={{ opacity: 0, x: 50 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     transition={{ delay: (0.3 * index) }}

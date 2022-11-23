@@ -56,33 +56,67 @@ table {
 /*    min-w-full divide-y divide-gray-200 text-sm dark:bg-br-black-400 dark:border-none border dark:border-br-l-blush*/
 }
 
+.hero-header {
+    text-shadow: 1px 1px #0d1821;
+}
+
 button {
     @apply px-5 py-2 text-sm font-medium rounded-lg bg-br-orange text-br-l-blush
+}
+
+@media (prefers-color-scheme: dark) {
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: none;
+    -webkit-text-fill-color: #FFFBFB;
+    /*-webkit-box-shadow: 0 0 0px 1000px #253341 inset;*/
+    /*box-shadow: 0 0 0px 1000px #253341 inset;*/
+    transition: background-color 5000s ease-in-out 0s;
+    color: white;
+    /*background-color: #0d1821;*/
+    background-color: #0d1821;
+}
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: solid 1px #0d1821;
+    /*-webkit-text-fill-color: ;*/
+    /*-webkit-box-shadow: 0 0 0px 1000px #253341 inset;*/
+    /*box-shadow: 0 0 0px 1000px #253341 inset;*/
+    transition: background-color 5000s ease-in-out 0s;
+    /*color: white;*/
+    /*background-color: #0d1821;*/
+    background-color: white;
 }
 
 input, textarea {
     @apply border-br-l-twilight focus:border-l-br-l-twilight dark:bg-br-black dark:text-br-l-blush focus:outline-none
 }
 
-/*.footer-heading {*/
-/*    @apply*/
-/*}*/
-
 td, th {
     @apply border-solid border-l-0 border-l-br-l-twilight
-    /*border-left:solid  1px;*/
-    /*border-top:solid black 1px;*/
 }
 
 th {
-    @apply border-b dark:border-br-black border-solid text-xl
-    /*background-color: blue;*/
-    /*border-top: none;*/
+    @apply border-b dark:border-br-black border-solid text-lg px-4 py-2 text-left font-medium
 }
 
 td:first-child, th:first-child {
-    /*border-left: none;*/
-    /*border-right: 1px solid black;*/
     @apply border-l-0 border-r dark:border-br-black border-solid
 }
 
@@ -92,7 +126,7 @@ section {
 }
 
 .footer-heading {
-    @apply text-lg mb-2
+    @apply text-xl mb-2
 }
 
 

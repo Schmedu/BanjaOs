@@ -13,7 +13,7 @@ export default function getPrices() {
     ];
 
     return (
-        <section>
+        <section id={"preise"}>
             <div>
                 <div className="text-center">
                     <span className="hidden lg:absolute lg:inset-y-0 lg:-left-16 lg:block lg:w-16" />
@@ -35,10 +35,10 @@ export default function getPrices() {
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th className="px-4 py-2 text-left font-medium ">
-                                                Service
+                                            <th>
+                                                Sauna
                                             </th>
-                                            <th className="px-4 py-2 text-left font-medium ">
+                                            <th>
                                                 Preis
                                             </th>
                                         </tr>
@@ -88,10 +88,10 @@ export default function getPrices() {
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th className="px-4 py-2 text-left font-medium ">
+                                            <th>
                                                 Extra
                                             </th>
-                                            <th className="px-4 py-2 text-left font-medium ">
+                                            <th>
                                                 Preis
                                             </th>
                                         </tr>

@@ -6,7 +6,7 @@ export default function Gallery() {
         <div id={"gallery"}>
             {/*<h2>Gallerie</h2>*/}
             <ResponsiveMasonry
-                columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+                columnsCountBreakPoints={{ 350: 1, 640: 2, 750: 2, 900: 3 }}
             >
                 <Masonry gutter='10px'>
                     <img src="/gallery/SaunaEingang.jpg" alt="" loading={"lazy"} />

@@ -11,12 +11,12 @@ export default function Layout({ children, title }: Props) {
     return (
         <>
             <Head>
-                <title>{title}</title>
+                <title>{`${title} - Banja Os`}</title>
                 <meta
                     name="description"
                     content="Banja Os - Osnabrücks Sauna im Stillen"
                 />
-                <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+                <link rel="icon" type="image/x-icon" href="/images/banja-os-icon.ico" />
             </Head>
             <div className="m-0 p-0 flex flex-col min-h-screen">
                 {/*<Header />*/}

@@ -20,7 +20,7 @@ export default function Faq() {
         }
     ]
     return (
-        <section className={"max-w-full bg-br-l-blush dark:bg-br-black"}>
+        <section className={"max-w-full bg-br-l-blush dark:bg-br-black-400"}>
             <h2 className="mt-0 mb-5 text-4xl font-medium tracking-wide   text-center">
                 Häufig gestellte Fragen
             </h2>
@@ -35,7 +35,7 @@ export default function Faq() {
                             {...(index === 0 ? { open: true } : {})}
                         >
                             <summary
-                                className="flex cursor-pointer items-center justify-between rounded-3xl bg-br-l-blush-light dark:bg-br-black-400 dark:border-none p-4 shadow-lg">
+                                className="flex cursor-pointer items-center justify-between rounded-3xl bg-br-l-blush-light dark:bg-br-black dark:border-none p-4 shadow-lg">
                                 <h3 className="font-medium ">
                                     {text.title}
                                 </h3>

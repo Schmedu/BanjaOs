@@ -7,9 +7,10 @@ interface Props {
 }
 
 export default function GradientBg({ children, classNames }: Props) {
+    let defaultClasses = ""
     return (
         <motion.div
-            className={classNames ? `bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight ${classNames}` : "bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight text-br-l-blush"}
+            className={`bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight hero-header ${classNames}`}
             animate={{
                 background: [
                     "linear-gradient(to right bottom, #735F3D, #EA9937, #657153)",

@@ -25,11 +25,11 @@ const ContactForm = () => {
     const handleRegistration = (data) => console.log(data);
 
     return (
-        <section className="">
+        <section id="termin">
             <h2 className="mt-0 mb-5 text-4xl font-medium tracking-wide text-center">
                 Termin buchen
             </h2>
-            <div className="mx-auto md:w-7/12">
+            <div className="mx-auto md:w-7/12 lg:w-1/2">
                 <div className="rounded-lg bg-br-l-blush-light dark:bg-br-black-400 dark:border-none dark:border-none p-8 shadow-lg lg:col-span-3 lg:p-12">
                     <form onSubmit={handleSubmit(handleRegistration)} className="space-y-4">
                         <div>
@@ -44,7 +44,7 @@ const ContactForm = () => {
                                 id="name"
                                 {...register('name', { required: true })}
                             />
-                            {errors.name && <span >Das ist ein Pflichtfeld.</span>}
+                            {errors.name && <span className="pt-2 pl-2 block" role="alert">Das ist ein Pflichtfeld.</span>}
                         </div>
 
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -66,7 +66,7 @@ const ContactForm = () => {
                                     })}
 
                                 />
-                                {errors.email && <span >Das ist ein Pflichtfeld.</span>}
+                                {errors.email && <span className="pt-2 pl-2 block" role="alert">Das ist ein Pflichtfeld.</span>}
                             </div>
 
                             <div>
@@ -85,10 +85,10 @@ const ContactForm = () => {
 
                                 />
                                 {errors.phone && errors.phone.type === "required" && (
-                                    <span role="alert" >Das ist ein Pflichtfeld.</span>
+                                    <span className="pt-2 pl-2 block" role="alert" >Das ist ein Pflichtfeld.</span>
                                 )}
                                 {errors.phone && errors.phone.type === "validate" && (
-                                    <span role="alert" >Es muss sich um eine valide Telefonnummer handeln.</span>
+                                    <span className="pt-2 pl-2 block" role="alert" >Es muss sich um eine valide Telefonnummer handeln.</span>
                                 )}
                             </div>
                         </div>
@@ -104,7 +104,6 @@ const ContactForm = () => {
                                     placeholder="Datum"
                                     type="date"
                                     id="datet"
-                                    min={Date.now()}
                                     {...register('date', {
                                         required: true,
                                         validate: (value) => {
@@ -116,10 +115,10 @@ const ContactForm = () => {
                                     })}
                                 />
                                 {errors.date && errors.date.type === "required" && (
-                                    <span role="alert">Das ist ein Pflichtfeld.</span>
+                                    <span className="pt-2 pl-2 block" role="alert">Das ist ein Pflichtfeld.</span>
                                 )}
                                 {errors.date && errors.date.type === "validate" && (
-                                    <span role="alert">Das Datum muss heute oder in der Zukunft liegen.</span>
+                                    <span className="pt-2 pl-2 block" role="alert">Das Datum muss heute oder in der Zukunft liegen.</span>
                                 )}
 
                             </div>
@@ -140,13 +139,13 @@ const ContactForm = () => {
                                     })}
                                 />
                                 {errors.time && errors.time.type === "required" && (
-                                    <span role="alert">Das ist ein Pflichtfeld.</span>
+                                    <span className="pt-2 pl-2 block" role="alert">Das ist ein Pflichtfeld.</span>
                                 )}
                                 {errors.time && errors.time.type === "validate" && (
-                                    <span role="alert">Inkorrekte Uhrzeit</span>
+                                    <span className="pt-2 pl-2 block" role="alert">Inkorrekte Uhrzeit</span>
                                 )}
                                 {errors.time && errors.time.type === "maxLength" && (
-                                    <span role="alert">Max length exceeded</span>
+                                    <span className="pt-2 pl-2 block" role="alert">Max length exceeded</span>
                                 )}
 
                                 {/*<datalist id="times">*/}
@@ -173,13 +172,13 @@ const ContactForm = () => {
                                     })}
                                 />
                                 {errors.persons && errors.persons.type === "required" && (
-                                    <span role="alert">Das ist ein Pflichtfeld.</span>
+                                    <span className="pt-2 pl-2 block" role="alert">Das ist ein Pflichtfeld.</span>
                                 )}
                                 {errors.persons && errors.persons.type === "min" && (
-                                    <span role="alert">Min. 1 Person</span>
+                                    <span className="pt-2 pl-2 block" role="alert">Min. 1 Person</span>
                                 )}
                                 {errors.persons && errors.persons.type === "max" && (
-                                    <span role="alert">Max. 6 Person</span>
+                                    <span className="pt-2 pl-2 block" role="alert">Max. 6 Person</span>
                                 )}
                             </div>
                             <div>
@@ -206,16 +205,16 @@ const ContactForm = () => {
                                 {/*    <option key={4} value={"4"} />*/}
                                 {/*</datalist>*/}
                                 {errors.hours && errors.hours.type === "required" && (
-                                    <span role="alert">Das ist ein Pflichtfeld.</span>
+                                    <span className="pt-2 pl-2 block" role="alert">Das ist ein Pflichtfeld.</span>
                                 )}
                                 {errors.hours && errors.hours.type === "validate" && (
-                                    <span role="alert">Falsche Uhrzeit</span>
+                                    <span className="pt-2 pl-2 block" role="alert">Falsche Uhrzeit</span>
                                 )}
                                 {errors.hours && errors.hours.type === "min" && (
-                                    <span role="alert">Min. 1 Stunde</span>
+                                    <span className="pt-2 pl-2 block" role="alert">Min. 1 Stunde</span>
                                 )}
                                 {errors.hours && errors.hours.type === "max" && (
-                                    <span role="alert">Max. 3 Stunden</span>
+                                    <span className="pt-2 pl-2 block" role="alert">Max. 3 Stunden</span>
                                 )}
                             </div>
                         </div>
@@ -270,7 +269,7 @@ const ContactForm = () => {
                             </motion.div>
                         </div>
                         <div className={"text-right"}>
-                            <GradientButton buttonText={buttonText} classNames={"px-5 py-2 text-xl"} />
+                            <GradientButton buttonText={buttonText} classNames={"px-5 py-2 text-xl"} delay={0} />
                         </div>
                     </form>
                 </div>

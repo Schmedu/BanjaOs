@@ -16,6 +16,7 @@ function classNames(...classes: string[]) {
 
 const navigation = [
     { name: 'Startseite', href: '/' },
+    { name: 'Preise', href: '/#preise' },
     { name: 'Über uns', href: '/ueber-uns' },
     // { name: 'Gallerie', href: '/gallerie' },
     // { name: 'Blog', href: '/blog' },
@@ -49,7 +50,7 @@ export default function Header() {
                         {/*<span className="w-20 h-10 bg-gray-200 rounded-lg"></span>*/}
                         <span className="h-auto flex items-center">
                             {/*<img src="Logo.jpg" alt="logo" className="w-10 h-10" />*/}
-                            <ResponsiveImage src="banja-os-icon.png" alt="logo" className="w-32 align-middle hidden md:block" />
+                            <ResponsiveImage src="banja-os-icon.png" alt="Banja OS Logo" className="w-32 align-middle hidden md:block" />
                             {/*<img src="banja-os-logo-cropped.png" alt="logo" className=" align-middle" />*/}
                             <p className={"text-4xl whitespace-nowrap"} style={{ fontFamily: "MrDeHaviland" }}>Banja Os</p>
                         </span>
@@ -156,7 +157,7 @@ export default function Header() {
                         {/*        Termin buchen*/}
                         {/*    </a>*/}
                         {/*</motion.button>*/}
-                        <GradientButton buttonText={"Termin buchen"} classNames={"text-sm"} delay={1} />
+                        <GradientButton buttonText={"Termin buchen"} classNames={"text-sm"} delay={1} href={"/#termin"} />
                     </div>
                     <div className="mr-10 flex md:hidden ">
                         <button
