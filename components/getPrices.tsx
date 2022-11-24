@@ -121,14 +121,6 @@ export default function getPrices() {
                                                 3,00€
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td className="px-4 py-2 font-medium ">
-                                                Badeschuhe leihen
-                                            </td>
-                                            <td className="px-4 py-2 ">
-                                                3,00€
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </motion.div>

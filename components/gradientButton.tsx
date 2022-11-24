@@ -14,32 +14,31 @@ export default function GradientButton({ buttonText, href, classNames, onClick, 
     return (
         <motion.button
             type="submit"
-            //className="inline-flex w-full items-center justify-center rounded-lg bg-black px-5 py-3 text-white sm:w-auto"
-            className={`px-5 py-2 rounded-lg text-br-l-blush bg-br-orange ${classNames} `}
-            // className={classNames ? `bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight ${classNames}` : "bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight text-br-l-blush"}
+            className={`px-5 py-2 rounded-lg text-br-l-blush bg-br-l-twilight ${classNames}`}
             initial={{ opacity: 1, scale: 1 }}
-            whileInView={{ opacity: 1, scale: [1, 0.95, 1.0], transition: { duration: 0.75, delay: delay } }}
-            viewport={{ once: true }}
+            whileInView={{ opacity: 1, scale: [1, 1.02, 1.0], transition: { duration: 0.75, delay: delay } }}
+            viewport={{ once: false }}
             whileHover={{
                 background: [
-                    "linear-gradient(to right bottom, #EA9937, #EA9937, #EA9937)",
-                    "linear-gradient(to right bottom, #735F3D, #EA9937, #EA9937)",
-                    "linear-gradient(to right bottom, #735F3D, #EA9937, #657153)",
-                    "linear-gradient(to right bottom, #657153, #735F3D, #EA9937)",
-                    "linear-gradient(to right bottom, #EA9937, #657153, #735F3D)",
-                    "linear-gradient(to right bottom, #EA9937, #EA9937, #657153)",
-                    "linear-gradient(to right bottom, #EA9937, #EA9937, #EA9937)",
-                    "linear-gradient(to right bottom, #EA9937, #EA9937, #EA9937)",
-                    "linear-gradient(to right bottom, #EA9937, #EA9937, #EA9937)",
+                    "linear-gradient(to right bottom, #7B506F, #7B506F, #7B506F)",
+                    "linear-gradient(to right bottom, #946085, #7B506F, #7B506F)",
+                    "linear-gradient(to right bottom, #946085, #7B506F, #593A50)",
+                    "linear-gradient(to right bottom, #593A50, #946085, #7B506F)",
+                    "linear-gradient(to right bottom, #7B506F, #593A50, #946085)",
+                    "linear-gradient(to right bottom, #7B506F, #7B506F, #593A50)",
+                    "linear-gradient(to right bottom, #7B506F, #7B506F, #7B506F)",
+                    "linear-gradient(to right bottom, #7B506F, #7B506F, #7B506F)",
+                    "linear-gradient(to right bottom, #7B506F, #7B506F, #7B506F)",
                 ],
-                scale: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.15, 1.0],
-            }
-            }
-            transition={{ duration: 3.5, repeat: Infinity, repeatDelay: 1 }}
+                scale: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.05, 1.0],
+                transition: { duration: 2.0, delay: 0 }
+            }}
             whileTap={{ scale: 0.9 }}
             onClick={onClick}
         >
-            <span > {buttonText} </span>
+            <a href={href}>
+                <span > {buttonText} </span>
+            </a>
         </motion.button>
     )
 }

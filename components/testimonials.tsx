@@ -16,7 +16,7 @@ const testimonials = [
         name: 'Kevin Kopsicker',
         rating: 5,
         text: "Super gemütliche Sauna mit freundlichen und diskreten Gastgeber:innen! Seit Jahren der ideale Ort zum Entspannen direkt in der Nachbarschaft 👌",
-        img: "/testimonials/kevin-kopsicker.png",
+        img: "kevin-kopsicker.png",
     },
     {
         name: 'Jan Peter Koch',
@@ -28,11 +28,11 @@ const testimonials = [
         name: 'Simon Sabin',
         rating: 5,
         text: "Super Saunaerlebnis!",
-        img: "/testimonials/simon-sabin.png",
+        img: "simon-sabin.png",
     }
 ]
 
-const SwiperButtonPrev = () => {
+export const SwiperButtonPrev = () => {
     const swiper = useSwiper();
     return (
         <button className="prev-button bg-transparent rounded-full border border-current p-3 text-br-l-twilight focus:bg-br-l-twilight focus:text-br-l-blush dark:text-br-l-blush dark:focus:bg-br-l-twilight focus:outline-none"
@@ -56,7 +56,7 @@ const SwiperButtonPrev = () => {
     );
 };
 
-const SwiperButtonNext = () => {
+export const SwiperButtonNext = () => {
     const swiper = useSwiper();
     return (
         <button className="next-button bg-transparent rounded-full border border-current p-3 text-br-l-twilight focus:bg-br-l-twilight focus:text-br-l-blush dark:text-br-l-blush dark:focus:bg-br-l-twilight focus:outline-none"

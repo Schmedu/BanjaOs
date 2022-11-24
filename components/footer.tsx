@@ -68,12 +68,9 @@ export default function footer() {
                             <p className="mt-4 sm:mt-0">©2002-{new Date().getFullYear()} Banja Os</p>
                         </div>
                         <p className="mt-8 text-xs text-gray-500">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-                            mollitia quia quod repellendus. Porro harum, odio dolore perspiciatis
-                            praesentium provident esse consequatur quibusdam aperiam, cupiditate
-                            omnis modi in quasi? In, maxime odio vel repellat sed earum? Debitis
-                            quaerat facilis animi. Odio natus nostrum laboriosam impedit magnam
-                            praesentium asperiores consectetur ipsum.
+                            Banja Os gibt es schon seit über 20 Jahren. Wir sind eine kleine, familiengeführte Sauna aus Osnabrück. Bei uns kannst du die Erfahrung einer privaten Holzofen Sauna machen, da unsere Sauna nicht öffentlich zugänglich ist. Jeder unserer Kunden mietet die Sauna für sich alleine - perfekt für eine entspannte Runde mit deinen Liebsten.
+
+                            Wir haben kürzlich den Sprung ins Internet gewagt. Dies ist unsere kleine Webpräsenz. Wir hoffen es gefällt dir. Hinterlass' uns gerne eine Rückmeldung per Email, wenn du magst!
                         </p>
                     </div>
                 </div>

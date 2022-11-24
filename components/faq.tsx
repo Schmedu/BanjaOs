@@ -4,20 +4,32 @@ export default function Faq() {
     const texts = [
         {
             title: "Darf man Essen & Trinken mitnehmen?",
-            content: "Selbstverständlich! Falls du etwas mitnehmen möchtest, kannst du dies gerne tun.",
+            content: "Klar! Du darfst mitbringen was du möchtest.",
         },
         {
             title: "Habe ich die Sauna für mich alleine?",
-            content: "Ja, du kannst in aller Ruhe die Sauna genießen. Die Sauna ist nur für dich reserviert.",
+            content: "Ja, du kannst in aller Ruhe die Sauna genießen. Die Sauna ist nur für dich, deine Familie und / oder Freunde reserviert.",
         },
         {
             title: "Wie viele Leute können in die Sauna?",
-            content: "Wir empfehlen maximal 6 Personen, damit jeder genügend Platz hat. Aber manche Kunden haben es auch schon zu siebt oder acht geschafft.",
+            content: "Wir empfehlen maximal 6 Personen, damit jeder genügend Platz hat, aber manche Kunden kamen auch schon zu siebt oder acht.",
         },
         {
             title: "Gibt es Parkplätze?",
             content: "Wir haben zwei Parkplätze direkt vor dem Haus. Falls du mehr brauchst, dann kannst du direkt auf der ggü. Straßenseite parken.",
-        }
+        },
+        {
+            title: "Aufguss möglich?",
+            content: "Sicher! Hier gibt's keinen Aufguss zur vollen Stunde, sondern wann immer du möchtest. Du hast die volle Kontrolle. Du kannst es auch mit Aromen aufpeppen wie bspw. Mentholkristallen.",
+        },
+        {
+            title: "Was hat es mit dem Birkenquast auf sich?",
+            content: "Es handelt sich hierbei um eine finnische Tradition, die auch in anderen Ländern geläufig ist. Hierbei wird ein Birkenquast in der Sauna angefeuchtet und dann mit leichten Hieben auf die Haut geschlagen. Das hat eine entspannende Wirkung und ist auch gut für die Durchblutung. Wir haben auch einen Birkenquast für dich bereit, die du bei uns kaufen kannst.",
+        },
+        {
+            title: "Muss ich mich anmelden?",
+            content: "Ja, unbedingt. Da wir mit Holz heizen muss die Sauna mindestens eine Stunde vorgeheizt werden. Wir empfehlen mindestens 90 Minuten vorher anzurufen.",
+        },
     ]
     return (
         <section className={"max-w-full bg-br-l-blush dark:bg-br-black-400"}>
@@ -28,7 +40,7 @@ export default function Faq() {
                 {texts.map((text, index) => (
                     <motion.div key={index}
                         initial={{ opacity: 0.2, y: +50 }}
-                        whileInView={{ opacity: 1, y: 0, transition: { duration: (0.3 * index) } }}
+                        whileInView={{ opacity: 1, y: 0, transition: { duration: (0.3) } }}
                         viewport={{ once: true }}
                     >
                         <details className="group  max-w-prose mx-auto"
