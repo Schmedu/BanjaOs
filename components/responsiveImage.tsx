@@ -61,23 +61,23 @@ export default function ResponsiveImage({ src, alt, className, lazy = true }: Re
         1536,
         1920,
     ]
+
+    const sources = fileFormats.map((fileFormat) => {
+        return ranges.filter((range) => isShown(src, range, path)).map((range) =>
+            <source
+                key={`${fileName}-${range}-${fileFormat}-${path}`}
+                media={`(max-width: ${range - 1}px)`}
+                srcSet={`${srcPath}/magick/${fileName}-${getWidth(src, range, path)}.${fileFormat}`}
+                width={getWidth(src, range, path)}
+                height={getHeight(src, range, path)}
+            />
+        );
+    });
+
+
     return (
         <picture>
-            {fileFormats.map((fileFormat) => (
-                <>
-                    {
-                        ranges.filter((range) => isShown(src, range, path)).map((range) => (
-                            <source
-                                key={`${fileName}-${range}-${fileFormat}-${path}`}
-                                media={`(max-width: ${range - 1}px)`}
-                                srcSet={`${srcPath}/magick/${fileName}-${getWidth(src, range, path)}.${fileFormat}`}
-                                width={getWidth(src, range, path)}
-                                height={getHeight(src, range, path)}
-                            />
-                        ))
-                    }
-                </>
-            ))}
+            {sources}
             {lazy ? (
                 <img src={src} alt={alt} loading={"lazy"} className={className} />
             ) : (
