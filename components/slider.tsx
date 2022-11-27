@@ -7,7 +7,7 @@ import { SwiperButtonNext, SwiperButtonPrev } from "./testimonials";
 export default function Slider() {
     let images = [
         { src: "/gallery/Eingangsbereich.jpg", alt: "" },
-        { src: "/gallery/Holzofen.jpg", alt: "" },
+        // { src: "/gallery/Holzofen.jpg", alt: "" },
         { src: "/gallery/Saunaraum.jpg", alt: "" },
         { src: "/gallery/SaunaEingang.jpg", alt: "" },
     ]

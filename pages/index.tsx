@@ -6,6 +6,8 @@ import Faq from "../components/faq";
 import getPrices from "../components/getPrices";
 import rightSection from "../components/rightSection";
 import leftSection from "../components/leftSection";
+import PriceContactForm from "../components/getPriceContactForm";
+import MultiStepContactForm from "../components/multiStepContactForm";
 
 
 export default function IndexPage() {
@@ -29,6 +31,8 @@ export default function IndexPage() {
                 <Testimonials />
                 {getPrices()}
                 <ContactForm />
+                {/*<PriceContactForm />*/}
+                {/*<MultiStepContactForm />*/}
 
             </div>
         </Layout>

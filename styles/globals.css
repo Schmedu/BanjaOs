@@ -29,7 +29,7 @@ body {
 }
 
 body {
-    @apply text-gray-600 dark:bg-br-l-blush dark:bg-br-black dark:text-br-l-blush;
+    @apply text-gray-600 bg-br-l-blush-light dark:bg-br-black dark:text-br-l-blush;
 }
 
 h1, h2, h3 {
@@ -140,4 +140,8 @@ section {
 
 label {
     @apply pl-1
+}
+
+#legal h2, #legal h3 {
+    @apply mt-4 text-left
 }

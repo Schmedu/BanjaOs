@@ -31,7 +31,7 @@ export default function GradientButton({ buttonText, href, classNames, onClick, 
                     "linear-gradient(to right bottom, #7B506F, #7B506F, #7B506F)",
                 ],
                 scale: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.05, 1.0],
-                transition: { duration: 2.0, delay: 0 }
+                transition: { duration: 2.3, delay: 0 }
             }}
             whileTap={{ scale: 0.9 }}
             onClick={onClick}
