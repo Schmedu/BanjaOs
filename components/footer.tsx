@@ -14,7 +14,7 @@ export default function footer() {
                             viewport={{ once: true }}
                             initial={{ opacity: 0, y: -100 }}
                         >
-                            <ResponsiveImage alt="Art" src="Banja-Os.png" className="md:w-full mx-auto" />
+                            <ResponsiveImage alt="Banja Os Logo Art - Saunaeimer mit Kelch" src="Banja-Os.png" className="md:w-full mx-auto" />
                         </motion.div>
                     </div>
                 </div>

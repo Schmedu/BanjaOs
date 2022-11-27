@@ -30,7 +30,7 @@ export const HeroHeader = () => {
                         viewport={{ once: true }}
                     >
                         <div className="w-10/12 rounded-3xl  mx-auto">
-                            <ResponsiveImage className="object-cover rounded-3xl" src="sauna-header.jpg" alt="" lazy={false} />
+                            <ResponsiveImage className="object-cover rounded-3xl" src="sauna-header.jpg" alt="Saunaeimer mit Kelch Birkenquast und Utensilien zum Saunieren" lazy={false} />
                         </div>
                     </motion.div>
                 </div>

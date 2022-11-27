@@ -159,7 +159,7 @@ const Testimonials = () => {
                                         <div className="flex items-center">
                                             {testimonial.img ? (
                                                 <ResponsiveImage
-                                                    alt="Man"
+                                                    alt={`Banja Os - Kundenmeinung von ${testimonial.name}`}
                                                     src={testimonial.img}
                                                     className="h-16 w-16 rounded-full object-cover mr-4"
                                                 />
