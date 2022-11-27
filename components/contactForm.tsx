@@ -58,7 +58,7 @@ const ContactForm = () => {
                     {contactResponse.send === false ? (
                         <form onSubmit={handleSubmit(handleRegistration)} className="space-y-4">
                             <div>
-                                <label className="sr-only" htmlFor="name">{nameLabel}</label>
+                                <label className="" htmlFor="name">{nameLabel}:</label>
                                 <motion.input
                                     initial={{ opacity: 0.2, x: -50 }}
                                     whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
@@ -74,7 +74,7 @@ const ContactForm = () => {
 
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <div>
-                                    <label className="sr-only" htmlFor="email">Email</label>
+                                    <label className="" htmlFor="email">Email:</label>
                                     <motion.input
                                         initial={{ opacity: 0.2, x: -50 }}
                                         whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
@@ -102,7 +102,7 @@ const ContactForm = () => {
                                 </div>
 
                                 <div>
-                                    <label className="sr-only" htmlFor="phone">{phoneLabel}</label>
+                                    <label className="" htmlFor="phone">{phoneLabel}:</label>
                                     <motion.input
                                         initial={{ opacity: 0.2, x: -50 }}
                                         whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
@@ -130,7 +130,7 @@ const ContactForm = () => {
 
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <div>
-                                    <label className="sr-only" htmlFor="date">Datum</label>
+                                    <label className="" htmlFor="date">Datum:</label>
                                     <motion.input
                                         initial={{ opacity: 0.2, x: -50 }}
                                         whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
@@ -159,7 +159,7 @@ const ContactForm = () => {
 
                                 </div>
                                 <div>
-                                    <label className="sr-only" htmlFor="time"></label>
+                                    <label className="" htmlFor="time">Uhrzeit:</label>
                                     <motion.input
                                         initial={{ opacity: 0.2, x: -50 }}
                                         whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
@@ -185,7 +185,7 @@ const ContactForm = () => {
                                     )}
                                 </div>
                                 <div>
-                                    <label className="sr-only" htmlFor="persons"></label>
+                                    <label className="" htmlFor="persons">Personen:</label>
                                     <motion.input
                                         initial={{ opacity: 0.2, x: -50 }}
                                         whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
@@ -212,7 +212,7 @@ const ContactForm = () => {
                                     )}
                                 </div>
                                 <div>
-                                    <label className="sr-only" htmlFor="hour">"Stunden"</label>
+                                    <label className="" htmlFor="hour">Stunden:</label>
                                     <motion.input
                                         initial={{ opacity: 0.2, x: -50 }}
                                         whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
@@ -250,7 +250,7 @@ const ContactForm = () => {
                             </div>
 
                             <div>
-                                <label className="sr-only" htmlFor="message">{message}</label>
+                                <label className="" htmlFor="message">{message}:</label>
                                 <motion.textarea
                                     initial={{ opacity: 0.2, x: -50 }}
                                     whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
@@ -277,7 +277,7 @@ const ContactForm = () => {
                                     />
                                     <label htmlFor="dataProtection" className={"ml-2"}>
                                         Ich akzeptiere die <a href="/datenschutz" target="_blank">Datenschutzerklärung</a>
-                                    </label>
+                                        :</label>
                                     {errors.dataProtection && errors.dataProtection.type === "required" && (
                                         <span className={"block mb-2"} role="alert">Das ist ein Pflichtfeld.</span>
                                     )}
@@ -295,7 +295,7 @@ const ContactForm = () => {
                                     />
                                     <label htmlFor="newsletter" className={"ml-2"}>
                                         Informiere mich über Sauna Angebote.
-                                    </label>
+                                        :</label>
                                 </motion.div>
                             </div>
                             <div className={"text-right"}>

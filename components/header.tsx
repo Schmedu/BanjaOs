@@ -37,6 +37,8 @@ export default function Header() {
     // const { data: session, status } = useSession()
     // const loading = status === "loading"
 
+    let linkClasses = "block relative py-2 px-4  uppercase bg-transparent cursor-pointer lg:px-2 hover:text-br-orange hover:scale-110 hover:duration-300 transition ease-out"
+
     return (
         <header className="shadow-sm">
             <noscript>
@@ -67,11 +69,11 @@ export default function Header() {
                                     // key={item.name}
                                     // href={item.href}
                                     className={classNames(
-                                        router.asPath === item.href
+                                        router.asPath.split("#")[0] === item.href
                                             // ? 'text-gray-500 underline whitespace-nowrap'
                                             // : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900 whitespace-nowrap',
-                                            ? 'block relative py-2 px-4  uppercase bg-transparent cursor-pointer lg:px-2 hover:text-br-orange hover:scale-110 hover:duration-300 transition ease-out text-br-orange'
-                                            : 'block relative py-2 px-4  uppercase bg-transparent cursor-pointer lg:px-2 hover:text-br-orange hover:scale-110 hover:duration-300 transition ease-out',
+                                            ? `${linkClasses} text-br-orange`
+                                            : linkClasses,
                                     )}
                                 // aria-current={item.current ? 'page' : undefined}
                                 >

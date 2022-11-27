@@ -7,7 +7,7 @@ export default function footer() {
         // <footer aria-label="Site Footer" className=" bg-gradient-to-br from-br-brown via-br-orange to-br-l-twilight text-br-l-blush">
         <div className={"dark:bg-br-black-300 bg-br-l-blush"}>
             <div className="max-w-screen-xl md:grid md:grid-cols-3 lg:grid-cols-6 mx-auto lg:items-center">
-                <div className="md:col-span-1 lg:relative lg:col-span-2 lg:block h-full">
+                <div className="md:col-span-1 lg:relative lg:col-span-2 lg:block h-full flex items-center justify-center">
                     <div>
                         <motion.div
                             whileInView={{ opacity: 1, y: 0, transition: { type: "spring", stiffness: 400, damping: 17, duration: 0.6, delay: 0.8 } }}

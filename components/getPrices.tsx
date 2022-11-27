@@ -24,8 +24,8 @@ export default function getPrices() {
                     </div>
                 </div>
                 <div className="relative z-10 flex items-center mx-auto md:w-full">
-                    <div className="relative mx-auto w-full lg:w-3/4">
-                        <div className="overflow-hidden overflow-x-auto md:grid md:grid-cols-2 md:gap-5">
+                    <div className="relative mx-auto w-full md:w-3/5 lg:w-4/5 xl:w-3/4">
+                        <div className="overflow-hidden overflow-x-auto lg:grid lg:grid-cols-2 lg:gap-1">
                             <motion.div
                                 initial={{ opacity: 0.2, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0, transition: { duration: 0.75 } }}
@@ -45,34 +45,34 @@ export default function getPrices() {
                                     </thead>
                                     <tbody className="divide-y divide-gray-200">
                                         <tr>
-                                            <td className="px-4 py-2 font-medium ">
+                                            <td className="px-4 py-0 font-medium ">
                                                 1 Person / Std (max. 2 Personen)
                                             </td>
-                                            <td className="px-4 py-2 ">
+                                            <td className="px-4 py-0 ">
                                                 10,00€{" "}
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className="px-4 py-2 font-medium ">
+                                            <td className="px-4 py-0 font-medium ">
                                                 1 Person / Std (3-4 Personen)
                                             </td>
-                                            <td className="px-4 py-2 ">
+                                            <td className="px-4 py-0 ">
                                                 9,00€
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className="px-4 py-2 font-medium ">
+                                            <td className="px-4 py-0 font-medium ">
                                                 1 Person / Std (5-6 Personen)
                                             </td>
-                                            <td className="px-4 py-2 ">
+                                            <td className="px-4 py-0 ">
                                                 8,00€
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className="px-4 py-2 font-medium ">
+                                            <td className="px-4 py-0 font-medium ">
                                                 1 Kind / Std (6-15 Jahre)
                                             </td>
-                                            <td className="px-4 py-2 ">
+                                            <td className="px-4 py-0 ">
                                                 5,00€
                                             </td>
                                         </tr>
@@ -98,29 +98,45 @@ export default function getPrices() {
                                     </thead>
                                     <tbody className="divide-y divide-gray-200">
                                         <tr>
-                                            <td className="px-4 py-2 font-medium ">
-                                                Birkenzweig / Wenik
+                                            <td className="px-4 py-0 font-medium ">
+                                                Birkenquast
                                             </td>
-                                            <td className="px-4 py-2 ">
+                                            <td className="px-4 py-0 ">
                                                 6,00€
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className="px-4 py-2 font-medium ">
-                                                Mentholkristalle (Aufguss)
+                                            <td className="px-4 py-0 font-medium ">
+                                                Versch. Aufgussaromen
                                             </td>
-                                            <td className="px-4 py-2 ">
+                                            <td className="px-4 py-0 ">
                                                 3,00€{" "}
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className="px-4 py-2 font-medium ">
-                                                Handtuch leihen
+                                            <td className="px-4 py-0 font-medium ">
+                                                Mentholkristalle (Aufguss)
                                             </td>
-                                            <td className="px-4 py-2 ">
+                                            <td className="px-4 py-0 ">
                                                 3,00€
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <td className="px-4 py-0 font-medium ">
+                                                Handtuch leihen
+                                            </td>
+                                            <td className="px-4 py-0 ">
+                                                3,00€
+                                            </td>
+                                        </tr>
+                                        {/*<tr>*/}
+                                        {/*<td className="px-4 py-0 font-medium ">*/}
+                                        {/*    Badeschuhe leihen*/}
+                                        {/*</td>*/}
+                                        {/*<td className="px-4 py-0 ">*/}
+                                        {/*    3,00€*/}
+                                        {/*</td>*/}
+                                        {/*</tr>*/}
                                     </tbody>
                                 </table>
                             </motion.div>

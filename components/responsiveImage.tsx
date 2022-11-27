@@ -22,7 +22,7 @@ function isShown(src: string, range: number, path: string): boolean {
         return false;
     }
     // @ts-ignore
-    return data[path][src][range].width >= 0
+    return data[path][src][range].width > 0
 }
 
 function getWidth(src: string, range: number, path: string): number {

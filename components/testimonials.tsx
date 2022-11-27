@@ -107,7 +107,7 @@ const Testimonials = () => {
 
     return (
         <>
-            <section className={"max-w-full"}>
+            <section className={"max-w-screen-2xl"}>
                 <div className="items-end justify-center sm:flex sm:pr-6 lg:pr-8">
                     {/*<h2 className="max-w-xl text-4xl font-bold tracking-tight sm:text-5xl text-center">*/}
                     <h2 className="mt-0 mb-5 text-4xl font-medium tracking-wide text-center">

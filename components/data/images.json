@@ -1,1 +1,448 @@
-{"/":{"banja-os-icon.png":{"414":{"width":0,"height":0},"640":{"width":0,"height":0},"768":{"width":184,"height":92},"896":{"width":256,"height":256},"1024":{"width":256,"height":256},"1280":{"width":256,"height":256},"1536":{"width":256,"height":256},"1920":{"width":256,"height":256}},"sauna-header.jpg":{"414":{"width":390,"height":276},"640":{"width":507,"height":358},"768":{"width":480,"height":339},"896":{"width":587,"height":415},"1024":{"width":373,"height":264},"1280":{"width":507,"height":358},"1536":{"width":533,"height":377},"1920":{"width":533,"height":377}},"Holzofen.jpg":{"414":{"width":468,"height":256},"640":{"width":592,"height":320},"768":{"width":720,"height":320},"896":{"width":848,"height":320},"1024":{"width":480,"height":320},"1280":{"width":608,"height":320},"1536":{"width":608,"height":320},"1920":{"width":608,"height":320}},"Birkenzweig-Sauna-Banja-Os.jpg":{"414":{"width":468,"height":256},"640":{"width":592,"height":320},"768":{"width":720,"height":320},"896":{"width":848,"height":320},"1024":{"width":480,"height":320},"1280":{"width":608,"height":320},"1536":{"width":608,"height":320},"1920":{"width":608,"height":320}},"kevin-kopsicker.png":{"414":{"width":128,"height":64},"640":{"width":128,"height":64},"768":{"width":128,"height":64},"896":{"width":128,"height":64},"1024":{"width":128,"height":64},"1280":{"width":128,"height":64},"1536":{"width":128,"height":64},"1920":{"width":128,"height":64}},"simon-sabin.png":{"414":{"width":128,"height":64},"640":{"width":128,"height":64},"768":{"width":128,"height":64},"896":{"width":128,"height":64},"1024":{"width":128,"height":64},"1280":{"width":128,"height":64},"1536":{"width":128,"height":64},"1920":{"width":128,"height":64}},"Banja-Os.png":{"414":{"width":0,"height":0},"640":{"width":0,"height":0},"768":{"width":256,"height":0},"896":{"width":299,"height":0},"1024":{"width":341,"height":0},"1280":{"width":427,"height":0},"1536":{"width":427,"height":0},"1920":{"width":427,"height":0}}}}
+{
+  "/": {
+    "banja-os-icon.png": {
+      "414": {
+        "width": 0,
+        "height": 0
+      },
+      "640": {
+        "width": 0,
+        "height": 0
+      },
+      "768": {
+        "width": 184,
+        "height": 184
+      },
+      "896": {
+        "width": 256,
+        "height": 256
+      },
+      "1024": {
+        "width": 256,
+        "height": 256
+      },
+      "1280": {
+        "width": 256,
+        "height": 256
+      },
+      "1536": {
+        "width": 256,
+        "height": 256
+      },
+      "1920": {
+        "width": 256,
+        "height": 256
+      }
+    },
+    "sauna-header.jpg": {
+      "414": {
+        "width": 390,
+        "height": 276
+      },
+      "640": {
+        "width": 507,
+        "height": 358
+      },
+      "768": {
+        "width": 480,
+        "height": 339
+      },
+      "896": {
+        "width": 587,
+        "height": 415
+      },
+      "1024": {
+        "width": 373,
+        "height": 264
+      },
+      "1280": {
+        "width": 507,
+        "height": 358
+      },
+      "1536": {
+        "width": 533,
+        "height": 377
+      },
+      "1920": {
+        "width": 533,
+        "height": 377
+      }
+    },
+    "Holzofen.jpg": {
+      "414": {
+        "width": 468,
+        "height": 256
+      },
+      "640": {
+        "width": 592,
+        "height": 320
+      },
+      "768": {
+        "width": 720,
+        "height": 320
+      },
+      "896": {
+        "width": 848,
+        "height": 320
+      },
+      "1024": {
+        "width": 480,
+        "height": 320
+      },
+      "1280": {
+        "width": 608,
+        "height": 320
+      },
+      "1536": {
+        "width": 608,
+        "height": 320
+      },
+      "1920": {
+        "width": 608,
+        "height": 320
+      }
+    },
+    "Birkenzweig-Sauna-Banja-Os.jpg": {
+      "414": {
+        "width": 468,
+        "height": 256
+      },
+      "640": {
+        "width": 592,
+        "height": 320
+      },
+      "768": {
+        "width": 720,
+        "height": 320
+      },
+      "896": {
+        "width": 848,
+        "height": 320
+      },
+      "1024": {
+        "width": 480,
+        "height": 320
+      },
+      "1280": {
+        "width": 608,
+        "height": 320
+      },
+      "1536": {
+        "width": 608,
+        "height": 320
+      },
+      "1920": {
+        "width": 608,
+        "height": 320
+      }
+    },
+    "kevin-kopsicker.png": {
+      "414": {
+        "width": 128,
+        "height": 128
+      },
+      "640": {
+        "width": 128,
+        "height": 128
+      },
+      "768": {
+        "width": 128,
+        "height": 128
+      },
+      "896": {
+        "width": 128,
+        "height": 128
+      },
+      "1024": {
+        "width": 128,
+        "height": 128
+      },
+      "1280": {
+        "width": 128,
+        "height": 128
+      },
+      "1536": {
+        "width": 128,
+        "height": 128
+      },
+      "1920": {
+        "width": 128,
+        "height": 128
+      }
+    },
+    "simon-sabin.png": {
+      "414": {
+        "width": 128,
+        "height": 128
+      },
+      "640": {
+        "width": 128,
+        "height": 128
+      },
+      "768": {
+        "width": 128,
+        "height": 128
+      },
+      "896": {
+        "width": 128,
+        "height": 128
+      },
+      "1024": {
+        "width": 128,
+        "height": 128
+      },
+      "1280": {
+        "width": 128,
+        "height": 128
+      },
+      "1536": {
+        "width": 128,
+        "height": 128
+      },
+      "1920": {
+        "width": 128,
+        "height": 128
+      }
+    },
+    "Banja-Os.png": {
+      "414": {
+        "width": 500,
+        "height": 500
+      },
+      "640": {
+        "width": 500,
+        "height": 500
+      },
+      "768": {
+        "width": 256,
+        "height": 256
+      },
+      "896": {
+        "width": 299,
+        "height": 299
+      },
+      "1024": {
+        "width": 341,
+        "height": 341
+      },
+      "1280": {
+        "width": 427,
+        "height": 427
+      },
+      "1536": {
+        "width": 427,
+        "height": 427
+      },
+      "1920": {
+        "width": 427,
+        "height": 427
+      }
+    }
+  },
+  "/ueber-uns": {
+    "banja-os-icon.png": {
+      "414": {
+        "width": 0,
+        "height": 0
+      },
+      "640": {
+        "width": 0,
+        "height": 0
+      },
+      "768": {
+        "width": 184,
+        "height": 184
+      },
+      "896": {
+        "width": 256,
+        "height": 256
+      },
+      "1024": {
+        "width": 256,
+        "height": 256
+      },
+      "1280": {
+        "width": 256,
+        "height": 256
+      },
+      "1536": {
+        "width": 256,
+        "height": 256
+      },
+      "1920": {
+        "width": 256,
+        "height": 256
+      }
+    },
+    "Eingangsbereich.jpg": {
+      "414": {
+        "width": 436,
+        "height": 581
+      },
+      "640": {
+        "width": 544,
+        "height": 725
+      },
+      "768": {
+        "width": 230,
+        "height": 307
+      },
+      "896": {
+        "width": 282,
+        "height": 376
+      },
+      "1024": {
+        "width": 310,
+        "height": 413
+      },
+      "1280": {
+        "width": 413,
+        "height": 551
+      },
+      "1536": {
+        "width": 413,
+        "height": 551
+      },
+      "1920": {
+        "width": 413,
+        "height": 551
+      }
+    },
+    "Holzofen.jpg": {
+      "414": {
+        "width": 436,
+        "height": 327
+      },
+      "640": {
+        "width": 544,
+        "height": 408
+      },
+      "768": {
+        "width": 230,
+        "height": 173
+      },
+      "896": {
+        "width": 282,
+        "height": 212
+      },
+      "1024": {
+        "width": 310,
+        "height": 233
+      },
+      "1280": {
+        "width": 413,
+        "height": 310
+      },
+      "1536": {
+        "width": 413,
+        "height": 310
+      },
+      "1920": {
+        "width": 413,
+        "height": 310
+      }
+    },
+    "Saunaraum.jpg": {
+      "414": {
+        "width": 436,
+        "height": 581
+      },
+      "640": {
+        "width": 544,
+        "height": 725
+      },
+      "768": {
+        "width": 230,
+        "height": 307
+      },
+      "896": {
+        "width": 282,
+        "height": 376
+      },
+      "1024": {
+        "width": 310,
+        "height": 413
+      },
+      "1280": {
+        "width": 413,
+        "height": 551
+      },
+      "1536": {
+        "width": 413,
+        "height": 551
+      },
+      "1920": {
+        "width": 413,
+        "height": 551
+      }
+    },
+    "SaunaEingang.jpg": {
+      "414": {
+        "width": 436,
+        "height": 572
+      },
+      "640": {
+        "width": 544,
+        "height": 713
+      },
+      "768": {
+        "width": 230,
+        "height": 302
+      },
+      "896": {
+        "width": 282,
+        "height": 370
+      },
+      "1024": {
+        "width": 310,
+        "height": 407
+      },
+      "1280": {
+        "width": 413,
+        "height": 542
+      },
+      "1536": {
+        "width": 413,
+        "height": 542
+      },
+      "1920": {
+        "width": 413,
+        "height": 542
+      }
+    },
+    "Banja-Os.png": {
+      "414": {
+        "width": 500,
+        "height": 500
+      },
+      "640": {
+        "width": 500,
+        "height": 500
+      },
+      "768": {
+        "width": 256,
+        "height": 256
+      },
+      "896": {
+        "width": 299,
+        "height": 299
+      },
+      "1024": {
+        "width": 341,
+        "height": 341
+      },
+      "1280": {
+        "width": 427,
+        "height": 427
+      },
+      "1536": {
+        "width": 427,
+        "height": 427
+      },
+      "1920": {
+        "width": 427,
+        "height": 427
+      }
+    }
+  }
+}

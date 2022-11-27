@@ -6,14 +6,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "@aws-cdk/aws-dynamodb": "^1.181.0",
+    "@aws-cdk/core": "^1.181.0",
     "@headlessui/react": "^1.7.3",
     "@hookform/resolvers": "^2.9.8",
     "@next-auth/prisma-adapter": "^1.0.4",
     "@next/bundle-analyzer": "^13.0.4",
     "@prisma/client": "^4.4.0",
+    "@types/mjml": "^4.7.0",
     "framer-motion": "^7.6.2",
     "js-cookie": "^3.0.1",
     "macy": "^2.5.1",
+    "mjml": "^4.13.0",
     "next": "latest",
     "next-auth": "latest",
     "nodemailer": "^6.6.3",

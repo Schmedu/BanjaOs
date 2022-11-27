@@ -45,17 +45,6 @@ h2 {
     @apply mt-0 mb-5 text-4xl font-medium tracking-wide text-center
 }
 
-table {
-    border-collapse:separate;
-    /*border:solid black 1px;*/
-    /*border-radius:6px;*/
-}
-
-table {
-    @apply min-w-full divide-y text-sm border-solid border rounded-3xl mt-4 bg-br-l-blush-light dark:bg-br-black-400 dark:border-none border dark:border-br-l-blush shadow-lg mx-auto;
-/*    min-w-full divide-y divide-gray-200 text-sm dark:bg-br-black-400 dark:border-none border dark:border-br-l-blush*/
-}
-
 .hero-header {
     text-shadow: 1px 1px #0d1821;
 }
@@ -108,16 +97,27 @@ input, textarea {
     @apply border-br-l-twilight focus:border-l-br-l-twilight dark:bg-br-black dark:text-br-l-blush focus:outline-none
 }
 
+table {
+    border-collapse:separate;
+    /*border:solid black 1px;*/
+    /*border-radius:6px;*/
+}
+
+table {
+    @apply min-w-full divide-y lg:text-lg rounded-3xl bg-br-l-blush-light dark:bg-br-black-400 shadow-lg mx-auto;
+    /*    min-w-full divide-y divide-gray-200 text-sm dark:bg-br-black-400 dark:border-none border dark:border-br-l-blush*/
+}
+
 td, th {
-    @apply border-solid border-l-0 border-l-br-l-twilight
+    /*@apply border-solid border-l-0 border-l-br-l-twilight*/
 }
 
 th {
-    @apply border-b dark:border-br-black border-solid text-lg px-4 py-2 text-left font-medium
+    @apply border-b dark:border-br-black border-solid text-xl px-4 py-2 text-left font-medium
 }
 
 td:first-child, th:first-child {
-    @apply border-l-0 border-r dark:border-br-black border-solid
+    /*@apply border-l-0 border-r dark:border-br-black border-solid*/
 }
 
 
@@ -136,4 +136,8 @@ section {
 
 #ueber-uns h3 {
     @apply text-lg
+}
+
+label {
+    @apply pl-1
 }
