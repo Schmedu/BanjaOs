@@ -1,18 +1,9 @@
 import Link from "next/link"
 import { useRouter } from 'next/router'
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import GradientButton from "./gradientButton";
 import ResponsiveImage from "./responsiveImage";
-
-
-// The approach used in this component shows how to build a sign in and sign out
-// component that works on pages which support both client and server side
-// rendering, and avoids any flash incorrect content on initial page load.
-
-function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ')
-}
 
 const navigation = [
     { name: 'Startseite', href: '/' },
@@ -36,6 +27,12 @@ export default function Header() {
     const router = useRouter()
     // const { data: session, status } = useSession()
     // const loading = status === "loading"
+
+    useEffect(() => {
+        console.log(`.${router.asPath}`)
+        const activeNavigation = Array.from(document.getElementsByClassName(`${router.asPath.replace("/", "slash")}`));
+        activeNavigation.map(x => x.classList.add("text-br-orange"));
+    }, [])
 
     let linkClasses = "block relative py-2 px-4  uppercase bg-transparent cursor-pointer lg:px-2 hover:text-br-orange hover:scale-110 hover:duration-300 transition ease-out"
 
@@ -68,13 +65,9 @@ export default function Header() {
                                 <a
                                     // key={item.name}
                                     // href={item.href}
-                                    className={classNames(
-                                        router.asPath.split("#")[0] === item.href
-                                            // ? 'text-gray-500 underline whitespace-nowrap'
-                                            // : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900 whitespace-nowrap',
-                                            ? `${linkClasses} text-br-orange`
-                                            : linkClasses,
-                                    )}
+                                    className={
+                                        `${linkClasses} ${item.href.replace("/", "slash")}`
+                                    }
                                 // aria-current={item.current ? 'page' : undefined}
                                 >
                                     {item.name}
@@ -247,11 +240,9 @@ export default function Header() {
                                     <a
                                         //key={item.name}
                                         // href={item.href}
-                                        className={classNames(
-                                            router.asPath === item.href
-                                                ? 'block px-3 py-2 text-br-orange whitespace-nowrap'
-                                                : 'block px-3 py-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-br-black hover:text-br-orange whitespace-nowrap dark:text-br-l-blush',
-                                        )}
+                                        className={
+                                            `${item.href.replace("/", "slash")} block px-3 py-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-br-black hover:text-br-orange whitespace-nowrap dark:text-br-l-blush`
+                                        }
                                     // aria-current={item.current ? 'page' : undefined}
                                     >
                                         {item.name}
