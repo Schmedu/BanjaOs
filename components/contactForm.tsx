@@ -29,7 +29,7 @@ interface ContactResponse {
 
 const ContactForm = () => {
     const [contactResponse, setContactResponse] = useState({
-        send: false,
+        send: "false",
         heading: "",
         paragraph: "",
     });
@@ -37,7 +37,7 @@ const ContactForm = () => {
     // @ts-ignore TODO: fix this
     const handleRegistration = async (data) => {
         // data.preventDefault();
-        console.log(data);
+        setContactResponse({ send: "sending", heading: "Senden...", paragraph: "Bitte warten..." });
         const res = await fetch(`/api/booking`, {
             body: JSON.stringify(data),
             headers: { 'Content-Type': 'application/json' },
@@ -45,9 +45,9 @@ const ContactForm = () => {
         });
 
         if (res.status === 200) {
-            setContactResponse({ send: true, heading: "Dankeschön!", paragraph: `Vielen Dank für deine Anfrage, ${data.name}!Wir melden uns bei dir innerhalb von 24 Stunden!` });
+            setContactResponse({ send: "true", heading: "Dankeschön!", paragraph: `Vielen Dank für deine Anfrage, ${data.name}!Wir melden uns bei dir innerhalb von 24 Stunden!` });
         } else {
-            setContactResponse({ send: true, heading: "Unerwarteter Fehler ☹", paragraph: `Bitte sende uns eine Email an info@banja-os.de und berichte uns was schief gelaufen ist.` });
+            setContactResponse({ send: "true", heading: "Unerwarteter Fehler ☹", paragraph: `Bitte sende uns eine Email an info@banja-os.de und berichte uns was schief gelaufen ist.` });
         }
     };
 
@@ -58,7 +58,7 @@ const ContactForm = () => {
             </h2>
             <div className="mx-auto md:w-7/12 lg:w-1/2">
                 <div className="rounded-lg bg-br-l-blush-light dark:bg-br-black-400 dark:border-none dark:border-none p-8 shadow-lg lg:col-span-3 lg:p-12">
-                    {contactResponse.send === false ? (
+                    {contactResponse.send === "false" ? (
                         <form onSubmit={handleSubmit(handleRegistration)} className="space-y-4">
                             <div>
                                 <label className="" htmlFor="name">{nameLabel}:</label>

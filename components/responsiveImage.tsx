@@ -36,7 +36,6 @@ function getHeight(src: string, range: number, path: string): number {
 }
 
 function getSource(src: string, fileName: string, srcPath: string, range: number, path: string, fileFormat: string): string {
-    // `/images/test/${fileName}-${getWidth(src, range, path)}.${fileFormat}`
     return `${srcPath}/magick/${fileName}-${getWidth(src, range, path)}.${fileFormat}`
 }
 
@@ -70,6 +69,7 @@ export default function ResponsiveImage({ src, alt, className, lazy = true }: Re
                 srcSet={`${srcPath}/magick/${fileName}-${getWidth(src, range, path)}.${fileFormat}`}
                 width={getWidth(src, range, path)}
                 height={getHeight(src, range, path)}
+                type={`image/${fileFormat}`}
             />
         );
     });

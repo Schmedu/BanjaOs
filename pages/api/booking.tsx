@@ -15,16 +15,40 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                     pass: process.env.EMAIL_PW
                 }
             })
-            console.log(
-                process.env.EMAIL_USER,
-                process.env.EMAIL_PW
-            )
+            let booking = ``
+            // iterate through formData object
+            for (let key in formData) {
+                booking += `${key}: ${formData[key]}\n`
+            }
+            let internalMail = {
+                // from: process.env.EMAIL_INFO,
+                from: process.env.EMAIL_USER,
+                to: process.env.EMAIL_USER,
+                subject: "Buchungsanfrage für Banja Os",
+                text: `
+Name: ${formData["name"]}
+Email: ${formData["email"]}
+Telefon: ${formData["phone"]}
+Datum: ${formData["date"]}
+Uhrzeit: ${formData["time"]}
+Anzahl Personen: ${formData["persons"]}
+Anzahl Stunden: ${formData["hours"]}
+Anmerkungen: ${formData["notes"] || "keine"}
+
+JSON:
+${booking}
+`
+            }
+            await transporter.sendMail(internalMail)
 
             let customerMail = {
                 // from: process.env.EMAIL_INFO,
+                // to: process.env.EMAIL_USER,
+                // replyTo: formData["email"],
                 from: process.env.EMAIL_USER,
                 to: formData["email"],
-                subject: "Buchungsanfrage für Banja Os",
+                subject: `Buchungsanfrage von ${formData["name"]}`,
+                html: getBookingInqueryAnswer(formData["name"]),
                 text: `Hi ${formData["name"]},
 das ist eine automatische Bestätigung deiner Buchungsanfrage für Banja Os. 
 Wir melden uns bei dir innerhalb von 24 Stunden.
@@ -36,6 +60,7 @@ Telefon: ${formData["phone"]}
 Datum: ${formData["date"]}
 Uhrzeit: ${formData["time"]}
 Anzahl Personen: ${formData["persons"]}
+Anzahl Stunden: ${formData["hours"]}
 Anmerkungen: ${formData["notes"] || "keine"}
 
 Liebe Grüße
@@ -45,27 +70,9 @@ Hilda
 Banja Os
 Hilda Uffelmann
 Kleine Schulstr. 24a
-49078 Osnabrück`
+49078 Osnabrück`,
             }
             await transporter.sendMail(customerMail)
-
-            let booking = ``
-            // iterate through formData object
-            for (let key in formData) {
-                booking += `${key}: ${formData[key]}\n`
-            }
-
-            let internalMail = {
-                // from: process.env.EMAIL_INFO,
-                // to: process.env.EMAIL_USER,
-                // replyTo: formData["email"],
-                from: process.env.EMAIL_USER,
-                to: formData["email"],
-                subject: `Buchungsanfrage von ${formData["name"]}`,
-                text: booking,
-                html: getBookingInqueryAnswer(formData["name"])
-            }
-            await transporter.sendMail(internalMail)
             console.log(`mail sent to ${formData["email"]}`)
             res.status(200)
             break;

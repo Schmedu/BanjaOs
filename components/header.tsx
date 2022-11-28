@@ -29,7 +29,6 @@ export default function Header() {
     // const loading = status === "loading"
 
     useEffect(() => {
-        console.log(`.${router.asPath}`)
         let url = router.asPath.split('#')[0]
         const activeNavigation = Array.from(document.getElementsByClassName(`${url.replace("/", "slash")}`));
         activeNavigation.map(x => x.classList.add("text-br-orange"));
