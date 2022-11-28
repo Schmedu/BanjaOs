@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 
 export default function Datenschutz() {
     return (
-        <Layout>
+        <Layout title={"Datenschutz"}>
             <HeroHeaderText heading={"Datenschutz"} />
             <section id={"legal"}>
                 <h2>1. Datenschutz auf einen Blick</h2>

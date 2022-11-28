@@ -6,12 +6,12 @@ import GradientButton from "./gradientButton";
 
 const buttonText = "Senden";
 const message = "Nachricht";
-const phoneNumber = "Telefon";
+const phoneNumber = "0171 1234567";
 const phoneLabel = "Telefon";
-const emailPlaceholder = "Email";
+const emailPlaceholder = "max@mustermann.com";
 
-const nameLabel = <>Name</>;
-const namePlaceholder = "Name";
+const nameLabel = "Name";
+const namePlaceholder = "Max Mustermann";
 
 // const times = Array.from({ length: 12 }, (_, i) => {
 //     const hour = 10 + i;
@@ -191,7 +191,7 @@ const ContactForm = () => {
                                         whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
                                         viewport={{ once: true }}
                                         className="w-full rounded-lg p-3 text-sm border  dark:border-none"
-                                        placeholder="Personen"
+                                        placeholder="4 Personen"
                                         id="persons"
                                         type={'number'}
                                         // list='persons'
@@ -218,7 +218,7 @@ const ContactForm = () => {
                                         whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
                                         viewport={{ once: true }}
                                         className="w-full rounded-lg p-3 text-sm border  dark:border-none"
-                                        placeholder="Stunden"
+                                        placeholder="2 Stunden"
                                         id="hour"
                                         // list={'hours'}
                                         type={'number'}
@@ -277,7 +277,7 @@ const ContactForm = () => {
                                     />
                                     <label htmlFor="dataProtection" className={"ml-2"}>
                                         Ich akzeptiere die <a href="/datenschutz" target="_blank">Datenschutzerklärung</a>
-                                        :</label>
+                                    </label>
                                     {errors.dataProtection && errors.dataProtection.type === "required" && (
                                         <span className={"block mb-2"} role="alert">Das ist ein Pflichtfeld.</span>
                                     )}
@@ -295,7 +295,7 @@ const ContactForm = () => {
                                     />
                                     <label htmlFor="newsletter" className={"ml-2"}>
                                         Informiere mich über Sauna Angebote.
-                                        :</label>
+                                    </label>
                                 </motion.div>
                             </div>
                             <div className={"text-right"}>

@@ -3,7 +3,7 @@ import footer from "./footer";
 import Head from "next/head";
 
 interface Props {
-    title?: string
+    title: string
     children: React.ReactNode
 }
 

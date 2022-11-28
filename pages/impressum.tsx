@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 
 export default function Impressum() {
     return (
-        <Layout>
+        <Layout title={"Impressum"}>
             <HeroHeaderText heading={"Impressum"} />
             <section id={"legal"} className={"text-left"}>
                 <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
