@@ -19,7 +19,6 @@
     "macy": "^2.5.1",
     "mjml": "^4.13.0",
     "next": "latest",
-    "next-auth": "latest",
     "nodemailer": "^6.6.3",
     "react": "18.1.0",
     "react-burger-menu": "^3.0.8",
