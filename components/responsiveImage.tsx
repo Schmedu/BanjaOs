@@ -42,7 +42,7 @@ function getSource(src: string, fileName: string, srcPath: string, range: number
 
 export default function ResponsiveImage({ src, alt, className, lazy = true }: ResponsiveImageProps) {
     let router = useRouter()
-    let path = router.asPath
+    let path = router.asPath.split("#")[0]
 
     const srcPath = src.split('/').slice(0, -1).join('/');
     let [fileName, originFileExtension] = src.split('.');
@@ -74,9 +74,20 @@ export default function ResponsiveImage({ src, alt, className, lazy = true }: Re
         );
     });
 
+    const blankSources = ranges.filter((range) => !isShown(src, range, path)).map((range) =>
+        <source
+            key={`${fileName}-${range}-${path}`}
+            media={`(max-width: ${range - 1}px)`}
+            srcSet={`blank.png`}
+            width={1}
+            height={1}
+        />
+    );
+
 
     return (
         <picture>
+            {blankSources}
             {sources}
             {lazy ? (
                 <img src={src} alt={alt} loading={"lazy"} className={className} />

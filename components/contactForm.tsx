@@ -67,9 +67,17 @@ const ContactForm = () => {
                                     placeholder={namePlaceholder}
                                     type="text"
                                     id="name"
-                                    {...register('name', { required: true })}
+                                    {...register('name', {
+                                        required: true,
+                                        validate: (value) => {
+                                            return value.length > 3 && value.split(" ").length > 1 && value.split(" ")[1].length > 1;
+                                        }
+                                    })}
                                 />
-                                {errors.name && <span className="pt-2 pl-2 block" role="alert">Das ist ein Pflichtfeld.</span>}
+                                {errors.name && errors.name.type === "required" && <span className="pt-2 pl-2 block text-br-orange" role="alert">Das ist ein Pflichtfeld.</span>}
+                                {errors.name && errors.name.type === "validate" && (
+                                    <span className="pt-2 pl-2 block text-br-orange" role="alert" >Bitte Vor- und Nachnamen angeben.</span>
+                                )}
                             </div>
 
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -93,10 +101,10 @@ const ContactForm = () => {
                                         })}
                                     />
                                     {errors.email && errors.email.type === "required" && (
-                                        <span className="pt-2 pl-2 block" role="alert" >Das ist ein Pflichtfeld.</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert" >Das ist ein Pflichtfeld.</span>
                                     )}
                                     {errors.email && errors.email.type === "validate" && (
-                                        <span className="pt-2 pl-2 block" role="alert" >Entspricht nicht dem Format einer Email-Adresse.</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert" >Entspricht nicht dem Format einer Email-Adresse.</span>
                                     )}
 
                                 </div>
@@ -120,10 +128,10 @@ const ContactForm = () => {
 
                                     />
                                     {errors.phone && errors.phone.type === "required" && (
-                                        <span className="pt-2 pl-2 block" role="alert" >Das ist ein Pflichtfeld.</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert" >Das ist ein Pflichtfeld.</span>
                                     )}
                                     {errors.phone && errors.phone.type === "validate" && (
-                                        <span className="pt-2 pl-2 block" role="alert" >Es muss sich um eine valide Telefonnummer handeln.</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert" >Es muss sich um eine valide Telefonnummer handeln.</span>
                                     )}
                                 </div>
                             </div>
@@ -151,10 +159,10 @@ const ContactForm = () => {
                                         })}
                                     />
                                     {errors.date && errors.date.type === "required" && (
-                                        <span className="pt-2 pl-2 block" role="alert">Das ist ein Pflichtfeld.</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Das ist ein Pflichtfeld.</span>
                                     )}
                                     {errors.date && errors.date.type === "validate" && (
-                                        <span className="pt-2 pl-2 block" role="alert">Das Datum muss heute oder in der Zukunft liegen.</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Das Datum muss heute oder in der Zukunft liegen.</span>
                                     )}
 
                                 </div>
@@ -175,13 +183,13 @@ const ContactForm = () => {
                                         })}
                                     />
                                     {errors.time && errors.time.type === "required" && (
-                                        <span className="pt-2 pl-2 block" role="alert">Das ist ein Pflichtfeld.</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Das ist ein Pflichtfeld.</span>
                                     )}
                                     {errors.time && errors.time.type === "validate" && (
-                                        <span className="pt-2 pl-2 block" role="alert">Inkorrekte Uhrzeit</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Inkorrekte Uhrzeit</span>
                                     )}
                                     {errors.time && errors.time.type === "maxLength" && (
-                                        <span className="pt-2 pl-2 block" role="alert">Max length exceeded</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Max length exceeded</span>
                                     )}
                                 </div>
                                 <div>
@@ -202,13 +210,13 @@ const ContactForm = () => {
                                         })}
                                     />
                                     {errors.persons && errors.persons.type === "required" && (
-                                        <span className="pt-2 pl-2 block" role="alert">Das ist ein Pflichtfeld.</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Das ist ein Pflichtfeld.</span>
                                     )}
                                     {errors.persons && errors.persons.type === "min" && (
-                                        <span className="pt-2 pl-2 block" role="alert">Min. 1 Person</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Min. 1 Person</span>
                                     )}
                                     {errors.persons && errors.persons.type === "max" && (
-                                        <span className="pt-2 pl-2 block" role="alert">Max. 6 Person</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Max. 6 Person</span>
                                     )}
                                 </div>
                                 <div>
@@ -235,16 +243,16 @@ const ContactForm = () => {
                                     {/*    <option key={4} value={"4"} />*/}
                                     {/*</datalist>*/}
                                     {errors.hours && errors.hours.type === "required" && (
-                                        <span className="pt-2 pl-2 block" role="alert">Das ist ein Pflichtfeld.</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Das ist ein Pflichtfeld.</span>
                                     )}
                                     {errors.hours && errors.hours.type === "validate" && (
-                                        <span className="pt-2 pl-2 block" role="alert">Falsche Uhrzeit</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Falsche Uhrzeit</span>
                                     )}
                                     {errors.hours && errors.hours.type === "min" && (
-                                        <span className="pt-2 pl-2 block" role="alert">Min. 1 Stunde</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Min. 1 Stunde</span>
                                     )}
                                     {errors.hours && errors.hours.type === "max" && (
-                                        <span className="pt-2 pl-2 block" role="alert">Max. 3 Stunden</span>
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Max. 3 Stunden</span>
                                     )}
                                 </div>
                             </div>
@@ -279,7 +287,7 @@ const ContactForm = () => {
                                         Ich akzeptiere die <a href="/datenschutz" target="_blank">Datenschutzerklärung</a>
                                     </label>
                                     {errors.dataProtection && errors.dataProtection.type === "required" && (
-                                        <span className={"block mb-2"} role="alert">Das ist ein Pflichtfeld.</span>
+                                        <span className={"block mb-2 text-br-orange"} role="alert">Das ist ein Pflichtfeld.</span>
                                     )}
                                 </motion.div>
                                 <motion.div className={""}
