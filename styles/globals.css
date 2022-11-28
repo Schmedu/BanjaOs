@@ -155,6 +155,7 @@ input[type="date"], input[type="time"]
     display:block;
     /* Solution 1 */
     -webkit-appearance: textfield;
+    width: 100%;
     -moz-appearance: textfield;
     /*min-height: 1.2em;*/
     /* Solution 2 */
