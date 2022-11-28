@@ -6,12 +6,15 @@ import GradientButton from "./gradientButton";
 
 const buttonText = "Senden";
 const message = "Nachricht";
-const phoneNumber = "0171 1234567";
+const phoneNumber = "";
 const phoneLabel = "Telefon";
-const emailPlaceholder = "max@mustermann.com";
+const emailPlaceholder = "";
 
 const nameLabel = "Name";
-const namePlaceholder = "Max Mustermann";
+const namePlaceholder = "";
+const personsPlaceHolder = "";
+const hoursPlaceHolder = "";
+const messagePlaceHolder = "(optional)";
 
 // const times = Array.from({ length: 12 }, (_, i) => {
 //     const hour = 10 + i;
@@ -199,7 +202,7 @@ const ContactForm = () => {
                                         whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
                                         viewport={{ once: true }}
                                         className="w-full rounded-lg p-3 text-sm border  dark:border-none"
-                                        placeholder="4 Personen"
+                                        placeholder={personsPlaceHolder}
                                         id="persons"
                                         type={'number'}
                                         // list='persons'
@@ -226,7 +229,7 @@ const ContactForm = () => {
                                         whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
                                         viewport={{ once: true }}
                                         className="w-full rounded-lg p-3 text-sm border  dark:border-none"
-                                        placeholder="2 Stunden"
+                                        placeholder={hoursPlaceHolder}
                                         id="hour"
                                         // list={'hours'}
                                         type={'number'}
@@ -264,7 +267,7 @@ const ContactForm = () => {
                                     whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
                                     viewport={{ once: true }}
                                     className="w-full rounded-lg p-3 text-sm border  dark:border-none"
-                                    placeholder="Nachricht (optional)"
+                                    placeholder={messagePlaceHolder}
                                     rows={2}
                                     id="message"
                                     {...register('message')}
