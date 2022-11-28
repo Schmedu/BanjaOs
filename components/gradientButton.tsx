@@ -31,14 +31,18 @@ export default function GradientButton({ buttonText, href, classNames, onClick, 
                     "linear-gradient(to right bottom, #7B506F, #7B506F, #7B506F)",
                 ],
                 scale: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.05, 1.0],
-                transition: { duration: 2.3, delay: 0, ease: "easeInOut" }
             }}
             whileTap={{ scale: 0.9 }}
+            transition={{ duration: 3, ease: "easeInOut", times: [0, 0.2, 0.5, 1], repeat: Infinity, repeatDelay: 1 }}
             onClick={onClick}
         >
-            <a href={href}>
+            {href ? (
+                <a href={href}>
+                    <span > {buttonText} </span>
+                </a>
+            ) : (
                 <span > {buttonText} </span>
-            </a>
+            )}
         </motion.button>
     )
 }

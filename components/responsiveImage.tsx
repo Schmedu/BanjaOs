@@ -87,8 +87,15 @@ export default function ResponsiveImage({ src, alt, className, lazy = true }: Re
 
     return (
         <picture>
-            {blankSources}
-            {sources}
+            {   // @ts-ignore
+                data[path] !== undefined ? (
+                    <>
+                        {blankSources}
+                        {sources}
+                    </>
+                ) : (
+                    <></>
+                )}
             {lazy ? (
                 <img src={src} alt={alt} loading={"lazy"} className={className} />
             ) : (
