@@ -94,7 +94,7 @@ select:-webkit-autofill:focus {
 }
 
 input, textarea {
-    @apply border-br-l-twilight focus:border-l-br-l-twilight dark:bg-br-black dark:text-br-l-blush focus:outline-none
+    @apply border-br-l-twilight focus:border-l-br-l-twilight bg-br-l-blush-light dark:bg-br-black dark:text-br-l-blush focus:outline-none
 }
 
 table {
@@ -155,7 +155,7 @@ input[type="date"], input[type="time"]
     display:block;
     /* Solution 1 */
     -webkit-appearance: textfield;
-    width: 100%;
+    width: 100% !important;
     -moz-appearance: textfield;
     /*min-height: 1.2em;*/
     /* Solution 2 */

@@ -34,7 +34,7 @@ const ContactForm = () => {
         paragraph: "",
     });
     const { register, handleSubmit, formState: { errors } } = useForm();
-    // @ts-ignore TODO: fix this
+    // @ts-ignore
     const handleRegistration = async (data) => {
         // data.preventDefault();
         setContactResponse({ send: "sending", heading: "Senden...", paragraph: "Bitte warten..." });
@@ -57,15 +57,16 @@ const ContactForm = () => {
                 Termin buchen
             </h2>
             <div className="mx-auto md:w-7/12 lg:w-1/2">
-                <div className="rounded-lg bg-br-l-blush-light dark:bg-br-black-400 dark:border-none dark:border-none p-8 shadow-lg lg:col-span-3 lg:p-12">
+                <motion.div className="rounded-lg bg-br-l-blush-light dark:bg-br-black-400 dark:border-none dark:border-none p-8 shadow-lg lg:col-span-3 lg:p-12"
+                    initial={{ opacity: 0.2, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0, transition: { duration: (0.3 * 1) } }}
+                    viewport={{ once: true }}
+                >
                     {contactResponse.send === "false" ? (
                         <form onSubmit={handleSubmit(handleRegistration)} className="space-y-4">
                             <div>
                                 <label className="" htmlFor="name">{nameLabel}:</label>
-                                <motion.input
-                                    initial={{ opacity: 0.2, x: -50 }}
-                                    whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
-                                    viewport={{ once: true }}
+                                <input
                                     className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                     placeholder={namePlaceholder}
                                     type="text"
@@ -86,10 +87,7 @@ const ContactForm = () => {
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <div>
                                     <label className="" htmlFor="email">Email:</label>
-                                    <motion.input
-                                        initial={{ opacity: 0.2, x: -50 }}
-                                        whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
-                                        viewport={{ once: true }}
+                                    <input
                                         className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                         placeholder={emailPlaceholder}
                                         type="text"
@@ -114,10 +112,7 @@ const ContactForm = () => {
 
                                 <div>
                                     <label className="" htmlFor="phone">{phoneLabel}:</label>
-                                    <motion.input
-                                        initial={{ opacity: 0.2, x: -50 }}
-                                        whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
-                                        viewport={{ once: true }}
+                                    <input
                                         className="w-full rounded-lg p-3 text-sm border dark:border-none"
                                         placeholder={phoneNumber}
                                         type="tel"
@@ -142,10 +137,7 @@ const ContactForm = () => {
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <div>
                                     <label className="" htmlFor="date">Datum:</label>
-                                    <motion.input
-                                        initial={{ opacity: 0.2, x: -50 }}
-                                        whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
-                                        viewport={{ once: true }}
+                                    <input
                                         className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                         placeholder="Datum"
                                         type="date"
@@ -171,10 +163,7 @@ const ContactForm = () => {
                                 </div>
                                 <div>
                                     <label className="" htmlFor="time">Uhrzeit:</label>
-                                    <motion.input
-                                        initial={{ opacity: 0.2, x: -50 }}
-                                        whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
-                                        viewport={{ once: true }}
+                                    <input
                                         className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                         placeholder="Uhrzeit"
                                         id="time"
@@ -197,10 +186,7 @@ const ContactForm = () => {
                                 </div>
                                 <div>
                                     <label className="" htmlFor="persons">Personen:</label>
-                                    <motion.input
-                                        initial={{ opacity: 0.2, x: -50 }}
-                                        whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
-                                        viewport={{ once: true }}
+                                    <input
                                         className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                         placeholder={personsPlaceHolder}
                                         id="persons"
@@ -224,10 +210,7 @@ const ContactForm = () => {
                                 </div>
                                 <div>
                                     <label className="" htmlFor="hour">Stunden:</label>
-                                    <motion.input
-                                        initial={{ opacity: 0.2, x: -50 }}
-                                        whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
-                                        viewport={{ once: true }}
+                                    <input
                                         className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                         placeholder={hoursPlaceHolder}
                                         id="hour"
@@ -262,24 +245,17 @@ const ContactForm = () => {
 
                             <div>
                                 <label className="" htmlFor="message">{message}:</label>
-                                <motion.textarea
-                                    initial={{ opacity: 0.2, x: -50 }}
-                                    whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
-                                    viewport={{ once: true }}
+                                <textarea
                                     className="w-full rounded-lg p-3 text-sm border  dark:border-none"
                                     placeholder={messagePlaceHolder}
                                     rows={2}
                                     id="message"
                                     {...register('message')}
-                                ></motion.textarea>
+                                ></textarea>
                             </div>
 
                             <div className="space-y-2">
-                                <motion.div
-                                    initial={{ opacity: 0.2, x: -50 }}
-                                    whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
-                                    viewport={{ once: true }}
-                                >
+                                <div>
                                     <input
                                         {...register('dataProtection', { required: true })}
                                         name="dataProtection"
@@ -292,12 +268,8 @@ const ContactForm = () => {
                                     {errors.dataProtection && errors.dataProtection.type === "required" && (
                                         <span className={"block mb-2 text-br-orange"} role="alert">Das ist ein Pflichtfeld.</span>
                                     )}
-                                </motion.div>
-                                <motion.div className={""}
-                                    initial={{ opacity: 0.2, x: -50 }}
-                                    whileInView={{ opacity: 1, x: 0, transition: { duration: (0.3 * 1) } }}
-                                    viewport={{ once: true }}
-                                >
+                                </div>
+                                <div className={""}>
                                     <input
                                         {...register('newsletter',)}
                                         id="newsletter"
@@ -307,7 +279,7 @@ const ContactForm = () => {
                                     <label htmlFor="newsletter" className={"ml-2"}>
                                         Informiere mich über Sauna Angebote.
                                     </label>
-                                </motion.div>
+                                </div>
                             </div>
                             <div className={"text-right"}>
                                 <GradientButton buttonText={buttonText} classNames={"px-5 py-2 text-xl"} delay={0} />
@@ -319,7 +291,7 @@ const ContactForm = () => {
                             <p className={""}>{contactResponse.paragraph}</p>
                         </div>
                     )}
-                </div>
+                </motion.div>
             </div >
 
         </section >

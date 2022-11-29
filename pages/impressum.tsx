@@ -18,7 +18,8 @@ export default function Impressum() {
 
                 <h2>Umsatzsteuer-ID</h2>
                 <p>Umsatzsteuer-Identifikationsnummer gem&auml;&szlig; &sect; 27 a Umsatzsteuergesetz:<br />
-                    1234567890TODO</p>
+                    6614509369
+                </p>
 
                 <h2>Redaktionell verantwortlich</h2>
                 <p>Eduard Uffelmann</p>

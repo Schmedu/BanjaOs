@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         'br-orange': {
-          DEFAULT: '#EA9937',
+          'DEFAULT': '#EA9937',
           '50': '#FBEEDD',
           '100': '#FAE4CB',
           '200': '#F6D1A6',
@@ -32,7 +32,7 @@ module.exports = {
           'light': "#FFFBFB",
           'DEFAULT': "#f8e9e9"
         },
-        "br-l-twilight": {  DEFAULT: '#7B506F',
+        "br-l-twilight": {  'DEFAULT': '#7B506F',
           '50': '#CEB4C7',
           '100': '#C6A8BE',
           '200': '#B68FAB',
@@ -44,7 +44,7 @@ module.exports = {
           '800': '#150E13',
           '900': '#000000'
         },
-        "br-brown":"#735F3D",
+        "br-brown": "#735F3D",
         "br-black": {
           "50": "#3f4a53",
           "100": "#354049",

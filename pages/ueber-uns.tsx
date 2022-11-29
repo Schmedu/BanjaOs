@@ -21,7 +21,7 @@ export default function UeberUnsPage() {
                     <br />
                     <h3 >Gezwungene Stille in der Sauna?</h3>
                     <p>
-                        Sprich so viel oder so wenig mit deinen Liebsten wie du magst. Du kannst auch gerne deinen Lieblingsmusik hören in unserer Sauna.
+                        Sprich so viel oder so wenig mit deinen Liebsten wie du magst. Du kannst auch gerne deine Lieblingsmusik hören in unserer Sauna.
                     </p>
                     <br />
                     <h3 >Aufguss gibt's nur ein Mal in der Stunde?</h3>

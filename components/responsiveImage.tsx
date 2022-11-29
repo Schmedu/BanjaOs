@@ -6,6 +6,7 @@ interface ResponsiveImageProps {
     alt: string
     className?: string
     lazy?: boolean
+    isStatic?: boolean
 }
 
 function isShown(src: string, range: number, path: string): boolean {
@@ -35,16 +36,12 @@ function getHeight(src: string, range: number, path: string): number {
     return data[path][src][range].height;
 }
 
-function getSource(src: string, fileName: string, srcPath: string, range: number, path: string, fileFormat: string): string {
-    return `${srcPath}/magick/${fileName}-${getWidth(src, range, path)}.${fileFormat}`
-}
-
-export default function ResponsiveImage({ src, alt, className, lazy = true }: ResponsiveImageProps) {
+export default function ResponsiveImage({ src, alt, className, lazy = true, isStatic = false }: ResponsiveImageProps) {
     let router = useRouter()
-    let path = router.asPath.split("#")[0]
-
-    const srcPath = src.split('/').slice(0, -1).join('/');
-    let [fileName, originFileExtension] = src.split('.');
+    let path = isStatic ? "static" : router.asPath.split("#")[0]
+    let srcSplits = src.split('/');
+    const srcPath = srcSplits.slice(0, -1).join('/');
+    let fileName = srcSplits.pop()?.split('.')[0];
     let fileFormats = [
         "avif",
         "webp",

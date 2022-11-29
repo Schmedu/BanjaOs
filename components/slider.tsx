@@ -5,11 +5,12 @@ import React from "react";
 import { SwiperButtonNext, SwiperButtonPrev } from "./testimonials";
 
 export default function Slider() {
+    let standardText = "Banja Os - Sauna in Osnabrück"
     let images = [
-        { src: "/gallery/Eingangsbereich.jpg", alt: "" },
-        // { src: "/gallery/Holzofen.jpg", alt: "" },
-        { src: "/gallery/Saunaraum.jpg", alt: "" },
-        { src: "/gallery/SaunaEingang.jpg", alt: "" },
+        { src: "/gallery/Eingangsbereich.jpg", alt: `Eingangsbereich ${standardText}`, lazy: false },
+        // { src: "/gallery/Holzofen.jpg", alt: `Holzofen ${standardText}`, lazy: true },
+        { src: "/gallery/Saunaraum.jpg", alt: `Saunaraum von ${standardText}`, lazy: true },
+        { src: "/gallery/SaunaEingang.jpg", alt: `Eingang zur Sauna von ${standardText}`, lazy: true },
     ]
 
     return (
@@ -29,7 +30,8 @@ export default function Slider() {
                         </div>
                         {images.map((img, index) => (
                             <SwiperSlide key={img.src}>
-                                <img className={"rounded-3xl shadow-lg"} src={img.src} alt={img.alt} loading={"lazy"} />
+                                <ResponsiveImage key={img.src} src={img.src} alt={img.alt} lazy={img.lazy} />
+                                {/*// <img className={"rounded-3xl shadow-lg"} src={img.src} alt={img.alt} loading={"lazy"} />*/}
                             </SwiperSlide>
                         ))}
                     </Swiper>

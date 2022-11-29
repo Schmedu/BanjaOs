@@ -49,7 +49,7 @@ export default function Header() {
                         {/*<span className="w-20 h-10 bg-gray-200 rounded-lg"></span>*/}
                         <span className="h-auto flex items-center">
                             {/*<img src="Logo.jpg" alt="logo" className="w-10 h-10" />*/}
-                            <ResponsiveImage src="banja-os-icon.png" alt="Banja OS Logo" className="w-32 align-middle hidden md:block" lazy={false} />
+                            <ResponsiveImage src="banja-os-icon.png" alt="Banja OS Logo" className="w-32 align-middle hidden md:block" lazy={false} isStatic={true} />
                             {/*<img src="banja-os-logo-cropped.png" alt="logo" className=" align-middle" />*/}
                             <p className={"text-4xl whitespace-nowrap"} style={{ fontFamily: "MrDeHaviland" }}>Banja Os</p>
                         </span>

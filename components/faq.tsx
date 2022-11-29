@@ -28,7 +28,7 @@ export default function Faq() {
         },
         {
             title: "Muss ich mich anmelden?",
-            content: "Ja, unbedingt. Da wir mit Holz heizen muss die Sauna mindestens eine Stunde vorgeheizt werden. Wir empfehlen mindestens 90 Minuten vorher anzurufen.",
+            content: "Ja, unbedingt. Da wir mit Holz heizen, muss die Sauna mindestens eine Stunde vorgeheizt werden. Wir empfehlen mindestens 90 Minuten vorher anzurufen.",
         },
     ]
     return (

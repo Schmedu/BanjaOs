@@ -100,6 +100,7 @@ Liebe Grüße<br/>Hilda</p>`
 }
 
 function getEmailTemplate(message: string) {
+    // TODO: adjust image url to production
     return mjml2html(`
 <mjml>
   <mj-head>

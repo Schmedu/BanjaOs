@@ -274,7 +274,7 @@
         "height": 256
       }
     },
-    "Eingangsbereich.jpg": {
+    "/gallery/Eingangsbereich.jpg": {
       "414": {
         "width": 436,
         "height": 581
@@ -308,7 +308,7 @@
         "height": 551
       }
     },
-    "Holzofen.jpg": {
+    "/gallery/Holzofen.jpg": {
       "414": {
         "width": 436,
         "height": 327
@@ -342,7 +342,7 @@
         "height": 310
       }
     },
-    "Saunaraum.jpg": {
+    "/gallery/Saunaraum.jpg": {
       "414": {
         "width": 436,
         "height": 581
@@ -376,7 +376,7 @@
         "height": 551
       }
     },
-    "SaunaEingang.jpg": {
+    "/gallery/SaunaEingang.jpg": {
       "414": {
         "width": 436,
         "height": 572
@@ -445,77 +445,7 @@
       }
     }
   },
-  "/impressum": {
-    "banja-os-icon.png": {
-      "414": {
-        "width": 0,
-        "height": 0
-      },
-      "640": {
-        "width": 0,
-        "height": 0
-      },
-      "768": {
-        "width": 184,
-        "height": 184
-      },
-      "896": {
-        "width": 256,
-        "height": 256
-      },
-      "1024": {
-        "width": 256,
-        "height": 256
-      },
-      "1280": {
-        "width": 256,
-        "height": 256
-      },
-      "1536": {
-        "width": 256,
-        "height": 256
-      },
-      "1920": {
-        "width": 256,
-        "height": 256
-      }
-    },
-    "Banja-Os.png": {
-      "414": {
-        "width": 500,
-        "height": 500
-      },
-      "640": {
-        "width": 500,
-        "height": 500
-      },
-      "768": {
-        "width": 256,
-        "height": 256
-      },
-      "896": {
-        "width": 299,
-        "height": 299
-      },
-      "1024": {
-        "width": 341,
-        "height": 341
-      },
-      "1280": {
-        "width": 427,
-        "height": 427
-      },
-      "1536": {
-        "width": 427,
-        "height": 427
-      },
-      "1920": {
-        "width": 427,
-        "height": 427
-      }
-    }
-  },
-  "/datenschutz": {
+  "static": {
     "banja-os-icon.png": {
       "414": {
         "width": 0,
