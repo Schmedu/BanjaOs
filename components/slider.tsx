@@ -30,7 +30,7 @@ export default function Slider() {
                         </div>
                         {images.map((img, index) => (
                             <SwiperSlide key={img.src}>
-                                <ResponsiveImage key={img.src} src={img.src} alt={img.alt} lazy={img.lazy} />
+                                <ResponsiveImage key={img.src} src={img.src} alt={img.alt} lazy={img.lazy} className={"mx-auto"} />
                                 {/*// <img className={"rounded-3xl shadow-lg"} src={img.src} alt={img.alt} loading={"lazy"} />*/}
                             </SwiperSlide>
                         ))}

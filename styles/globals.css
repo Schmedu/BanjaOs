@@ -161,3 +161,7 @@ input[type="date"], input[type="time"]
     /* Solution 2 */
     /* min-width: 96%; */
 }
+
+.footer-ul {
+    @apply text-sm space-y-2 sm:space-y-1
+}

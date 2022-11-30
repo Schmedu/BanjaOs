@@ -23,7 +23,7 @@ export default function footer() {
                         <div>
                             <div>
                                 <p className="footer-heading">Öffnungszeiten</p>
-                                <ul className="space-y text-sm">
+                                <ul className="footer-ul">
                                     <li><span className={"whitespace-nowrap"}>Montag - Mittwoch:</span> <span className={"whitespace-nowrap"}>12:00 - 22:00</span></li>
                                     <li><span className={"whitespace-nowrap"}>Donerstag:</span> <span className={"whitespace-nowrap"}>12:00 - 23:00</span></li>
                                     <li><span className={"whitespace-nowrap"}>Freitag - Sonntag:</span> <span className={"whitespace-nowrap"}>10:00 - 23:00</span></li>
@@ -34,7 +34,7 @@ export default function footer() {
                             <div>
                                 <p className="footer-heading">Anfahrt</p>
                                 <a className={"hover:opacity-75"} href={"https://www.google.com/maps/dir//Banja+OS,+Kleine+Schulstra%C3%9Fe+24a,+49078+Osnabr%C3%BCck/@52.2583381,7.988857,17z/data=!4m16!1m6!3m5!1s0x47b9e94b802c3863:0xe8b1d692e333080e!2sBanja+OS!8m2!3d52.2583381!4d7.9910457!4m8!1m0!1m5!1m1!1s0x47b9e94b802c3863:0xe8b1d692e333080e!2m2!1d7.9910457!2d52.2583381!3e3"}>
-                                    <ul className="space-y text-sm">
+                                    <ul className="footer-ul">
                                         <li><span className={"whitespace-nowrap"}>Kleine Schulstraße 24a,</span></li>
                                         <li><span className={"whitespace-nowrap"}>49078 Osnabrück</span></li>
                                     </ul>
@@ -45,7 +45,7 @@ export default function footer() {
                         <div>
                             <div>
                                 <p className="footer-heading">Kontakt</p>
-                                <ul className="space-y text-sm">
+                                <ul className="footer-ul">
                                     <li><a
                                         href="tel:0541441806"
                                         className={"hover:opacity-75"}
