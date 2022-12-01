@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start"
   },
   "dependencies": {
@@ -12,6 +12,8 @@
     "@next/bundle-analyzer": "^13.0.4",
     "@prisma/client": "^4.4.0",
     "@types/mjml": "^4.7.0",
+    "aws-cdk-lib": "^2.53.0",
+    "aws-sdk": "^2.1265.0",
     "framer-motion": "^7.6.2",
     "js-cookie": "^3.0.1",
     "macy": "^2.5.1",

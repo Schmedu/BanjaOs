@@ -1,31 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import mjml2html from "mjml";
+import AWS from 'aws-sdk'
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
-    // try 5 times
-    for (let i = 0; i < 5; i++) {
-        try {
-            const formData = await req.body;
-            const nodemailer = require('nodemailer');
-            let transporter = nodemailer.createTransport({
-                host: process.env.EMAIL_HOST,
-                port: process.env.EMAIL_PORT,
-                auth: {
-                    user: process.env.EMAIL_USER,
-                    pass: process.env.EMAIL_PW
-                }
-            })
-            let booking = ``
-            // iterate through formData object
-            for (let key in formData) {
-                booking += `${key}: ${formData[key]}\n`
-            }
-            let internalMail = {
-                // from: process.env.EMAIL_INFO,
-                from: process.env.EMAIL_USER,
-                to: process.env.EMAIL_USER,
-                subject: "Buchungsanfrage für Banja Os",
-                text: `
+
+function getInternalEmailText(formData: any, booking: string) {
+    return `
 Name: ${formData["name"]}
 Email: ${formData["email"]}
 Telefon: ${formData["phone"]}
@@ -37,19 +16,11 @@ Anmerkungen: ${formData["notes"] || "keine"}
 
 JSON:
 ${booking}
-`
-            }
-            await transporter.sendMail(internalMail)
+`;
+}
 
-            let customerMail = {
-                // from: process.env.EMAIL_INFO,
-                // to: process.env.EMAIL_USER,
-                // replyTo: formData["email"],
-                from: process.env.EMAIL_USER,
-                to: formData["email"],
-                subject: `Buchungsanfrage von ${formData["name"]}`,
-                html: getBookingInqueryAnswer(formData["name"]),
-                text: `Hi ${formData["name"]},
+function getCustomerMailText(formData: any) {
+    return `Hi ${formData["name"]},
 das ist eine automatische Bestätigung deiner Buchungsanfrage für Banja Os. 
 Wir melden uns bei dir innerhalb von 24 Stunden.
 
@@ -70,20 +41,37 @@ Hilda
 Banja Os
 Hilda Uffelmann
 Kleine Schulstr. 24a
-49078 Osnabrück`,
-            }
-            await transporter.sendMail(customerMail)
-            console.log(`mail sent to ${formData["email"]}`)
-            res.status(200)
-            break;
-        } catch (err) {
-            console.log(err)
-            if (i === 4) {
-                res.status(500)
-            }
-        }
+49078 Osnabrück`;
+}
+
+function getBookingJson(formData: any) {
+    let booking = ``
+    // iterate through formData object
+    for (let key in formData) {
+        booking += `${key}: ${formData[key]}\n`
     }
-    res.end()
+    return booking;
+}
+
+async function saveInS3(formData: any) {
+    console.log(process.env.AWS_ACCESS_KEY_ID)
+    const s3 = new AWS.S3({
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    })
+    // get current datetime as iso string
+    const date = new Date().toISOString().split('T')[0]
+    if (!process.env.AWS_BUCKET_NAME) {
+        console.error("No bucket name set")
+        return;
+    }
+    const params = {
+        Bucket: process.env.AWS_BUCKET_NAME,
+        Key: `${formData['email']}-${date}.json`,
+        Body: JSON.stringify(formData)
+    }
+    // @ts-ignore
+    await s3.upload(params).promise()
 }
 
 function getBookingInqueryAnswer(name: string) {
@@ -142,4 +130,58 @@ function getEmailTemplate(message: string) {
   </mj-body>
 </mjml>
 `).html;
+}
+
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+    const formData = await req.body;
+
+    await saveInS3(formData);
+
+    const nodemailer = require('nodemailer');
+    let transporter = nodemailer.createTransport({
+        host: process.env.EMAIL_HOST,
+        port: process.env.EMAIL_PORT,
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PW
+        }
+    })
+
+    let booking = getBookingJson(formData);
+    let internalMail = {
+        // TODO: adjust email addresses after adding EMAIL_INFO
+        // from: process.env.EMAIL_INFO,
+        from: process.env.EMAIL_USER,
+        to: process.env.EMAIL_USER,
+        subject: "Buchungsanfrage für Banja Os",
+        text: getInternalEmailText(formData, booking)
+    }
+
+    let customerMail = {
+        // TODO: adjust email addresses after adding EMAIL_INFO
+        // from: process.env.EMAIL_INFO,
+        // to: process.env.EMAIL_USER,
+        // replyTo: formData["email"],
+        from: process.env.EMAIL_USER,
+        to: formData["email"],
+        subject: `Buchungsanfrage von ${formData["name"]}`,
+        html: getBookingInqueryAnswer(formData["name"]),
+        text: getCustomerMailText(formData),
+    }
+    // try 5 times
+    for (let i = 0; i < 3; i++) {
+        try {
+            await transporter.sendMail(internalMail)
+            await transporter.sendMail(customerMail)
+            console.log(`mail sent to ${formData["email"]}`)
+            res.status(200)
+            break;
+        } catch (err) {
+            console.log(err)
+            if (i === 4) {
+                res.status(500)
+            }
+        }
+    }
+    res.end()
 }

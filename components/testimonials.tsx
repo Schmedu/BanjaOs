@@ -19,7 +19,7 @@ const testimonials = [
         img: "kevin-kopsicker.png",
     },
     {
-        name: 'Jan Peter Koch',
+        name: 'Jan P. Kock',
         rating: 5,
         text: "Kleine aber feine Sauna. Besitzer sind sehr nett und sehr zuvorkommend. Man ist dort immer sehr ungestört und kann super entspannen!",
         img: "",

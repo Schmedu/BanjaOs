@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import React from "react";
+import Link from "next/link";
 
 interface Props {
     buttonText: string,
@@ -10,8 +11,8 @@ interface Props {
     additionalMotions?: any
 }
 
-export default function GradientButton({ buttonText, href, classNames, onClick, delay = 0, additionalMotions }: Props) {
-    return (
+export default function GradientButton({ buttonText, href, classNames, onClick, delay = 0 }: Props) {
+    let gradientButton = (
         <motion.button
             type="submit"
             className={`px-5 py-2 rounded-lg text-br-l-blush bg-br-l-twilight ${classNames}`}
@@ -36,13 +37,12 @@ export default function GradientButton({ buttonText, href, classNames, onClick, 
             transition={{ duration: 3, ease: "easeInOut", times: [0, 0.2, 0.5, 1], repeat: Infinity, repeatDelay: 1 }}
             onClick={onClick}
         >
-            {href ? (
-                <a href={href}>
-                    <span > {buttonText} </span>
-                </a>
-            ) : (
-                <span > {buttonText} </span>
-            )}
+            <span> {buttonText} </span>
         </motion.button>
+    )
+    return (
+        <>
+            {href ? <Link href={href}>{gradientButton}</Link> : gradientButton}
+        </>
     )
 }
