@@ -146,6 +146,10 @@ label {
     @apply mt-4 text-left
 }
 
+#legal {
+    @apply break-words
+}
+
 details summary::-webkit-details-marker {
     display:none;
 }
