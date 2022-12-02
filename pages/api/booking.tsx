@@ -2,7 +2,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 import mjml2html from "mjml";
 import AWS from 'aws-sdk'
 
-
 function getInternalEmailText(formData: any, booking: string) {
     return `
 Name: ${formData["name"]}
