@@ -106,8 +106,8 @@ function getEmailTemplate(message: string) {
       <mj-section padding-top="40px;"></mj-section>
     <mj-section padding-top="30px" background-color="#17222b" border-radius="0.5rem" padding="5%">
       <mj-column width="100%">
-        <mj-image align="center" width="150px" padding-bottom="10px" href="https://recast.ai?ref=newsletter" src="${process.env.NEXTAUTH_URL}/magick/banja-os-icon-250.png"></mj-image>
-        <mj-text align="center" color="#EA9937" font-size="33px" line-height="1%" font-family="Mr De Haviland" padding-bottom="20px" padding-top="0px">
+        <mj-image align="center" width="90px" padding-bottom="0px" href="https://recast.ai?ref=newsletter" src="${process.env.NEXTAUTH_URL}/magick/banja-os-icon-250.png"></mj-image>
+        <mj-text align="center" color="#EA9937" font-size="40px" line-height="1%" font-family="Mr De Haviland" padding-bottom="20px" padding-top="0px">
         <p>Banja Os</p>
         </mj-text>
         <mj-text color="#FFFBFB" align="center">
@@ -115,10 +115,7 @@ function getEmailTemplate(message: string) {
         </mj-text>
 
         <mj-divider border-width="0.1px" border-style="solid" border-color="#3f4a53" width="60%" />
-        <mj-image align="center" width="150px" padding-bottom="10px" href="https://recast.ai?ref=newsletter" src="${process.env.NEXTAUTH_URL}/magick/Banja-Os-300.png"></mj-image>
-        <mj-text align="center" color="#3f4a53" font-size="33px" line-height="1%" font-family="Mr De Haviland" padding-bottom="0px" padding-top="30px">
-                <p>Banja Os</p>
-        </mj-text>
+        <mj-image align="center" width="250px" padding-bottom="0px" href="https://recast.ai?ref=newsletter" src="${process.env.NEXTAUTH_URL}/magick/Banja-Os-300.png"></mj-image>
         <mj-text align="center" color="#354049" font-size="13px" line-height="100%" padding-top="0px">
         <p padding="0px">
           Hilda Uffelmann<br/>

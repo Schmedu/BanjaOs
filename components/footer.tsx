@@ -62,9 +62,9 @@ export default function footer() {
                     </div>
                     <div className="mt-12 border-t border-br-l-twilight dark:border-br-l-blush pt-12">
                         <div className="text-sm  sm:flex sm:items-center sm:justify-between">
-                            <div className="sm:flex sm:gap-3">
-                                <a className="hover:opacity-75" href={"impressum"}> Impressum </a>
-                                <a className="hover:opacity-75" href={"datenschutz"}> Datenschutz </a>
+                            <div className="sm:flex sm:gap-3 space-y-2 sm:space-y-0">
+                                <a className="hover:opacity-75 block" href={"impressum"}> Impressum </a>
+                                <a className="hover:opacity-75 block" href={"datenschutz"}> Datenschutz </a>
                             </div>
                             <p className="mt-4 sm:mt-0">©2002-{new Date().getFullYear()} Banja Os</p>
                         </div>
