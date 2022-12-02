@@ -45,9 +45,9 @@ const ContactForm = () => {
         });
 
         if (res.status === 200) {
-            setContactResponse({ send: "true", heading: "Dankeschön!", paragraph: `Vielen Dank für deine Anfrage, ${data.name}!Wir melden uns bei dir innerhalb von 24 Stunden!` });
+            setContactResponse({ send: "true", heading: "Dankeschön! 😊", paragraph: `Vielen Dank für deine Anfrage, ${data.name}! Wir melden uns bei dir innerhalb von 24 Stunden!` });
         } else {
-            setContactResponse({ send: "true", heading: "Unerwarteter Fehler ☹", paragraph: `Bitte sende uns eine Email an info@banja-os.de und berichte uns was schief gelaufen ist.` });
+            setContactResponse({ send: "true", heading: "Unerwarteter Fehler 😢", paragraph: `Bitte sende uns eine Email an info@banja-os.de und berichte uns was schief gelaufen ist.` });
         }
     };
 
