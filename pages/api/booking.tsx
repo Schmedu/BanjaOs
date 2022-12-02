@@ -59,7 +59,7 @@ async function saveInS3(formData: any) {
         secretAccessKey: process.env.BANJA_OS_AWS_SECRET_ACCESS_KEY,
     })
     // get current datetime as iso string
-    const date = new Date().toISOString().split('T')[0]
+    const date = new Date().toISOString().split('.')[0]
     if (!process.env.AWS_BUCKET_NAME) {
         console.error("No bucket name set")
         return;
