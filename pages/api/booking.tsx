@@ -54,10 +54,9 @@ function getBookingJson(formData: any) {
 }
 
 async function saveInS3(formData: any) {
-    console.log(process.env.AWS_ACCESS_KEY_ID)
     const s3 = new AWS.S3({
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        accessKeyId: process.env.BANJA_OS_AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.BANJA_OS_AWS_SECRET_ACCESS_KEY,
     })
     // get current datetime as iso string
     const date = new Date().toISOString().split('T')[0]
