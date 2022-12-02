@@ -94,7 +94,7 @@ select:-webkit-autofill:focus {
 }
 
 input, textarea {
-    @apply border-br-l-twilight focus:border-l-br-l-twilight bg-br-l-blush-light dark:bg-br-black dark:text-br-l-blush focus:outline-none
+    @apply border-br-l-twilight-50 focus:border-l-br-l-twilight-50 bg-br-l-blush-light dark:bg-br-black dark:text-br-l-blush focus:outline-none
 }
 
 table {
@@ -130,7 +130,7 @@ section {
 }
 
 
-#gallery img {
+img {
     @apply rounded-3xl shadow-lg
 }
 
