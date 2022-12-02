@@ -7,8 +7,7 @@ export default function Impressum() {
             <HeroHeaderText heading={"Impressum"} />
             <section id={"legal"} className={"text-left"}>
                 <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
-                <p>Hilda Uffelmann<br />
-                    Banja Os - Hilda Uffelmann<br />
+                <p>Banja Os - Hilda Uffelmann<br />
                     Kleine Schulstr. 24a<br />
                     49078 Osnabr&uuml;ck</p>
 
