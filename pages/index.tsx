@@ -5,7 +5,7 @@ import ContactForm from "../components/contactForm";
 import Faq from "../components/faq";
 import rightSection from "../components/rightSection";
 import leftSection from "../components/leftSection";
-import Prices from "../components/getPrices";
+import Prices from "../components/prices";
 
 
 export default function IndexPage() {
