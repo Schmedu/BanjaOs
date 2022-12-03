@@ -10,7 +10,7 @@ import Prices from "../components/prices";
 
 export default function IndexPage() {
     return (
-        <Layout title={"Osnabrücks Sauna"}>
+        <Layout title={"Osnabrücks Holzofen Sauna mit finnischen Flair"}>
             <HeroHeader />
             <div>
                 {leftSection()}

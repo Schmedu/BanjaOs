@@ -3,7 +3,7 @@ import mjml2html from "mjml";
 import AWS from 'aws-sdk'
 
 function getInternalEmailText(formData: any, booking: string) {
-    return `
+    return `Eingegangene Buchungsanfrage:
 Name: ${formData["name"]}
 Email: ${formData["email"]}
 Telefon: ${formData["phone"]}
@@ -12,9 +12,6 @@ Uhrzeit: ${formData["time"]}
 Anzahl Personen: ${formData["persons"]}
 Anzahl Stunden: ${formData["hours"]}
 Anmerkungen: ${formData["notes"] || "keine"}
-
-JSON:
-${booking}
 `;
 }
 
@@ -129,8 +126,14 @@ function getEmailTemplate(message: string) {
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     const formData = await req.body;
-
-    await saveInS3(formData);
+    try {
+        await saveInS3(formData);
+        res.status(200)
+    } catch (e) {
+        console.error(e);
+        res.status(500)
+    }
+    res.end();
 
     const nodemailer = require('nodemailer');
     let transporter = nodemailer.createTransport({
@@ -163,20 +166,19 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         html: getBookingInqueryAnswer(formData["name"]),
         text: getCustomerMailText(formData),
     }
-    // try 5 times
+    // send mail after finishing res  because the mail servers are too slow to wait
+    // try 3 times
     for (let i = 0; i < 3; i++) {
         try {
             await transporter.sendMail(internalMail)
             await transporter.sendMail(customerMail)
             console.log(`mail sent to ${formData["email"]}`)
-            res.status(200)
             break;
         } catch (err) {
-            console.log(err)
+            console.log("error", err)
             if (i === 4) {
                 res.status(500)
             }
         }
     }
-    res.end()
 }
