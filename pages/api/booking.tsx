@@ -101,7 +101,7 @@ function getEmailTemplate(message: string) {
       <mj-section padding-top="40px;"></mj-section>
     <mj-section padding-top="30px" background-color="#17222b" border-radius="0.5rem" padding="5%">
       <mj-column width="100%">
-        <mj-image align="center" width="90px" padding-bottom="0px" href="https://recast.ai?ref=newsletter" src="${process.env.NEXTAUTH_URL}/magick/banja-os-icon-250.png"></mj-image>
+        <mj-image align="center" width="90px" padding-bottom="0px" href="https://www.banja-os.de" src="${process.env.NEXTAUTH_URL}/magick/banja-os-icon-250.png"></mj-image>
         <mj-text align="center" color="#EA9937" font-size="40px" line-height="1%" font-family="Mr De Haviland" padding-bottom="20px" padding-top="0px">
         <p>Banja Os</p>
         </mj-text>
@@ -110,7 +110,7 @@ function getEmailTemplate(message: string) {
         </mj-text>
 
         <mj-divider border-width="0.1px" border-style="solid" border-color="#3f4a53" width="60%" />
-        <mj-image align="center" width="250px" padding-bottom="0px" href="https://recast.ai?ref=newsletter" src="${process.env.NEXTAUTH_URL}/magick/Banja-Os-300.png"></mj-image>
+        <mj-image align="center" width="250px" padding-bottom="0px" href="https://www.banja-os.de" src="${process.env.NEXTAUTH_URL}/magick/Banja-Os-300.png"></mj-image>
         <mj-text align="center" color="#354049" font-size="13px" line-height="100%" padding-top="0px">
         <p padding="0px">
           Hilda Uffelmann<br/>
@@ -125,6 +125,7 @@ function getEmailTemplate(message: string) {
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+    console.log("request body", req.body)
     const formData = await req.body;
     try {
         await saveInS3(formData);
@@ -134,7 +135,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         res.status(500)
     }
     res.end();
-
+    console.log("saved to s3")
     const nodemailer = require('nodemailer');
     let transporter = nodemailer.createTransport({
         host: process.env.EMAIL_HOST,
@@ -175,7 +176,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             console.log(`mail sent to ${formData["email"]}`)
             break;
         } catch (err) {
-            console.log("error", err)
+            console.log("error ", err)
             if (i === 4) {
                 res.status(500)
             }
