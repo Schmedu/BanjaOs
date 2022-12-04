@@ -111,8 +111,9 @@ function getEmailTemplate(message: string) {
 
         <mj-divider border-width="0.1px" border-style="solid" border-color="#3f4a53" width="60%" />
         <mj-image align="center" width="250px" padding-bottom="0px" href="https://www.banja-os.de" src="${process.env.NEXTAUTH_URL}/magick/Banja-Os-300.png"></mj-image>
-        <mj-text align="center" color="#354049" font-size="13px" line-height="100%" padding-top="0px">
+        <mj-text align="center" color="#3f4a53" font-size="13px" line-height="100%" padding-top="0px">
         <p padding="0px">
+          Banja Os<br/>
           Hilda Uffelmann<br/>
           Kleine Schulstr. 24a <br/>
           49078 Osnabrück</p>
@@ -125,17 +126,8 @@ function getEmailTemplate(message: string) {
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-    console.log("request body", req.body)
+    console.log("Received booking request")
     const formData = await req.body;
-    try {
-        await saveInS3(formData);
-        res.status(200)
-    } catch (e) {
-        console.error(e);
-        res.status(500)
-    }
-    res.end();
-    console.log("saved to s3")
     const nodemailer = require('nodemailer');
     let transporter = nodemailer.createTransport({
         host: process.env.EMAIL_HOST,
@@ -167,19 +159,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         html: getBookingInqueryAnswer(formData["name"]),
         text: getCustomerMailText(formData),
     }
-    // send mail after finishing res  because the mail servers are too slow to wait
-    // try 3 times
-    for (let i = 0; i < 3; i++) {
-        try {
-            await transporter.sendMail(internalMail)
-            await transporter.sendMail(customerMail)
-            console.log(`mail sent to ${formData["email"]}`)
-            break;
-        } catch (err) {
-            console.log("error ", err)
-            if (i === 4) {
-                res.status(500)
-            }
-        }
-    }
+    // don't wait for the functions to finish because because of time limit on vercel
+    // TODO: add previous error handling
+    // TODO: setup Lambda function to handle the mail sending with an s3 trigger to overcome the time limit
+    saveInS3(formData)
+    transporter.sendMail(internalMail)
+    transporter.sendMail(customerMail)
+    res.status(200)
+    res.end()
+    console.log(`mail sent to ${formData["email"]}`)
 }
