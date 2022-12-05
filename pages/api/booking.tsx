@@ -162,9 +162,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     // don't wait for the functions to finish because because of time limit on vercel
     // TODO: add previous error handling
     // TODO: setup Lambda function to handle the mail sending with an s3 trigger to overcome the time limit
-    saveInS3(formData)
-    transporter.sendMail(internalMail)
-    transporter.sendMail(customerMail)
+    await saveInS3(formData)
+    // await transporter.sendMail(internalMail)
+    // transporter.sendMail(customerMail)
     res.status(200)
     res.end()
     console.log(`mail sent to ${formData["email"]}`)
