@@ -17,7 +17,7 @@ export default function leftSection() {
                 >
                     <div className="relative z-10 rounded-3xl shadow-lg">
                         <div className="relative h-64 sm:h-80">
-                            <ResponsiveImage alt="Holzofen Sauna in Banja Os in Osnabrück" src="Holzofen.jpg" className="absolute inset-0 h-full w-full object-cover object-bottom rounded-3xl" />
+                            <ResponsiveImage alt="Holzofen Sauna in Banja Os in Osnabrück" src="Holzofen.jpg" className="absolute inset-0 h-full w-full object-cover object-bottom rounded-3xl" lazy={false} />
                         </div>
                     </div>
                 </motion.div>
