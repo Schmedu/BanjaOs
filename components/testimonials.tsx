@@ -15,7 +15,7 @@ const testimonials = [
     {
         name: 'Kevin Kopsicker',
         rating: 5,
-        text: "Super gemütliche Sauna mit freundlichen und diskreten Gastgeber:innen! Seit Jahren der ideale Ort zum Entspannen direkt in der Nachbarschaft 👌",
+        text: "Super gemütliche Sauna mit freundlichen Gastgeber:innen! Seit Jahren der ideale Ort zum Entspannen direkt in der Nachbarschaft 👌",
         img: "kevin-kopsicker.png",
     },
     {
