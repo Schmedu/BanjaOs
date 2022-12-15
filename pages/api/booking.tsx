@@ -1,6 +1,6 @@
 import {NextApiRequest, NextApiResponse} from "next";
 import AWS from 'aws-sdk'
-import { nanoid } from 'nanoid/async'
+import {nanoid} from 'nanoid/async'
 import {SendMessageBatchRequestEntryList} from "aws-sdk/clients/sqs";
 
 interface FormData {
@@ -18,51 +18,50 @@ interface FormData {
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     console.log("Received booking request")
-
-    const formData = await req.body;
-
-    let internalMail = {
-        to: process.env.EMAIL_USER,
-        subject: `Buchungsanfrage`,
-        templateFile: "template.mjml",
-        messageHtml: "",
-        messageText: getInternalEmailText(formData),
-    }
-
-    let customerEmail = {
-        to: formData["email"],
-        subject: "Buchungsanfrage für Banja Os",
-        templateFile: "template.mjml",
-        messageHtml: getBookingInqueryAnswer(formData["name"]),
-        messageText: getCustomerMailText(formData),
-    }
-
-    const sqs = new AWS.SQS({
-        accessKeyId: process.env.BANJA_OS_AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.BANJA_OS_AWS_SECRET_ACCESS_KEY,
-        region: process.env.BANJA_OS_AWS_REGION
-    });
-
-    var params = {
-        QueueUrl: process.env.SQS_QUEUE_URL,
-        Entries: [
-            {
-                Id: await nanoid(),
-                MessageBody: JSON.stringify(internalMail),
-            },
-            {
-                Id: await nanoid(),
-                MessageBody: JSON.stringify(customerEmail),
-            }
-        ] as SendMessageBatchRequestEntryList
-    } as AWS.SQS.SendMessageBatchRequest;
-
     try {
+        const formData = await req.body;
+
+        let internalMail = {
+            to: process.env.EMAIL_USER,
+            subject: `Buchungsanfrage`,
+            templateFile: "template.mjml",
+            messageHtml: "",
+            messageText: getInternalEmailText(formData),
+        }
+
+        let customerEmail = {
+            to: formData["email"],
+            subject: "Buchungsanfrage für Banja Os",
+            templateFile: "template.mjml",
+            messageHtml: getBookingInqueryAnswer(formData["name"]),
+            messageText: getCustomerMailText(formData),
+        }
+
+        const sqs = new AWS.SQS({
+            accessKeyId: process.env.BANJA_OS_AWS_ACCESS_KEY_ID,
+            secretAccessKey: process.env.BANJA_OS_AWS_SECRET_ACCESS_KEY,
+            region: process.env.BANJA_OS_AWS_REGION
+        });
+
+        var params = {
+            QueueUrl: process.env.SQS_QUEUE_URL,
+            Entries: [
+                {
+                    Id: await nanoid(),
+                    MessageBody: JSON.stringify(internalMail),
+                },
+                {
+                    Id: await nanoid(),
+                    MessageBody: JSON.stringify(customerEmail),
+                }
+            ] as SendMessageBatchRequestEntryList
+        } as AWS.SQS.SendMessageBatchRequest;
+
         await sqs.sendMessageBatch(params).promise();
         res.status(200)
         console.log(`Form successfully processed!`)
     } catch (err) {
-        console.error(err);
+        console.error(err, req.body);
         res.status(500)
     }
     res.end()
