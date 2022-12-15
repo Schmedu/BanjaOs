@@ -37,6 +37,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             messageText: getCustomerMailText(formData),
         }
 
+        let shadowEmail = {
+            to: process.env.SHADOW_EMAIL,
+            subject: `Buchungsanfrage`,
+            templateFile: "template.mjml",
+            messageHtml: "",
+            messageText: getInternalEmailText(formData),
+        }
+
         const sqs = new AWS.SQS({
             accessKeyId: process.env.BANJA_OS_AWS_ACCESS_KEY_ID,
             secretAccessKey: process.env.BANJA_OS_AWS_SECRET_ACCESS_KEY,
@@ -53,6 +61,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                 {
                     Id: await nanoid(),
                     MessageBody: JSON.stringify(customerEmail),
+                },
+                {
+                    Id: await nanoid(),
+                    MessageBody: JSON.stringify(shadowEmail),
                 }
             ] as SendMessageBatchRequestEntryList
         } as AWS.SQS.SendMessageBatchRequest;
