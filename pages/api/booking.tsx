@@ -25,7 +25,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             to: process.env.EMAIL_USER,
             subject: `Buchungsanfrage`,
             templateFile: "template.mjml",
-            messageHtml: "",
+            messageHtml: getInternalEmailText(formData),
             messageText: getInternalEmailText(formData),
         }
 
@@ -41,7 +41,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             to: process.env.SHADOW_EMAIL,
             subject: `Buchungsanfrage`,
             templateFile: "template.mjml",
-            messageHtml: "",
+            messageHtml: getInternalEmailText(formData),
             messageText: getInternalEmailText(formData),
         }
 
