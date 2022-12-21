@@ -131,7 +131,7 @@ section {
 
 
 img {
-    @apply rounded-3xl shadow-lg
+    @apply shadow-lg
 }
 
 #ueber-uns h3 {
