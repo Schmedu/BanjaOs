@@ -2,6 +2,7 @@ import {NextApiRequest, NextApiResponse} from "next";
 import AWS from 'aws-sdk'
 import {nanoid} from 'nanoid/async'
 import {SendMessageBatchRequestEntryList} from "aws-sdk/clients/sqs";
+import {newsletterSchema} from "../../components/contactForm";
 
 interface FormData {
     name: string,
@@ -20,6 +21,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     console.log("Received booking request")
     try {
         const formData = await req.body;
+
+        if (!newsletterSchema.parse(formData)) {
+            res.status(400).json({ error: "Invalid request body" });
+            res.end();
+            return;
+        }
 
         let internalMail = {
             to: process.env.EMAIL_USER,

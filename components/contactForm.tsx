@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { motion } from 'framer-motion';
+import React, {useState} from "react";
+import {useForm} from "react-hook-form";
+import {motion} from 'framer-motion';
 import GradientButton from "./gradientButton";
+import {zodResolver} from '@hookform/resolvers/zod';
+import * as z from 'zod';
 
 
 const buttonText = "Senden";
@@ -15,6 +17,38 @@ const namePlaceholder = "";
 const personsPlaceHolder = "";
 const hoursPlaceHolder = "";
 const messagePlaceHolder = "(optional)";
+
+let required = 'Pflichtfeld';
+export const newsletterSchema = z.object({
+    name: z.string().min(2, {message: required}).max(50, {message: 'Der Name ist zu lang.'}),
+    email: z.string().email({message: 'Invalide Emailadresse'}),
+    dataProtection: z.boolean().refine(value => value === true, {message: required}),
+    phone: z.string().min(6, {message: required}).refine((val) => !Number.isNaN(parseInt(val, 10)), {
+        message: "Bitte geben Sie eine gültige Telefonnummer ein.",
+    }),
+    date: z.string().min(10, {message: 'Datum muss in der Zukunft sein.'}).refine((val) => {
+        const date = new Date(val);
+        return date > new Date((new Date()).setHours(0, 0, 0, 0));
+    }, {message: 'Datum muss in der Zukunft sein.'}),
+    time: z.string().min(4, {message: required}).max(5, {message: 'Gib eine valide Uhrzeit an.'}),
+    persons: z.string().refine((val) => !Number.isNaN(parseInt(val, 10)), {
+        message: "Bitte geben Sie eine Zahl ein.",
+    }).refine((val) => parseInt(val, 10) < 9 , {
+        message: "Maximal 8 Personen.",
+    }).refine((val) => parseInt(val, 10) > 0 , {
+        message: "Mindestens 1 Person.",
+    }),
+    hours: z.string().refine((val) => !Number.isNaN(parseInt(val, 10)), {
+        message: "Bitte geben Sie eine Zahl ein.",
+    }).refine((val) => parseInt(val, 10) < 7 , {
+        message: "Maximal 6 Stunden.",
+    }).refine((val) => parseInt(val, 10) > 0 , {
+        message: "Mindestens 1 Stunde.",
+    }),
+    message: z.string().max(500, {message: 'Die Nachricht ist zu lang.'}),
+    newsletter: z.boolean(),
+});
+
 
 // const times = Array.from({ length: 12 }, (_, i) => {
 //     const hour = 10 + i;
@@ -33,21 +67,31 @@ const ContactForm = () => {
         heading: "",
         paragraph: "",
     });
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const {register, handleSubmit, formState: {errors}} = useForm({
+        resolver: zodResolver(newsletterSchema),
+    });
     // @ts-ignore
     const handleRegistration = async (data) => {
         // data.preventDefault();
-        setContactResponse({ send: "sending", heading: "Senden...", paragraph: "Bitte warten..." });
+        setContactResponse({send: "sending", heading: "Senden...", paragraph: "Bitte warten..."});
         const res = await fetch(`/api/booking`, {
             body: JSON.stringify(data),
-            headers: { 'Content-Type': 'application/json' },
+            headers: {'Content-Type': 'application/json'},
             method: 'POST'
         });
 
         if (res.status === 200) {
-            setContactResponse({ send: "true", heading: "Dankeschön! 😊", paragraph: `Vielen Dank für deine Anfrage, ${data.name}! Wir melden uns bei dir innerhalb von 24 Stunden!` });
+            setContactResponse({
+                send: "true",
+                heading: "Dankeschön! 😊",
+                paragraph: `Vielen Dank für deine Anfrage, ${data.name}! Wir melden uns bei dir innerhalb von 24 Stunden!`
+            });
         } else {
-            setContactResponse({ send: "true", heading: "Unerwarteter Fehler 😢", paragraph: `Bitte sende uns eine Email an info@banja-os.de und berichte uns was schief gelaufen ist.` });
+            setContactResponse({
+                send: "true",
+                heading: "Unerwarteter Fehler 😢",
+                paragraph: `Bitte sende uns eine Email an info@banja-os.de und berichte uns was schief gelaufen ist.`
+            });
         }
     };
 
@@ -57,10 +101,11 @@ const ContactForm = () => {
                 Termin buchen
             </h2>
             <div className="mx-auto md:w-7/12 lg:w-1/2">
-                <motion.div className="rounded-lg bg-br-l-blush-light dark:bg-br-black-400 dark:border-none dark:border-none p-8 shadow-lg lg:col-span-3 lg:p-12"
-                    initial={{ opacity: 0.2, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0, transition: { duration: (0.3 * 1) } }}
-                    viewport={{ once: true }}
+                <motion.div
+                    className="rounded-lg bg-br-l-blush-light dark:bg-br-black-400 dark:border-none dark:border-none p-8 shadow-lg lg:col-span-3 lg:p-12"
+                    initial={{opacity: 0.2, y: 50}}
+                    whileInView={{opacity: 1, y: 0, transition: {duration: (0.3 * 1)}}}
+                    viewport={{once: true}}
                 >
                     {contactResponse.send === "false" ? (
                         <form onSubmit={handleSubmit(handleRegistration)} className="space-y-4">
@@ -78,10 +123,13 @@ const ContactForm = () => {
                                         }
                                     })}
                                 />
-                                {errors.name && errors.name.type === "required" && <span className="pt-2 pl-2 block text-br-orange" role="alert">Das ist ein Pflichtfeld.</span>}
-                                {errors.name && errors.name.type === "validate" && (
-                                    <span className="pt-2 pl-2 block text-br-orange" role="alert" >Bitte Vor- und Nachnamen angeben.</span>
+                                {errors.name && (
+                                    <span className="pt-2 pl-2 block text-br-orange" role="alert">
+                                        {/*@ts-ignore*/}
+                                        {errors.name?.message}
+                                    </span>
                                 )}
+
                             </div>
 
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -101,11 +149,11 @@ const ContactForm = () => {
                                             },
                                         })}
                                     />
-                                    {errors.email && errors.email.type === "required" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert" >Das ist ein Pflichtfeld.</span>
-                                    )}
-                                    {errors.email && errors.email.type === "validate" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert" >Entspricht nicht dem Format einer Email-Adresse.</span>
+                                    {errors.email && (
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">
+                                            {/*@ts-ignore*/}
+                                            {errors.email?.message}
+                                        </span>
                                     )}
 
                                 </div>
@@ -125,11 +173,11 @@ const ContactForm = () => {
                                         })}
 
                                     />
-                                    {errors.phone && errors.phone.type === "required" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert" >Das ist ein Pflichtfeld.</span>
-                                    )}
-                                    {errors.phone && errors.phone.type === "validate" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert" >Es muss sich um eine valide Telefonnummer handeln.</span>
+                                    {errors.phone && (
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">
+                                            {/*@ts-ignore*/}
+                                            {errors.phone?.message}
+                                        </span>
                                     )}
                                 </div>
                             </div>
@@ -153,11 +201,11 @@ const ContactForm = () => {
                                             }
                                         })}
                                     />
-                                    {errors.date && errors.date.type === "required" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Das ist ein Pflichtfeld.</span>
-                                    )}
-                                    {errors.date && errors.date.type === "validate" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Das Datum muss heute oder in der Zukunft liegen.</span>
+                                    {errors.date && (
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">
+                                            {/*@ts-ignore*/}
+                                            {errors.date?.message}
+                                        </span>
                                     )}
 
                                 </div>
@@ -174,14 +222,11 @@ const ContactForm = () => {
                                             // validate: value => times.includes(value)
                                         })}
                                     />
-                                    {errors.time && errors.time.type === "required" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Das ist ein Pflichtfeld.</span>
-                                    )}
-                                    {errors.time && errors.time.type === "validate" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Inkorrekte Uhrzeit</span>
-                                    )}
-                                    {errors.time && errors.time.type === "maxLength" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Max length exceeded</span>
+                                    {errors.time && (
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">
+                                            {/*@ts-ignore*/}
+                                            {errors.time?.message}
+                                        </span>
                                     )}
                                 </div>
                                 <div>
@@ -198,14 +243,11 @@ const ContactForm = () => {
                                             max: 6,
                                         })}
                                     />
-                                    {errors.persons && errors.persons.type === "required" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Das ist ein Pflichtfeld.</span>
-                                    )}
-                                    {errors.persons && errors.persons.type === "min" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Min. 1 Person</span>
-                                    )}
-                                    {errors.persons && errors.persons.type === "max" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Max. 6 Person</span>
+                                    {errors.persons && (
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">
+                                            {/*@ts-ignore*/}
+                                            {errors.persons?.message}
+                                        </span>
                                     )}
                                 </div>
                                 <div>
@@ -228,17 +270,11 @@ const ContactForm = () => {
                                     {/*    <option key={3} value={"3"} />*/}
                                     {/*    <option key={4} value={"4"} />*/}
                                     {/*</datalist>*/}
-                                    {errors.hours && errors.hours.type === "required" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Das ist ein Pflichtfeld.</span>
-                                    )}
-                                    {errors.hours && errors.hours.type === "validate" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Falsche Uhrzeit</span>
-                                    )}
-                                    {errors.hours && errors.hours.type === "min" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Min. 1 Stunde</span>
-                                    )}
-                                    {errors.hours && errors.hours.type === "max" && (
-                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">Max. 3 Stunden</span>
+                                    {errors.hours && (
+                                        <span className="pt-2 pl-2 block text-br-orange" role="alert">
+                                            {/*@ts-ignore*/}
+                                            {errors.hours?.message}
+                                        </span>
                                     )}
                                 </div>
                             </div>
@@ -257,16 +293,20 @@ const ContactForm = () => {
                             <div className="space-y-2">
                                 <div>
                                     <input
-                                        {...register('dataProtection', { required: true })}
+                                        {...register('dataProtection', {required: true})}
                                         name="dataProtection"
                                         id="dataProtection"
                                         type="checkbox"
                                     />
                                     <label htmlFor="dataProtection" className={"ml-2"}>
-                                        Ich akzeptiere die <a href="/datenschutz" target="_blank">Datenschutzerklärung</a>
+                                        Ich akzeptiere die <a href="/datenschutz"
+                                                              target="_blank">Datenschutzerklärung</a>
                                     </label>
-                                    {errors.dataProtection && errors.dataProtection.type === "required" && (
-                                        <span className={"block mb-2 text-br-orange"} role="alert">Das ist ein Pflichtfeld.</span>
+                                    {errors.dataProtection && (
+                                        <span className="block mb-2 text-br-orange" role="alert">
+                                            {/*@ts-ignore*/}
+                                            {errors.dataProtection?.message}
+                                        </span>
                                     )}
                                 </div>
                                 <div className={""}>
@@ -282,7 +322,7 @@ const ContactForm = () => {
                                 </div>
                             </div>
                             <div className={"text-right"}>
-                                <GradientButton buttonText={buttonText} classNames={"px-5 py-2 text-xl"} delay={0} />
+                                <GradientButton buttonText={buttonText} classNames={"px-5 py-2 text-xl"} delay={0}/>
                             </div>
                         </form>
                     ) : (
@@ -292,9 +332,9 @@ const ContactForm = () => {
                         </div>
                     )}
                 </motion.div>
-            </div >
+            </div>
 
-        </section >
+        </section>
     )
 }
 
