@@ -12,12 +12,12 @@ export default function leftSection() {
                         transition: { duration: 0.5 },
                     }}
                     whileTap={{ scale: 1.0 }}
-                    whileInView={{ opacity: 1, rotate: -3, transition: { duration: 0.75, delay: 0.3 } }}
+                    whileInView={{ opacity: 1, transition: { duration: 0.75, delay: 0.3 } }}
                     viewport={{ once: true }}
                 >
-                    <div className="relative z-10 rounded-3xl shadow-lg">
+                    <div className="relative z-10  shadow-lg">
                         <div className="relative h-64 sm:h-80">
-                            <ResponsiveImage alt="Holzofen Sauna in Banja Os in Osnabrück" src="Holzofen.jpg" className="absolute inset-0 h-full w-full object-cover object-bottom rounded-3xl" lazy={false} />
+                            <ResponsiveImage alt="Holzofen Sauna in Banja Os in Osnabrück" src="Holzofen.jpg" className="absolute inset-0 h-full w-full object-cover object-bottom " lazy={false} />
                         </div>
                     </div>
                 </motion.div>

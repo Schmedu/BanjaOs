@@ -26,11 +26,11 @@ export const HeroHeader = () => {
                             transition: { duration: 0.5 },
                         }}
                         whileTap={{ scale: 1.0 }}
-                        whileInView={{ opacity: 1, rotate: 5, transition: { duration: 0.75 } }}
+                        whileInView={{ opacity: 1, transition: { duration: 0.75 } }}
                         viewport={{ once: true }}
                     >
-                        <div className="w-10/12 rounded-3xl  mx-auto">
-                            <ResponsiveImage className="object-cover rounded-3xl" src="sauna-header.jpg" alt="Saunaeimer mit Kelch Birkenquast und Utensilien zum Saunieren" lazy={false} />
+                        <div className="w-10/12   mx-auto">
+                            <ResponsiveImage className="object-cover " src="sauna-header.jpg" alt="Saunaeimer mit Kelch Birkenquast und Utensilien zum Saunieren" lazy={false} />
                         </div>
                     </motion.div>
                 </div>
