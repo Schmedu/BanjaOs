@@ -49,13 +49,6 @@ export const newsletterSchema = z.object({
     newsletter: z.boolean(),
 });
 
-
-// const times = Array.from({ length: 12 }, (_, i) => {
-//     const hour = 10 + i;
-//     return [`${hour}:00`, `${hour}:30`];
-// }).flat();
-// console.log(times);
-
 interface ContactResponse {
     heading: string;
     paragraph: string;

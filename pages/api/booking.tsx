@@ -33,7 +33,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             subject: `Buchungsanfrage`,
             templateFile: "template.mjml",
             messageHtml: getInternalEmailText(formData),
-            messageText: getInternalEmailText(formData),
+            messageText: getInternalEmailHtml(formData),
         }
 
         let customerEmail = {
@@ -49,7 +49,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             subject: `Buchungsanfrage`,
             templateFile: "template.mjml",
             messageHtml: getInternalEmailText(formData),
-            messageText: getInternalEmailText(formData),
+            messageText: getInternalEmailHtml(formData),
         }
 
         const sqs = new AWS.SQS({
@@ -86,6 +86,19 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.end()
 }
 
+
+function getInternalEmailHtml(formData: FormData) {
+    return `Eingegangene Buchungsanfrage:<br/>
+Name: ${formData["name"]}<br/>
+Email: ${formData["email"]}<br/>
+Telefon: ${formData["phone"]}<br/>
+Datum: ${formData["date"]}<br/>
+Uhrzeit: ${formData["time"]}<br/>
+Anzahl Personen: ${formData["persons"]}<br/>
+Anzahl Stunden: ${formData["hours"]}<br/>
+Anmerkungen: ${formData["notes"] || "keine"}<br/>
+`;
+}
 
 function getInternalEmailText(formData: FormData) {
     return `Eingegangene Buchungsanfrage:
