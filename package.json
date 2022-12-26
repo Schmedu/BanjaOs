@@ -23,6 +23,7 @@
     "mjml": "^4.13.0",
     "nanoid": "^4.0.0",
     "next": "^12.3.4",
+    "next-safe": "^3.3.0",
     "next-sitemap": "^3.1.43",
     "nodemailer": "^6.6.3",
     "react": "18.1.0",

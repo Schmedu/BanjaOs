@@ -8,9 +8,7 @@ export const HeroHeaderText = ({ heading }: { heading: string }) => {
             <div className="flex flex-col items-center justify-center w-full lg:flex-row max-w-screen-xl mx-auto">
                 <div className="lg:mb-0 lg:max-w-lg lg:pr-5 text-center lg:text-left">
                     <div className="max-w-xl">
-                        <h1
-                            className="block text-5xl font-bold bg-transparent"
-                            style={{ textDecoration: 'none', lineHeight: '60px' }}>
+                        <h1 className="block text-5xl font-bold bg-transparent hero-header">
                             {heading}
                         </h1>
                     </div>

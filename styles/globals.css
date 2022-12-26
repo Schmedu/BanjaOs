@@ -12,6 +12,10 @@
     font-display: swap;
 }
 
+.logo {
+    font-family: "MrDeHaviland", cursive;
+}
+
 @font-face {
     font-family: 'Lora';
     src: url('/fonts/Lora-Regular.ttf');
@@ -168,4 +172,14 @@ input[type="date"], input[type="time"]
 
 .footer-ul {
     @apply text-sm space-y-2 sm:space-y-1
+}
+
+.hero-header {
+    textDecoration: 'none';
+    lineHeight: '60px'
+}
+
+.nojs-show {
+    opacity: 1;
+    top: 0;
 }

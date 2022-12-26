@@ -1611,6 +1611,11 @@
     "preact-render-to-string" "^5.1.19"
     "uuid" "^8.3.2"
 
+"next-safe@^3.3.0":
+  "integrity" "sha512-IM+ohDK3GMoLk38/anwkvdPF7k6xxUSB/XmyfowssUpnYGbmRHNVJG5OsYv9HGjMg4Ug0h+xh4Cat7hRH/CPhg=="
+  "resolved" "https://registry.npmjs.org/next-safe/-/next-safe-3.3.0.tgz"
+  "version" "3.3.0"
+
 "next-sitemap@^3.1.43":
   "integrity" "sha512-TshDAP69OjHwvszedQ/jBvOjzqy7Gm9NU3ZIP30X3e1qXsNVOVF5uzi9kQOI6v0uBG08QUOk9wKNSIk3zI/wjQ=="
   "resolved" "https://registry.npmjs.org/next-sitemap/-/next-sitemap-3.1.43.tgz"
@@ -1619,7 +1624,7 @@
     "@corex/deepmerge" "^4.0.29"
     "minimist" "^1.2.7"
 
-"next@*", "next@^12.2.5", "next@^12.3.4":
+"next@*", "next@^12.2.5", "next@^12.3.4", "next@^9.5.0 || ^10.2.1 || ^11.1.0 || ^12.1.0":
   "integrity" "sha512-VcyMJUtLZBGzLKo3oMxrEF0stxh8HwuW976pAzlHhI3t8qJ4SROjCrSh1T24bhrbjw55wfZXAbXPGwPt5FLRfQ=="
   "resolved" "https://registry.npmjs.org/next/-/next-12.3.4.tgz"
   "version" "12.3.4"

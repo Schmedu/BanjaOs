@@ -8,9 +8,7 @@ export const HeroHeader = () => {
             <div className="flex flex-col items-center justify-between w-full mb-10 lg:flex-row max-w-screen-xl mx-auto">
                 <div className="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5 text-center lg:text-left">
                     <div className="max-w-xl mb-6">
-                        <h1
-                            className="block mb-4 text-5xl font-bold bg-transparent"
-                            style={{ textDecoration: 'none', lineHeight: '60px' }}>
+                        <h1 className="block mb-4 text-5xl font-bold bg-transparent hero-header">
                             Osnabrücks Holzofen Sauna mit finnischen Flair.
                         </h1>
                         <p className="text-base md:text-lg">

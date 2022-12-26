@@ -38,10 +38,6 @@ export default function Header() {
 
     return (
         <header className="shadow-sm">
-            <noscript>
-                <style>{`.nojs-show { opacity: 1; top: 0; }`}</style>
-            </noscript>
-
             {/*Actual Content*/}
             <div className="max-w-screen-xl p-4 xl:p-0 mx-auto">
                 <div className="flex items-center justify-between space-x-4 lg:space-x-10">
@@ -51,7 +47,7 @@ export default function Header() {
                             {/*<img src="Logo.jpg" alt="logo" className="w-10 h-10" />*/}
                             <ResponsiveImage src="banja-os-icon.png" alt="Banja OS Logo" className="w-32 align-middle hidden md:block shadow-none" lazy={false} isStatic={true} />
                             {/*<img src="banja-os-logo-cropped.png" alt="logo" className=" align-middle" />*/}
-                            <p className={"text-4xl whitespace-nowrap"} style={{ fontFamily: "MrDeHaviland" }}>Banja Os</p>
+                            <p className={"text-4xl whitespace-nowrap logo"}>Banja Os</p>
                         </span>
                     </div>
 
